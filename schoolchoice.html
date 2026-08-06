@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#f4f7fc">
+<title>Sélectionnez votre établissement | NeTubeX</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+html,body{height:100%;width:100%;background:#f0f4fa;color:#1e293b;font-weight:400;line-height:1.5;-webkit-font-smoothing:antialiased}
+body{display:flex;flex-direction:column;overflow:hidden;background:radial-gradient(circle at 20% 30%,#e9f0f9,#dce5f0 80%)}
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:rgba(0,0,0,0.02);border-radius:20px}
+::-webkit-scrollbar-thumb{background:rgba(66,133,244,0.25);border-radius:20px}
+::-webkit-scrollbar-thumb:hover{background:rgba(66,133,244,0.4)}
+.header-fixed{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.6);box-shadow:0 8px 32px rgba(0,20,40,0.06);padding:14px 24px;width:100%}
+.header{max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.header-top{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.header-left{display:flex;align-items:center;gap:14px}
+.header-icon{background:rgba(66,133,244,0.08);border:1px solid rgba(255,255,255,0.7);width:46px;height:46px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:22px;color:#1a5bbf;flex-shrink:0;box-shadow:0 4px 12px rgba(66,133,244,0.05)}
+.header-title{font-size:22px;font-weight:700;color:#0b1e33;letter-spacing:-0.4px;display:flex;align-items:center;gap:8px}
+.header-title span{font-weight:400;color:#5e6f88;font-size:14px;background:rgba(0,0,0,0.02);padding:2px 12px;border-radius:40px}
+.btn-home{background:rgba(66,133,244,0.06);border:1px solid rgba(255,255,255,0.7);padding:8px 22px;border-radius:40px;font-size:13px;font-weight:500;color:#1a5bbf;cursor:pointer;transition:all 0.25s;text-decoration:none;display:flex;align-items:center;gap:6px;white-space:nowrap;box-shadow:0 2px 8px rgba(0,0,0,0.02)}
+.btn-home:hover{background:rgba(66,133,244,0.12);color:#0a3d8a;border-color:rgba(66,133,244,0.15);transform:translateY(-1px)}
+.search-wrap{position:relative;width:100%}
+.search-icon{position:absolute;left:16px;top:50%;transform:translateY(-50%);font-size:16px;color:#6b7f97;opacity:0.7}
+.search-input{width:100%;padding:12px 16px 12px 48px;border-radius:60px;border:1px solid rgba(255,255,255,0.8);background:rgba(255,255,255,0.5);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);font-size:15px;font-family:inherit;color:#1e293b;transition:all 0.3s;outline:none;box-shadow:0 2px 12px rgba(0,0,0,0.02)}
+.search-input:focus{border-color:rgba(66,133,244,0.3);background:rgba(255,255,255,0.75);box-shadow:0 4px 20px rgba(66,133,244,0.06)}
+.search-input::placeholder{color:#8a9bb0;font-weight:400}
+.search-clear{position:absolute;right:14px;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.03);border:none;font-size:14px;color:#5e6f88;cursor:pointer;padding:4px 12px;display:none;border-radius:40px;transition:all 0.2s}
+.search-clear:hover{color:#1e293b;background:rgba(0,0,0,0.06)}
+.main-container{position:fixed;top:118px;left:0;right:0;bottom:0;overflow-y:auto;overflow-x:hidden;padding:24px 24px 90px;scroll-behavior:smooth;-webkit-overflow-scrolling:touch}
+.main-container::-webkit-scrollbar{width:5px}
+.main-container::-webkit-scrollbar-track{background:transparent}
+.main-container::-webkit-scrollbar-thumb{background:rgba(66,133,244,0.15);border-radius:20px}
+.schools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;max-width:1300px;margin:0 auto;padding-top:6px}
+.school-card{background:rgba(255,255,255,0.5);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.7);border-radius:28px;transition:all 0.35s cubic-bezier(0.15,0.85,0.35,1);cursor:pointer;display:flex;flex-direction:column;position:relative;padding:28px 28px 22px;min-height:210px;box-shadow:0 8px 32px rgba(0,20,40,0.04),inset 0 1px 0 rgba(255,255,255,0.9)}
+.school-card:hover{transform:translateY(-8px);border-color:rgba(66,133,244,0.15);box-shadow:0 20px 60px rgba(66,133,244,0.08),0 8px 24px rgba(0,0,0,0.02);background:rgba(255,255,255,0.7)}
+.school-card:active{transform:scale(0.98)}
+.school-card.hidden{display:none}
+.school-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:4px}
+.school-left{display:flex;align-items:center;gap:14px;min-width:0}
+.school-number{display:flex;align-items:center;justify-content:center;background:rgba(66,133,244,0.06);color:#1a5bbf;font-size:11px;font-weight:600;width:28px;height:28px;border-radius:50%;flex-shrink:0;border:1px solid rgba(255,255,255,0.5)}
+.school-icon{background:rgba(66,133,244,0.05);border:1px solid rgba(255,255,255,0.6);width:48px;height:48px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:22px;color:#1a5bbf;flex-shrink:0}
+.school-name{font-size:17px;font-weight:700;color:#0b1e33;letter-spacing:-0.2px;word-break:break-word;line-height:1.2}
+.school-name .prefix{font-weight:400;color:#5e6f88;font-size:13px;margin-right:4px}
+.school-status{font-size:10px;padding:3px 14px;border-radius:40px;font-weight:500;white-space:nowrap;flex-shrink:0;margin-top:2px;background:rgba(34,197,94,0.08);color:#1f9a5e;border:1px solid rgba(34,197,94,0.1)}
+.school-desc{font-size:13px;color:#475569;line-height:1.6;margin:6px 0 14px;padding-left:56px;font-weight:400}
+.school-bottom{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:14px;border-top:1px solid rgba(0,0,0,0.04);margin-top:auto}
+.school-meta{font-size:11px;color:#5e6f88;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.school-meta .code{background:rgba(0,0,0,0.02);padding:2px 12px;border-radius:40px;font-family:monospace;font-size:10px;color:#475569}
+.school-meta .location{color:#5e6f88;display:flex;align-items:center;gap:4px}
+.btn-access{background:rgba(66,133,244,0.06);border:1px solid rgba(255,255,255,0.6);padding:8px 28px;border-radius:60px;font-size:13px;font-weight:600;color:#1a5bbf;transition:all 0.3s;cursor:pointer;display:flex;align-items:center;gap:6px;box-shadow:0 2px 8px rgba(0,0,0,0.01)}
+.btn-access:after{content:"→";transition:transform 0.3s;font-size:15px}
+.school-card:hover .btn-access{background:rgba(66,133,244,0.1);border-color:rgba(66,133,244,0.1);box-shadow:0 4px 16px rgba(66,133,244,0.06)}
+.school-card:hover .btn-access:after{transform:translateX(5px)}
+.no-result{text-align:center;padding:60px 20px;color:#5e6f88;font-size:15px;grid-column:1/-1;background:rgba(255,255,255,0.4);backdrop-filter:blur(8px);border-radius:28px;border:1px solid rgba(255,255,255,0.5)}
+.loading{text-align:center;padding:60px 20px;color:#5e6f88;font-size:15px;display:flex;align-items:center;justify-content:center;gap:14px;grid-column:1/-1;background:rgba(255,255,255,0.3);backdrop-filter:blur(8px);border-radius:28px;border:1px solid rgba(255,255,255,0.4)}
+.loading:before{content:"";width:24px;height:24px;border:2px solid rgba(66,133,244,0.1);border-top-color:#1a5bbf;border-radius:50%;animation:spin 0.8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.error{text-align:center;padding:40px 20px;color:#b91c1c;background:rgba(220,38,38,0.04);border-radius:28px;font-weight:500;border-left:3px solid #dc2626;grid-column:1/-1}
+.school-card{opacity:0;animation:cardFadeIn 0.5s cubic-bezier(0.15,0.85,0.35,1) forwards}
+.school-card:nth-child(1){animation-delay:0.02s}
+.school-card:nth-child(2){animation-delay:0.04s}
+.school-card:nth-child(3){animation-delay:0.06s}
+.school-card:nth-child(4){animation-delay:0.08s}
+.school-card:nth-child(5){animation-delay:0.10s}
+.school-card:nth-child(6){animation-delay:0.12s}
+.school-card:nth-child(7){animation-delay:0.14s}
+.school-card:nth-child(8){animation-delay:0.16s}
+.school-card:nth-child(9){animation-delay:0.18s}
+.school-card:nth-child(10){animation-delay:0.20s}
+@keyframes cardFadeIn{0%{opacity:0;transform:translateY(24px)}100%{opacity:1;transform:translateY(0)}}
+html,body{overscroll-behavior:none;-webkit-overscroll-behavior:none;touch-action:pan-y}
+@media(max-width:768px){.header-fixed{padding:12px 16px}.main-container{top:112px;padding:16px 16px 80px}.schools-grid{grid-template-columns:1fr;gap:16px}.school-card{padding:20px 20px 18px;min-height:170px}.school-desc{padding-left:0;font-size:12px}.school-icon{width:40px;height:40px;font-size:18px}.school-name{font-size:16px}.school-name .prefix{font-size:12px}.header-title{font-size:18px}.header-title span{font-size:12px}.header-icon{width:38px;height:38px;font-size:18px}.btn-home{padding:6px 16px;font-size:12px}.search-input{padding:10px 14px 10px 44px;font-size:14px}.school-card{animation:cardFadeInMobile 0.4s cubic-bezier(0.15,0.85,0.35,1) forwards}@keyframes cardFadeInMobile{0%{opacity:0;transform:translateY(16px)}100%{opacity:1;transform:translateY(0)}}}
+@media(max-width:480px){.school-card{min-height:150px;padding:16px 16px 14px}.school-desc{font-size:11px}.school-name{font-size:14px}.school-name .prefix{font-size:11px}.school-icon{width:34px;height:34px;font-size:15px}.btn-access{padding:5px 18px;font-size:11px}.main-container{top:106px;padding:12px 12px 70px}}
+</style>
+</head>
+<body>
+<div class="header-fixed">
+<div class="header">
+<div class="header-top">
+<div class="header-left"><div class="header-icon">🏫</div><div class="header-title">Établissements <span>sélection</span></div></div>
+<a href="https://www.netubex.com/index" class="btn-home" target="_blank">🏠 Accueil</a>
+</div>
+<div class="search-wrap"><span class="search-icon">🔍</span><input class="search-input" id="searchInput" type="text" placeholder="Rechercher un établissement…" autocomplete="off"><button class="search-clear" id="searchClear" aria-label="Effacer">✕</button></div>
+</div>
+</div>
+<div class="main-container" id="mainContainer">
+<div class="schools-grid" id="schoolsList"><div class="loading">Chargement des écoles…</div></div>
+</div>
+<script>
+document.addEventListener('contextmenu',function(e){e.preventDefault();return false});
+document.addEventListener('keydown',function(e){if(e.key==='F12'||e.keyCode===123){e.preventDefault();return false}if(e.ctrlKey&&e.shiftKey&&(e.key==='I'||e.key==='J'||e.key==='C')){e.preventDefault();return false}if(e.ctrlKey&&(e.key==='U'||e.key==='S'||e.key==='P')){e.preventDefault();return false}return true});
+document.addEventListener('selectstart',function(e){e.preventDefault();return false});
+document.addEventListener('copy',function(e){e.preventDefault();return false});
+document.addEventListener('cut',function(e){e.preventDefault();return false});
+document.addEventListener('paste',function(e){e.preventDefault();return false});
+document.querySelectorAll('img').forEach(function(img){img.addEventListener('contextmenu',function(e){e.preventDefault()});img.addEventListener('dragstart',function(e){e.preventDefault()})});
+</script>
+<script type="importmap">{"imports":{"firebase/app":"https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js","firebase/firestore":"https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"}}</script>
+<script type="module">
+import{initializeApp}from"firebase/app";
+import{getFirestore,collection,getDocs}from"firebase/firestore";
+const firebaseConfig={apiKey:"AIzaSyDX430AIfzzgfq3o8tXHwQfIptgWOZ-K8c",authDomain:"gesco-67c43.firebaseapp.com",projectId:"gesco-67c43",storageBucket:"gesco-67c43.firebasestorage.app",messagingSenderId:"333004443566",appId:"1:333004443566:web:de41f60000e418dce9023f",measurementId:"G-V7MF88Y5EE"};
+const app=initializeApp(firebaseConfig);
+const db=getFirestore(app);
+let allCards=[];
+const isPWA=window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true;
+if(isPWA){const savedSchool=localStorage.getItem('pwa_school_id');if(savedSchool&&!window.location.search.includes('ecole')){const targetUrl=new URL('/',window.location.origin);targetUrl.searchParams.set('ecole',savedSchool);targetUrl.searchParams.set('from','pwa');targetUrl.searchParams.set('t',Date.now());window.location.href=targetUrl.toString();throw new Error('Redirection PWA')}}
+const schoolDescriptions=["Excellence académique et formation intégrale.","Éducation moderne et innovation pédagogique.","Un cadre d'apprentissage exceptionnel.","École de référence pour les leaders de demain.","Enseignement de qualité et suivi personnalisé.","Tradition et modernité éducative.","Préparation à un avenir prometteur.","Pédagogie centrée sur l'élève.","Formation de citoyens responsables.","Programmes éducatifs innovants.","Excellence et encadrement de qualité.","École d'élite aux infrastructures modernes.","Réussite académique et épanouissement.","Enseignement adapté aux défis actuels.","Un environnement stimulant et sécurisé.","Excellence pédagogique reconnue.","Formation complète et humaine.","Innovation et tradition éducative.","Réussite et excellence pour tous.","Un cadre idéal pour apprendre.","Éducation d'excellence en RDC.","Des élèves préparés pour le futur.","Qualité et rigueur académique.","Une école qui forme des bâtisseurs.","Excellence, intégrité et réussite."];
+async function chargerEcoles(){const container=document.getElementById('schoolsList');try{const snapshot=await getDocs(collection(db,"ecoles"));if(snapshot.empty){container.innerHTML='<div class="error">⚠️ Aucune école trouvée</div>';return}let total=0,active=0,inactive=0;const cardsData=[];let index=0;for(const docSnap of snapshot.docs){const ecole=docSnap.data();const prefixe=docSnap.id;const estActif=ecole.actif!==false;if(!estActif){inactive++;continue}total++;active++;index++;const nomSafe=(ecole.nom||prefixe||'').replace(/[&<>]/g,function(m){if(m==='&')return'&amp;';if(m==='<')return'&lt;';if(m==='>')return'&gt;';return m});const villeSafe=(ecole.ville||'').replace(/[&<>]/g,function(m){if(m==='&')return'&amp;';if(m==='<')return'&lt;';if(m==='>')return'&gt;';return m});const descIndex=(index-1)%schoolDescriptions.length;const description=schoolDescriptions[descIndex];cardsData.push({html:'<div class="school-card" data-prefixe="'+prefixe+'" data-nom="'+nomSafe.toLowerCase()+'" data-ville="'+villeSafe.toLowerCase()+'" data-index="'+index+'"><div class="school-top"><div class="school-left"><span class="school-number">'+index+'</span><div class="school-icon">🏛️</div><div><div class="school-name"><span class="prefix">ÉCOLE</span> '+nomSafe+'</div></div></div><span class="school-status">● Actif</span></div><div class="school-desc">'+description+'</div><div class="school-bottom"><div class="school-meta"><span class="code">📋 '+prefixe+'</span><span class="location">📍 '+villeSafe+'</span></div><div class="btn-access">Accéder</div></div></div>',prefixe:prefixe,nom:nomSafe.toLowerCase(),ville:villeSafe.toLowerCase(),actif:estActif})}allCards=cardsData;renderCards(cardsData);setupSearch();setupClicks()}catch(error){container.innerHTML='<div class="error">❌ Erreur: '+error.message+'</div>';console.error(error)}}
+function renderCards(cards){const container=document.getElementById('schoolsList');if(cards.length===0){container.innerHTML='<div class="no-result">🔍 Aucun établissement disponible</div>';return}container.innerHTML=cards.map(function(c){return c.html}).join('')}
+function setupSearch(){const input=document.getElementById('searchInput');const clear=document.getElementById('searchClear');input.addEventListener('input',function(){const q=this.value.trim().toLowerCase();if(q.length>0){clear.style.display='block'}else{clear.style.display='none'}const filtered=allCards.filter(function(c){return c.nom.includes(q)||c.ville.includes(q)});renderCards(filtered);setupClicks()});clear.addEventListener('click',function(){document.getElementById('searchInput').value='';this.style.display='none';renderCards(allCards);setupClicks();document.getElementById('searchInput').focus()})}
+function setupClicks(){document.querySelectorAll('.school-card').forEach(function(card){card.addEventListener('click',function(e){e.stopPropagation();const prefixe=this.getAttribute('data-prefixe');if(prefixe&&prefixe!=='null'&&prefixe!=='undefined'){localStorage.setItem('pwa_school_id',prefixe);localStorage.setItem('lastSchoolId',prefixe);const isPWA=window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true;let targetUrl;if(isPWA){const baseUrl=new URL('/',window.location.origin);baseUrl.searchParams.set('ecole',prefixe);baseUrl.searchParams.set('from','pwa');baseUrl.searchParams.set('t',Date.now());targetUrl=baseUrl.toString()}else{targetUrl='/schooling?ecole='+encodeURIComponent(prefixe)}window.location.href=targetUrl}})})}
+chargerEcoles();
+</script>
+</body>
+</html>
