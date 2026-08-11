@@ -98,9 +98,12 @@
         .footer a{color:#aac4d4;text-decoration:none;display:block;margin:6px 0;font-size:0.95rem;transition:0.3s}
         .footer a:hover{color:#ffffff;transform:translateX(4px)}
         .footer .copy{text-align:center;border-top:1px solid rgba(255,255,255,0.06);padding-top:18px;margin-top:28px;font-size:0.85rem;color:#6a8aa0}
-        .btn-espace{display:inline-flex;align-items:center;gap:12px;background:linear-gradient(135deg,#0a1a2a,#1a3a5c);color:#fff;padding:16px 48px;border-radius:50px;font-weight:700;font-size:1.05rem;text-decoration:none;transition:all 0.4s cubic-bezier(0.25,0.46,0.45,0.94);border:none;cursor:pointer;box-shadow:0 8px 28px rgba(26,58,92,0.25)}
-        .btn-espace:hover{transform:translateY(-5px) scale(1.04);box-shadow:0 20px 50px rgba(26,58,92,0.35);background:linear-gradient(135deg,#1a3a5c,#2a5f7a)}
-        .btn-espace i{font-size:1.3rem}
+        .btn-espace{display:inline-flex;align-items:center;gap:14px;background:linear-gradient(135deg,#0066cc 0%,#00a86b 50%,#0088cc 100%);color:#fff;padding:18px 56px;border-radius:60px;font-weight:800;font-size:1.2rem;text-decoration:none;border:none;cursor:pointer;box-shadow:0 8px 32px rgba(0,80,180,0.45),0 0 0 2px rgba(0,168,107,0.3);transition:all 0.4s cubic-bezier(0.25,0.46,0.45,0.94);letter-spacing:0.3px;text-transform:uppercase;position:relative;overflow:hidden}
+        .btn-espace::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,0.15) 0%,transparent 70%);opacity:0;transition:opacity 0.6s;pointer-events:none}
+        .btn-espace:hover::before{opacity:1}
+        .btn-espace:hover{transform:translateY(-6px) scale(1.04);box-shadow:0 16px 48px rgba(0,80,180,0.55),0 0 0 3px rgba(0,168,107,0.4);background:linear-gradient(135deg,#0077ee 0%,#00c47a 50%,#0099dd 100%)}
+        .btn-espace:active{transform:scale(0.96)}
+        .btn-espace i{font-size:1.4rem}
         .btn-espace-wrapper{text-align:center;padding:10px 5% 24px 5%}
         .fade-in{opacity:0;transform:translateY(40px);transition:all 0.8s cubic-bezier(0.25,0.46,0.45,0.94)}
         .fade-in.visible{opacity:1;transform:translateY(0)}
@@ -148,14 +151,23 @@
         .systeme-contact strong{color:#0a1a2a}
         .systeme-contact .email{color:#1a3a5c;font-weight:600}
         .systeme-btn-wrapper{text-align:center;padding-top:6px}
+        .popup-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.55);backdrop-filter:blur(6px);z-index:9999;justify-content:center;align-items:center;animation:fadeIn 0.3s ease}
+        .popup-overlay.active{display:flex}
+        .popup-box{background:linear-gradient(145deg,#ffffff,#f8f9fa);border-radius:32px;padding:48px 56px;max-width:520px;width:90%;text-align:center;box-shadow:0 40px 80px rgba(0,0,0,0.3);transform:scale(0.9);transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1);border:1px solid rgba(255,255,255,0.2)}
+        .popup-overlay.active .popup-box{transform:scale(1)}
+        .popup-box .popup-icon{font-size:4.5rem;color:#00a86b;margin-bottom:16px;display:block}
+        .popup-box h2{font-size:1.8rem;font-weight:800;color:#0a1a2a;margin-bottom:12px}
+        .popup-box p{font-size:1.1rem;color:#4a5a6a;line-height:1.6;margin-bottom:28px}
+        .popup-box .btn-close-popup{background:linear-gradient(135deg,#0066cc,#00a86b);color:#fff;border:none;padding:14px 44px;border-radius:50px;font-weight:700;font-size:1rem;cursor:pointer;transition:all 0.3s;box-shadow:0 6px 24px rgba(0,80,180,0.3)}
+        .popup-box .btn-close-popup:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 10px 36px rgba(0,80,180,0.4)}
+        @keyframes fadeIn{from{opacity:0}to{opacity:1}}
         @media(max-width:1024px){.hero-section{grid-template-columns:1fr;padding:48px 5% 40px}.hero-section p{max-width:100%}.grid-3{grid-template-columns:1fr 1fr}.pillar-grid{grid-template-columns:1fr 1fr}.pourquoi-grid{grid-template-columns:1fr 1fr}.systeme-grid{grid-template-columns:1fr 1fr}.fullwidth-images{grid-template-columns:1fr 1fr}}
-        @media(max-width:768px){.header-main{flex-direction:column;gap:14px;align-items:flex-start}.nav-main{gap:1rem;flex-wrap:wrap}.grid-3{grid-template-columns:1fr}.grid-2{grid-template-columns:1fr}.pillar-grid{grid-template-columns:1fr}.gallery-grid{grid-template-columns:repeat(3,1fr)}.contact-section{grid-template-columns:1fr}.contact-side{border-left:0;border-top:2px solid #eef2f5;padding-left:0;padding-top:20px}.hero-section h2{font-size:2.2rem}.footer .inner{grid-template-columns:1fr;gap:28px}.logo img{height:70px}.logo h1{font-size:1.6rem}.pourquoi-grid{grid-template-columns:1fr}.pourquoi-card-full{grid-column:1/2}.systeme-card{padding:20px}.systeme-grid{grid-template-columns:1fr 1fr}.systeme-header h3{font-size:1.2rem}.carousel-banner .track img{height:160px}.fullwidth-images{grid-template-columns:1fr}.fullwidth-images img{height:200px}}
+        @media(max-width:768px){.header-main{flex-direction:column;gap:14px;align-items:flex-start}.nav-main{gap:1rem;flex-wrap:wrap}.grid-3{grid-template-columns:1fr}.grid-2{grid-template-columns:1fr}.pillar-grid{grid-template-columns:1fr}.gallery-grid{grid-template-columns:repeat(3,1fr)}.contact-section{grid-template-columns:1fr}.contact-side{border-left:0;border-top:2px solid #eef2f5;padding-left:0;padding-top:20px}.hero-section h2{font-size:2.2rem}.footer .inner{grid-template-columns:1fr;gap:28px}.logo img{height:70px}.logo h1{font-size:1.6rem}.pourquoi-grid{grid-template-columns:1fr}.pourquoi-card-full{grid-column:1/2}.systeme-card{padding:20px}.systeme-grid{grid-template-columns:1fr 1fr}.systeme-header h3{font-size:1.2rem}.carousel-banner .track img{height:160px}.fullwidth-images{grid-template-columns:1fr}.fullwidth-images img{height:200px}.popup-box{padding:32px 24px}.popup-box h2{font-size:1.4rem}.btn-espace{padding:14px 32px;font-size:1rem}}
         @media(max-width:480px){.gallery-grid{grid-template-columns:1fr 1fr}.check-grid{grid-template-columns:1fr}.hero-buttons .btn-primary,.hero-buttons .btn-outline{width:100%;justify-content:center}.top-bar{flex-direction:column;gap:4px;text-align:center;font-size:0.7rem}.logo h1{font-size:1.3rem}.hero-section h2{font-size:1.8rem}.btn-espace{width:100%;justify-content:center;padding:14px 24px}.systeme-grid{grid-template-columns:1fr}.systeme-card{padding:16px}.carousel-banner .track img{height:120px}.fullwidth-images img{height:160px}}
     </style>
 </head>
 <body>
 <div class="page">
-
     <div class="top-bar">
         <div class="social-icons">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -164,7 +176,6 @@
             <a href="#"><i class="fab fa-youtube"></i></a>
         </div>
     </div>
-
     <div class="header-main">
         <div class="logo">
             <img src="https://www.netubex.com/tremplin.png" alt="Logo CS Le Tremplin">
@@ -177,7 +188,6 @@
             <a href="#">Contact</a>
         </div>
     </div>
-
     <div class="hero-section">
         <div class="fade-in-left">
             <div class="badge-school"><i class="fas fa-graduation-cap" style="margin-right:6px;"></i> École d'excellence</div>
@@ -196,7 +206,6 @@
             <div class="stat-row"><span class="label">⭐ Valeurs</span><span class="value">Travail · Discipline · Réussite</span></div>
         </div>
     </div>
-
     <div class="carousel-banner">
         <div class="track">
             <img src="https://www.cstremplin.com/image1.jpg" alt="Bâtiment école 1">
@@ -215,12 +224,10 @@
             <img src="https://www.cstremplin.com/enseignant.jpg" alt="Enseignants">
         </div>
     </div>
-
     <div class="fullwidth-images">
         <img src="https://www.cstremplin.com/merite.jpg" alt="Mérite scolaire 1" class="fade-in-scale">
         <img src="https://www.cstremplin.com/merite2.jpg" alt="Mérite scolaire 2" class="fade-in-scale">
     </div>
-
     <div class="section-title fade-in"><i class="fas fa-flag"></i> NOTRE MISSION</div>
     <p class="section-sub fade-in">Révéler le potentiel de chaque élève et lui donner les connaissances, les compétences et les valeurs nécessaires pour construire un avenir solide et prometteur. De la maternelle au secondaire, nous accompagnons chaque élève dans son parcours scolaire en favorisant :</p>
     <ul class="check-grid fade-in">
@@ -231,14 +238,12 @@
         <li><i class="fas fa-check-circle"></i> La persévérance</li>
         <li><i class="fas fa-check-circle"></i> Le goût de l'effort</li>
     </ul>
-
     <div class="section-title fade-in"><i class="fas fa-layer-group"></i> NOS NIVEAUX D'ENSEIGNEMENT</div>
     <div class="grid-3">
         <div class="card fade-in-rotate"><h3><i class="fas fa-child"></i> MATERNELLE</h3><p>Les premières bases pour bien commencer. Un environnement doux et stimulant pour éveiller la curiosité.</p><span class="tag">3-5 ans</span></div>
         <div class="card fade-in-rotate"><h3><i class="fas fa-book-open"></i> PRIMAIRE</h3><p>Apprendre, comprendre et développer ses capacités. Des fondamentaux solides pour construire la réussite.</p><span class="tag">6-11 ans</span></div>
         <div class="card fade-in-rotate"><h3><i class="fas fa-user-graduate"></i> SECONDAIRE</h3><p>Se préparer aux défis académiques et à l'avenir. Une formation complète pour devenir un citoyen éclairé.</p><span class="tag">12-18 ans</span></div>
     </div>
-
     <div class="section-title fade-in"><i class="fas fa-microchip"></i> SYSTÈME DE SUIVI INTELLIGENT</div>
     <div class="systeme-card fade-in-scale">
         <div class="systeme-header">
@@ -249,12 +254,10 @@
             </div>
         </div>
         <p class="systeme-desc">Le Complexe Scolaire Le Tremplin met à disposition des parents un système de suivi intelligent pour accompagner la scolarité de leurs enfants.</p>
-
         <div class="systeme-box">
             <div class="box-title"><i class="fas fa-key"></i> Accès sécurisé par code parent</div>
             <p class="box-text">Chaque parent reçoit un code personnel à 4 ou 6 chiffres lui permettant de consulter en temps réel les informations de son ou ses enfants.</p>
         </div>
-
         <div class="systeme-grid">
             <div class="systeme-grid-item"><i class="fas fa-coins"></i><h4>Situation financière</h4><p>Minerval, paiements, solde</p></div>
             <div class="systeme-grid-item"><i class="fas fa-graduation-cap"></i><h4>Notes et résultats</h4><p>Notes, épreuves, devoirs</p></div>
@@ -263,19 +266,16 @@
             <div class="systeme-grid-item"><i class="fas fa-bullhorn"></i><h4>Communiqués</h4><p>Messages, actualités</p></div>
             <div class="systeme-grid-item"><i class="fas fa-lock"></i><h4>Sécurité</h4><p>Données chiffrées</p></div>
         </div>
-
         <div class="systeme-contact">
             <i class="fas fa-phone"></i>
             <span><strong>Pour obtenir votre code parent :</strong> Contactez la comptabilité — <span class="email">contact@cstremplin.com</span></span>
         </div>
-
         <div class="systeme-btn-wrapper">
-            <a href="https://www.netubex.com/espacet?ecole=tremplin" class="btn-espace" target="_blank" id="espaceParent">
+            <button class="btn-espace" id="espaceParent">
                 <i class="fas fa-sign-in-alt"></i> Accéder à l'espace parental
-            </a>
+            </button>
         </div>
     </div>
-
     <div class="section-title fade-in"><i class="fas fa-question-circle"></i> POURQUOI LE TREMPLIN ?</div>
     <div class="pourquoi-grid">
         <div class="pourquoi-card fade-in-scale">
@@ -299,21 +299,18 @@
             <p>Préparer chaque élève à devenir un acteur responsable, compétent et ambitieux de la société.</p>
         </div>
     </div>
-
     <div class="section-title fade-in"><i class="fas fa-columns"></i> NOS 3 PILIERS</div>
     <div class="pillar-grid">
         <div class="pillar-card fade-in-rotate"><i class="fas fa-hammer"></i><h3>TRAVAIL</h3><p>L'effort qui construit l'excellence. Nous cultivons la persévérance, la rigueur et le goût du travail bien fait.</p></div>
         <div class="pillar-card fade-in-rotate"><i class="fas fa-balance-scale"></i><h3>DISCIPLINE</h3><p>Les valeurs qui construisent le caractère. Respect, responsabilité, ponctualité et rigueur.</p></div>
         <div class="pillar-card fade-in-rotate"><i class="fas fa-trophy"></i><h3>RÉUSSITE</h3><p>L'ambition de dépasser ses limites. La réussite se construit à travers les connaissances, les compétences et la confiance en soi.</p></div>
     </div>
-
     <div class="section-title fade-in"><i class="fas fa-handshake"></i> NOTRE ENGAGEMENT</div>
     <p class="fade-in" style="font-size:1.1rem;line-height:1.9;color:#0a1a2a;max-width:850px;padding:0 5% 28px 5%;text-align:center;margin:0 auto;">
         Chaque enfant possède un potentiel unique. Notre engagement est de créer les conditions nécessaires pour que ce potentiel puisse s'exprimer, progresser et se transformer en réussite.<br><br>
         <strong style="color:#1a3a5c;">AU CS LE TREMPLIN :</strong><br>
         Nous enseignons avec exigence. Nous accompagnons avec attention. Nous éduquons avec des valeurs. Nous préparons avec ambition.
     </p>
-
     <div class="section-title fade-in"><i class="fas fa-images"></i> LA VIE AU CS LE TREMPLIN</div>
     <p class="fade-in" style="font-size:1rem;color:#4a5a6a;padding:0 5% 14px 5%;">Découvrez un environnement où les élèves apprennent, échangent, participent et grandissent ensemble.</p>
     <div class="gallery-grid">
@@ -323,13 +320,11 @@
         <div class="gallery-item fade-in-scale"><i class="fas fa-running"></i> Activités</div>
         <div class="gallery-item fade-in-scale"><i class="fas fa-building"></i> Établissement</div>
     </div>
-
     <div class="section-title fade-in"><i class="fas fa-heart"></i> UN MOT AUX PARENTS</div>
     <div class="parent-message fade-in">
         <p>Choisir une école, c'est choisir une partie de l'avenir de son enfant. Au Complexe Scolaire Le Tremplin, nous travaillons chaque jour pour offrir aux élèves un environnement dans lequel ils peuvent apprendre, progresser et croire en leurs capacités. Parce que chaque enfant mérite une éducation qui lui ouvre les portes de l'avenir.</p>
         <div class="signature"><i class="fas fa-quote-left" style="opacity:0.3;margin-right:8px;"></i> L'équipe du CS Le Tremplin</div>
     </div>
-
     <div class="section-title fade-in"><i class="fas fa-forward"></i> PRÊT POUR L'AVENIR ?</div>
     <p class="fade-in" style="text-align:center;font-size:1.2rem;font-weight:600;color:#0a1a2a;padding:0 5% 8px 5%;">L'avenir de votre enfant commence aujourd'hui.</p>
     <p class="fade-in" style="text-align:center;color:#4a5a6a;max-width:600px;margin:0 auto 28px;padding:0 5%;font-size:1.05rem;">Donnez-lui un environnement où le travail, la discipline et l'ambition deviennent les fondations de sa réussite.</p>
@@ -337,7 +332,6 @@
         <a href="#" class="btn-primary" style="background:#1a3a5c;color:#fff;font-size:1.05rem;padding:16px 40px;"><i class="fas fa-school" style="margin-right:10px;"></i> Visiter l'école</a>
         <a href="#" class="btn-outline" style="color:#1a3a5c;border-color:#1a3a5c;font-size:1.05rem;padding:16px 40px;"><i class="fas fa-envelope" style="margin-right:10px;"></i> Nous écrire</a>
     </div>
-
     <div class="section-title fade-in"><i class="fas fa-address-card"></i> CONTACT</div>
     <div class="contact-section fade-in">
         <div>
@@ -350,7 +344,6 @@
             <div style="margin-top:10px;color:#4a5a6a;font-size:0.9rem;">© CS LE TREMPLIN</div>
         </div>
     </div>
-
     <div class="footer">
         <div class="inner">
             <div>
@@ -372,16 +365,21 @@
         </div>
         <div class="copy">© 2026 Complexe Scolaire Le Tremplin — Tous droits réservés</div>
     </div>
-
 </div>
-
+<div class="popup-overlay" id="popupOverlay">
+    <div class="popup-box">
+        <i class="fas fa-clock popup-icon"></i>
+        <h2>🚀 ESPACE PARENTAL</h2>
+        <p>Cet espace sera disponible très bientôt. Nous travaillons activement à son déploiement pour vous offrir un suivi scolaire moderne et efficace.</p>
+        <button class="btn-close-popup" id="closePopup"><i class="fas fa-check-circle" style="margin-right:10px;"></i> J'ai compris</button>
+    </div>
+</div>
 <script>
     document.addEventListener('contextmenu', function(e) {
         e.preventDefault();
         window.location.href = 'https://www.cstremplin.com/about';
         return false;
     });
-
     document.addEventListener('keydown', function(e) {
         if (e.key === 'F12' || e.keyCode === 123) {
             e.preventDefault();
@@ -409,19 +407,16 @@
             return false;
         }
     });
-
     document.addEventListener('dragstart', function(e) {
         e.preventDefault();
         window.location.href = 'https://www.cstremplin.com/about';
         return false;
     });
-
     document.addEventListener('selectstart', function(e) {
         e.preventDefault();
         window.location.href = 'https://www.cstremplin.com/about';
         return false;
     });
-
     document.querySelectorAll('a').forEach(function(link) {
         link.addEventListener('contextmenu', function(e) {
             e.preventDefault();
@@ -429,24 +424,51 @@
             return false;
         });
     });
-
     document.addEventListener('DOMContentLoaded', function() {
-        const fadeElements = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .fade-in-scale, .fade-in-rotate');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
+        var fadeElements = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .fade-in-scale, .fade-in-rotate');
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
                 }
             });
         }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-        fadeElements.forEach(el => observer.observe(el));
-        setTimeout(() => {
-            fadeElements.forEach(el => {
+        fadeElements.forEach(function(el) { observer.observe(el); });
+        setTimeout(function() {
+            fadeElements.forEach(function(el) {
                 if (el.getBoundingClientRect().top < window.innerHeight) {
                     el.classList.add('visible');
                 }
             });
         }, 150);
+    });
+    var espaceBtn = document.getElementById('espaceParent');
+    var popup = document.getElementById('popupOverlay');
+    var closeBtn = document.getElementById('closePopup');
+    if (espaceBtn) {
+        espaceBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            popup.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    }
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function() {
+            popup.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    }
+    popup.addEventListener('click', function(e) {
+        if (e.target === popup) {
+            popup.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && popup.classList.contains('active')) {
+            popup.classList.remove('active');
+            document.body.style.overflow = '';
+        }
     });
 </script>
 </body>
