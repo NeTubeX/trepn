@@ -1,158 +1,268 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CS LE TREMPLIN</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
-    body{background-color:#f5efe6;display:flex;justify-content:center;padding:2rem 1rem}
-    .page{max-width:1200px;width:100%;background:#fff;box-shadow:0 20px 40px -10px rgba(184,142,47,0.3);border-radius:28px;padding:2.5rem 2.2rem;border:1px solid #e9dccd}
-    .gold-border{border-top:3px solid #c9a84c;border-bottom:3px solid #c9a84c;padding:0.6rem 0;margin-bottom:2rem;text-align:center}
-    .gold-border h1{font-size:2.5rem;font-weight:300;letter-spacing:6px;color:#1e1e1e}
-    .gold-border h1 span{font-weight:700;color:#b8942b}
-    .gold-border .sub{font-size:0.85rem;letter-spacing:8px;color:#6b5d48;margin-top:4px}
-    .motto{text-align:center;font-size:1.2rem;font-weight:300;letter-spacing:3px;color:#b8942b;margin:0.5rem 0 0.2rem}
-    .motto strong{font-weight:600;color:#1e1e1e}
-    .lead{text-align:center;font-size:1.05rem;color:#3a342a;max-width:700px;margin:1.2rem auto 1.8rem;line-height:1.6}
-    .btn-group{display:flex;flex-wrap:wrap;justify-content:center;gap:1.2rem;margin:1.8rem 0 2.2rem}
-    .btn{display:inline-block;padding:0.8rem 2.8rem;border-radius:40px;font-weight:600;font-size:1rem;letter-spacing:1px;text-decoration:none;transition:0.25s;border:1px solid transparent}
-    .btn-primary{background:#b8942b;color:#fff;box-shadow:0 4px 12px rgba(184,148,43,0.25)}
-    .btn-primary:hover{background:#a07d20;box-shadow:0 6px 18px rgba(184,148,43,0.35);transform:translateY(-2px)}
-    .btn-outline{border:1px solid #b8942b;color:#b8942b;background:transparent}
-    .btn-outline:hover{background:#b8942b;color:#fff;box-shadow:0 4px 12px rgba(184,148,43,0.2)}
-    .section-title{text-align:center;font-size:1.6rem;font-weight:300;letter-spacing:2px;color:#1e1e1e;margin:2.8rem 0 1.2rem}
-    .section-title i{color:#b8942b;margin-right:10px}
-    .section-title .gold{color:#b8942b;font-weight:500}
-    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin:1.5rem 0}
-    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem;margin:1.5rem 0}
-    .pillar-card,.level-card{background:#fcf9f3;border-radius:18px;padding:1.8rem 1.5rem;border-left:4px solid #c9a84c;box-shadow:0 2px 8px rgba(0,0,0,0.02)}
-    .pillar-card h3,.level-card h3{font-size:1.3rem;color:#b8942b;font-weight:600;margin-bottom:0.4rem;letter-spacing:0.5px}
-    .pillar-card p,.level-card p{color:#3f3a32;line-height:1.6;font-size:0.98rem}
-    .pillar-card i{color:#b8942b;margin-right:8px;font-size:1.2rem}
-    .check-list{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0.6rem 1.2rem;margin:1.2rem 0}
-    .check-list li{color:#2d2822;font-size:1rem;display:flex;align-items:center;gap:10px}
-    .check-list li i{color:#b8942b;font-size:1.1rem;width:20px}
-    .mission-text{font-size:1.05rem;line-height:1.7;color:#2d2822;max-width:800px;margin:0 auto;text-align:center}
-    .gallery{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:1.5rem 0}
-    .gallery-item{background:#ece3d5;border-radius:14px;height:90px;display:flex;align-items:center;justify-content:center;color:#7a6b56;font-size:0.85rem;font-weight:500;letter-spacing:0.3px;border:1px solid #dfd2c0;transition:0.2s}
-    .gallery-item i{font-size:1.8rem;color:#b8942b;margin-right:6px}
-    .gallery-item:hover{background:#e2d4c0;border-color:#c9a84c}
-    .parent-message{background:#fcf9f3;border-radius:20px;padding:2rem 2.5rem;text-align:center;border:1px solid #e9dccd;margin:1.8rem 0}
-    .parent-message p{font-size:1.05rem;line-height:1.7;color:#2d2822}
-    .parent-message .signature{font-weight:600;color:#b8942b;margin-top:0.8rem}
-    .contact-grid{display:grid;grid-template-columns:2fr 1fr;gap:2rem;margin:1.5rem 0;background:#fcf9f3;border-radius:20px;padding:2rem;border:1px solid #e9dccd}
-    .contact-item{display:flex;align-items:center;gap:16px;padding:0.6rem 0;color:#2d2822}
-    .contact-item i{width:28px;font-size:1.3rem;color:#b8942b;text-align:center}
-    .contact-item span{font-weight:500}
-    .footer-gold{text-align:center;border-top:1px solid #e9dccd;padding-top:1.8rem;margin-top:2.5rem;color:#6b5d48;font-size:0.9rem;letter-spacing:1px}
-    .footer-gold .motto-small{color:#b8942b;font-weight:500;letter-spacing:2px;font-size:0.95rem}
-    .footer-gold .copy{margin-top:6px;color:#8f806a;font-size:0.8rem}
-    @media(max-width:768px){.grid-2,.grid-3{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(3,1fr)}.check-list{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}.page{padding:1.5rem}}
-    @media(max-width:480px){.gallery{grid-template-columns:1fr 1fr}.gold-border h1{font-size:1.8rem}}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS LE TREMPLIN · Accueil</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+        body{background-color:#f5efe6;display:flex;justify-content:center;padding:2rem 1rem}
+        .page{max-width:1200px;width:100%;background:#fff;box-shadow:0 20px 40px -10px rgba(184,142,47,0.3);border-radius:28px;padding:2.5rem 2.2rem;border:1px solid #e9dccd}
+        .gold-border{border-top:3px solid #c9a84c;border-bottom:3px solid #c9a84c;padding:0.6rem 0;margin-bottom:2rem;text-align:center}
+        .gold-border h1{font-size:2.5rem;font-weight:300;letter-spacing:6px;color:#1e1e1e}
+        .gold-border h1 span{font-weight:700;color:#b8942b}
+        .gold-border .sub{font-size:0.85rem;letter-spacing:8px;color:#6b5d48;margin-top:4px}
+        .nav-links{display:flex;justify-content:center;gap:2rem;margin:1.5rem 0 0.5rem;flex-wrap:wrap}
+        .nav-links a{color:#6b5d48;text-decoration:none;font-weight:500;letter-spacing:1px;font-size:0.95rem;transition:0.2s;border-bottom:2px solid transparent;padding-bottom:4px}
+        .nav-links a:hover{color:#b8942b;border-bottom-color:#b8942b}
+        .nav-links a.active{color:#b8942b;border-bottom-color:#b8942b}
+        .motto{text-align:center;font-size:1.2rem;font-weight:300;letter-spacing:3px;color:#b8942b;margin:0.5rem 0 0.2rem}
+        .motto strong{font-weight:600;color:#1e1e1e}
+        .lead{text-align:center;font-size:1.05rem;color:#3a342a;max-width:700px;margin:1.2rem auto 1.8rem;line-height:1.6}
+        .btn-group{display:flex;flex-wrap:wrap;justify-content:center;gap:1.2rem;margin:1.8rem 0 2.2rem}
+        .btn{display:inline-block;padding:0.8rem 2.8rem;border-radius:40px;font-weight:600;font-size:1rem;letter-spacing:1px;text-decoration:none;transition:0.25s;border:1px solid transparent}
+        .btn-primary{background:#b8942b;color:#fff;box-shadow:0 4px 12px rgba(184,148,43,0.25)}
+        .btn-primary:hover{background:#a07d20;box-shadow:0 6px 18px rgba(184,148,43,0.35);transform:translateY(-2px)}
+        .btn-outline{border:1px solid #b8942b;color:#b8942b;background:transparent}
+        .btn-outline:hover{background:#b8942b;color:#fff;box-shadow:0 4px 12px rgba(184,148,43,0.2)}
+        .btn-gold{background:linear-gradient(135deg,#c9a84c,#b8942b);color:#fff;box-shadow:0 4px 16px rgba(184,148,43,0.35)}
+        .btn-gold:hover{background:linear-gradient(135deg,#b8942b,#a07d20);box-shadow:0 6px 24px rgba(184,148,43,0.45);transform:translateY(-2px)}
+        .section-title{text-align:center;font-size:1.6rem;font-weight:300;letter-spacing:2px;color:#1e1e1e;margin:2.8rem 0 1.2rem}
+        .section-title i{color:#b8942b;margin-right:10px}
+        .section-title .gold{color:#b8942b;font-weight:500}
+        .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin:1.5rem 0}
+        .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem;margin:1.5rem 0}
+        .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin:1.5rem 0}
+        .card{background:#fcf9f3;border-radius:18px;padding:1.8rem 1.5rem;border-left:4px solid #c9a84c;box-shadow:0 2px 8px rgba(0,0,0,0.02)}
+        .card h3{font-size:1.2rem;color:#b8942b;font-weight:600;margin-bottom:0.4rem;letter-spacing:0.5px}
+        .card p{color:#3f3a32;line-height:1.6;font-size:0.98rem}
+        .card i{color:#b8942b;margin-right:8px;font-size:1.2rem}
+        .check-list{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0.6rem 1.2rem;margin:1.2rem 0}
+        .check-list li{color:#2d2822;font-size:1rem;display:flex;align-items:center;gap:10px}
+        .check-list li i{color:#b8942b;font-size:1.1rem;width:20px}
+        .mission-text{font-size:1.05rem;line-height:1.7;color:#2d2822;max-width:800px;margin:0 auto;text-align:center}
+        .gallery{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:1.5rem 0}
+        .gallery-item{background:#ece3d5;border-radius:14px;height:90px;display:flex;align-items:center;justify-content:center;color:#7a6b56;font-size:0.85rem;font-weight:500;letter-spacing:0.3px;border:1px solid #dfd2c0;transition:0.2s}
+        .gallery-item i{font-size:1.8rem;color:#b8942b;margin-right:6px}
+        .gallery-item:hover{background:#e2d4c0;border-color:#c9a84c}
+        .parent-message{background:#fcf9f3;border-radius:20px;padding:2rem 2.5rem;text-align:center;border:1px solid #e9dccd;margin:1.8rem 0}
+        .parent-message p{font-size:1.05rem;line-height:1.7;color:#2d2822}
+        .parent-message .signature{font-weight:600;color:#b8942b;margin-top:0.8rem}
+        .contact-grid{display:grid;grid-template-columns:2fr 1fr;gap:2rem;margin:1.5rem 0;background:#fcf9f3;border-radius:20px;padding:2rem;border:1px solid #e9dccd}
+        .contact-item{display:flex;align-items:center;gap:16px;padding:0.6rem 0;color:#2d2822}
+        .contact-item i{width:28px;font-size:1.3rem;color:#b8942b;text-align:center}
+        .contact-item span{font-weight:500}
+        .footer-gold{text-align:center;border-top:1px solid #e9dccd;padding-top:1.8rem;margin-top:2.5rem;color:#6b5d48;font-size:0.9rem;letter-spacing:1px}
+        .footer-gold .motto-small{color:#b8942b;font-weight:500;letter-spacing:2px;font-size:0.95rem}
+        .footer-gold .copy{margin-top:6px;color:#8f806a;font-size:0.8rem}
+        .pillar-card{background:#fcf9f3;border-radius:18px;padding:1.8rem 1.5rem;border-left:4px solid #c9a84c;box-shadow:0 2px 8px rgba(0,0,0,0.02)}
+        .pillar-card h3{font-size:1.3rem;color:#b8942b;font-weight:600;margin-bottom:0.4rem;letter-spacing:0.5px}
+        .pillar-card p{color:#3f3a32;line-height:1.6;font-size:0.98rem}
+        .pillar-card i{color:#b8942b;margin-right:8px;font-size:1.2rem}
+        .smart-card{background:linear-gradient(135deg,#fcf9f3,#f5efe6);border-radius:20px;padding:2rem;border:2px solid #c9a84c;margin:1.5rem 0;box-shadow:0 8px 30px -8px rgba(184,142,47,0.15)}
+        .smart-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin:1.2rem 0}
+        .smart-item{background:#fff;border-radius:14px;padding:1.2rem;text-align:center;border:1px solid #e9dccd;transition:0.2s}
+        .smart-item:hover{transform:translateY(-4px);box-shadow:0 8px 20px -8px rgba(184,142,47,0.2)}
+        .smart-item i{font-size:2rem;color:#b8942b;display:block;margin-bottom:0.6rem}
+        .smart-item h4{font-size:0.95rem;color:#1e1e1e;font-weight:600}
+        .smart-item p{font-size:0.85rem;color:#6b5d48;margin-top:0.3rem}
+        .pillar-card h3{font-size:1.3rem;color:#b8942b;font-weight:600;margin-bottom:0.4rem;letter-spacing:0.5px}
+        .pillar-card p{color:#3f3a32;line-height:1.6;font-size:0.98rem}
+        .pillar-card i{color:#b8942b;margin-right:8px;font-size:1.2rem}
+        @media(max-width:768px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(3,1fr)}.check-list{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}.page{padding:1.5rem}.smart-grid{grid-template-columns:1fr 1fr}.nav-links{gap:1rem}}
+        @media(max-width:480px){.gallery{grid-template-columns:1fr 1fr}.gold-border h1{font-size:1.8rem}.smart-grid{grid-template-columns:1fr}}
+    </style>
 </head>
 <body>
 <div class="page">
 
-  <div class="gold-border">
-    <h1>CS <span>LE TREMPLIN</span></h1>
-    <div class="sub">COMPLEXE SCOLAIRE</div>
-  </div>
-
-  <div class="motto"><strong>L’EXCELLENCE COMMENCE ICI</strong></div>
-  <div class="motto" style="font-size:0.95rem;letter-spacing:5px;color:#6b5d48;margin-top:-2px">TRAVAIL • DISCIPLINE • RÉUSSITE</div>
-
-  <p class="lead">Former aujourd’hui les leaders de demain.<br>
-  Au Complexe Scolaire Le Tremplin, nous croyons qu’une grande réussite commence par une éducation solide.<br>
-  Nous offrons à chaque élève un cadre d’apprentissage exigeant, stimulant et bienveillant, où le travail forge les compétences, la discipline construit le caractère et la réussite devient une ambition.</p>
-
-  <div class="btn-group">
-    <a href="#" class="btn btn-primary"><i class="fas fa-user-plus" style="margin-right:8px"></i> INSCRIRE MON ENFANT</a>
-    <a href="#" class="btn btn-outline"><i class="fas fa-school" style="margin-right:8px"></i> DÉCOUVRIR L’ÉCOLE</a>
-  </div>
-
-  <div class="section-title"><i class="fas fa-flag"></i> NOTRE <span class="gold">MISSION</span></div>
-  <p class="mission-text">Révéler le potentiel de chaque élève et lui donner les connaissances, les compétences et les valeurs nécessaires pour construire un avenir solide et prometteur.<br><br>De la maternelle au secondaire, nous accompagnons chaque élève dans son parcours scolaire en favorisant :</p>
-
-  <ul class="check-list">
-    <li><i class="fas fa-check-circle"></i> L’excellence académique</li>
-    <li><i class="fas fa-check-circle"></i> L’autonomie</li>
-    <li><i class="fas fa-check-circle"></i> La confiance en soi</li>
-    <li><i class="fas fa-check-circle"></i> La responsabilité</li>
-    <li><i class="fas fa-check-circle"></i> La persévérance</li>
-    <li><i class="fas fa-check-circle"></i> Le goût de l’effort</li>
-  </ul>
-
-  <div class="section-title"><i class="fas fa-layer-group"></i> NOS NIVEAUX <span class="gold">D’ENSEIGNEMENT</span></div>
-  <div class="grid-3">
-    <div class="level-card"><h3><i class="fas fa-child"></i> MATERNELLE</h3><p>Les premières bases pour bien commencer.</p></div>
-    <div class="level-card"><h3><i class="fas fa-book-open"></i> PRIMAIRE</h3><p>Apprendre, comprendre et développer ses capacités.</p></div>
-    <div class="level-card"><h3><i class="fas fa-user-graduate"></i> SECONDAIRE</h3><p>Se préparer aux défis académiques et à l’avenir.</p></div>
-  </div>
-
-  <div class="section-title"><i class="fas fa-question-circle"></i> POURQUOI <span class="gold">LE TREMPLIN ?</span></div>
-  <div class="grid-2">
-    <div class="pillar-card"><h3><i class="fas fa-star"></i> UNE ÉDUCATION DE QUALITÉ</h3><p>Un enseignement structuré pour favoriser la progression et la réussite de chaque élève.</p></div>
-    <div class="pillar-card"><h3><i class="fas fa-users"></i> UN ENCADREMENT RIGOUREUX</h3><p>Un suivi attentif permettant d’identifier les besoins de chaque élève et de l’accompagner efficacement.</p></div>
-    <div class="pillar-card"><h3><i class="fas fa-gavel"></i> UN CADRE DISCIPLINAIRE</h3><p>Un environnement fondé sur le respect, la responsabilité, la ponctualité et la rigueur.</p></div>
-    <div class="pillar-card"><h3><i class="fas fa-cogs"></i> UNE FORMATION COMPLÈTE</h3><p>Au-delà des connaissances scolaires, nous développons le caractère, l’autonomie et les compétences de vie.</p></div>
-    <div class="pillar-card" style="grid-column:1/3"><h3><i class="fas fa-rocket"></i> UNE VISION TOURNÉE VERS L’AVENIR</h3><p>Préparer chaque élève à devenir un acteur responsable, compétent et ambitieux de la société.</p></div>
-  </div>
-
-  <div class="section-title"><i class="fas fa-columns"></i> NOS <span class="gold">3 PILIERS</span></div>
-  <div class="grid-3">
-    <div class="pillar-card"><h3><i class="fas fa-hammer"></i> TRAVAIL</h3><p>L’effort qui construit l’excellence.<br><br>Nous cultivons la persévérance, la rigueur et le goût du travail bien fait afin que chaque élève puisse développer pleinement ses capacités.</p></div>
-    <div class="pillar-card"><h3><i class="fas fa-balance-scale"></i> DISCIPLINE</h3><p>Les valeurs qui construisent le caractère.<br><br>Le respect, la responsabilité, la ponctualité et la rigueur constituent les fondements d’un environnement favorable à l’apprentissage.</p></div>
-    <div class="pillar-card"><h3><i class="fas fa-trophy"></i> RÉUSSITE</h3><p>L’ambition de dépasser ses limites.<br><br>La réussite ne se résume pas aux résultats scolaires. Elle se construit à travers les connaissances, les compétences, la confiance en soi et la capacité à relever les défis de demain.</p></div>
-  </div>
-
-  <div class="section-title"><i class="fas fa-handshake"></i> NOTRE <span class="gold">ENGAGEMENT</span></div>
-  <p class="mission-text">Chaque enfant possède un potentiel unique.<br><br>Notre engagement est de créer les conditions nécessaires pour que ce potentiel puisse s’exprimer, progresser et se transformer en réussite.<br><br><strong style="color:#b8942b">AU CS LE TREMPLIN :</strong><br>Nous enseignons avec exigence.<br>Nous accompagnons avec attention.<br>Nous éduquons avec des valeurs.<br>Nous préparons avec ambition.</p>
-
-  <div class="section-title"><i class="fas fa-images"></i> LA VIE AU <span class="gold">CS LE TREMPLIN</span></div>
-  <p style="text-align:center;color:#3a342a;margin-bottom:0.8rem">Découvrez un environnement où les élèves apprennent, échangent, participent et grandissent ensemble.</p>
-  <div class="gallery">
-    <div class="gallery-item"><i class="fas fa-chalkboard-teacher"></i> Classes</div>
-    <div class="gallery-item"><i class="fas fa-users"></i> Élèves</div>
-    <div class="gallery-item"><i class="fas fa-user-tie"></i> Enseignants</div>
-    <div class="gallery-item"><i class="fas fa-running"></i> Activités</div>
-    <div class="gallery-item"><i class="fas fa-building"></i> Établissement</div>
-  </div>
-
-  <div class="section-title"><i class="fas fa-heart"></i> UN MOT AUX <span class="gold">PARENTS</span></div>
-  <div class="parent-message">
-    <p>Choisir une école, c’est choisir une partie de l’avenir de son enfant.<br><br>Au Complexe Scolaire Le Tremplin, nous travaillons chaque jour pour offrir aux élèves un environnement dans lequel ils peuvent apprendre, progresser et croire en leurs capacités.<br><br>Parce que chaque enfant mérite une éducation qui lui ouvre les portes de l’avenir.</p>
-    <div class="signature"><i class="fas fa-quote-left" style="opacity:0.3;margin-right:6px"></i> L’équipe du CS Le Tremplin</div>
-  </div>
-
-  <div class="section-title"><i class="fas fa-forward"></i> PRÊT POUR <span class="gold">L’AVENIR ?</span></div>
-  <p style="text-align:center;font-size:1.2rem;color:#1e1e1e;font-weight:300;letter-spacing:1px">L’avenir de votre enfant commence aujourd’hui.</p>
-  <p style="text-align:center;color:#3a342a;max-width:600px;margin:0.4rem auto 1.8rem">Donnez-lui un environnement où le travail, la discipline et l’ambition deviennent les fondations de sa réussite.</p>
-  <div class="btn-group" style="margin-top:0">
-    <a href="#" class="btn btn-primary"><i class="fas fa-pen-fancy" style="margin-right:8px"></i> S’INSCRIRE</a>
-    <a href="#" class="btn btn-outline"><i class="fas fa-envelope" style="margin-right:8px"></i> NOUS CONTACTER</a>
-  </div>
-
-  <div class="section-title"><i class="fas fa-address-card"></i> <span class="gold">CONTACT</span></div>
-  <div class="contact-grid">
-    <div>
-      <div style="font-weight:600;font-size:1.2rem;color:#1e1e1e;margin-bottom:0.6rem">COMPLEXE SCOLAIRE LE TREMPLIN</div>
-      <div class="contact-item"><i class="fas fa-phone-alt"></i><span>+243 973 510 555</span></div>
-      <div class="contact-item"><i class="fas fa-envelope"></i><span>contact@csletremplin.com</span></div>
-      <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>Kasumbalesa, Haut-Katanga<br>République Démocratique du Congo</span></div>
+    <div class="gold-border">
+        <h1>CS <span>LE TREMPLIN</span></h1>
+        <div class="sub">COMPLEXE SCOLAIRE</div>
     </div>
-    <div style="display:flex;flex-direction:column;justify-content:center;align-items:center;border-left:1px solid #e9dccd;padding-left:1.5rem">
-      <div style="font-weight:500;color:#b8942b;letter-spacing:2px;font-size:1.1rem">TRAVAIL • DISCIPLINE • RÉUSSITE</div>
-      <div style="margin-top:0.6rem;color:#6b5d48;font-size:0.85rem">© CS LE TREMPLIN</div>
-    </div>
-  </div>
 
-  <div class="footer-gold">
-    <div class="motto-small">CS LE TREMPLIN · L’EXCELLENCE COMMENCE ICI</div>
-    <div class="copy">© 2026 Complexe Scolaire Le Tremplin — Tous droits réservés</div>
-  </div>
+    <div class="nav-links">
+        <a href="#" class="active">Accueil</a>
+        <a href="#">À propos</a>
+        <a href="#">Niveaux</a>
+        <a href="#">Promoteur</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <div class="motto"><strong>L’EXCELLENCE COMMENCE ICI</strong></div>
+    <div class="motto" style="font-size:0.95rem;letter-spacing:5px;color:#6b5d48;margin-top:-2px">TRAVAIL • DISCIPLINE • RÉUSSITE</div>
+
+    <p class="lead">
+        Former aujourd’hui les leaders de demain.<br>
+        Au Complexe Scolaire Le Tremplin, nous croyons qu’une grande réussite commence par une éducation solide.<br>
+        Nous offrons à chaque élève un cadre d’apprentissage exigeant, stimulant et bienveillant, où le travail forge les compétences, la discipline construit le caractère et la réussite devient une ambition.
+    </p>
+
+    <div class="btn-group">
+        <a href="#" class="btn btn-primary"><i class="fas fa-user-plus" style="margin-right:8px"></i> INSCRIRE MON ENFANT</a>
+        <a href="#" class="btn btn-outline"><i class="fas fa-school" style="margin-right:8px"></i> DÉCOUVRIR L’ÉCOLE</a>
+    </div>
+
+    <div class="section-title"><i class="fas fa-flag"></i> NOTRE <span class="gold">MISSION</span></div>
+    <p class="mission-text">
+        Révéler le potentiel de chaque élève et lui donner les connaissances, les compétences et les valeurs nécessaires pour construire un avenir solide et prometteur.<br><br>
+        De la maternelle au secondaire, nous accompagnons chaque élève dans son parcours scolaire en favorisant :
+    </p>
+
+    <ul class="check-list">
+        <li><i class="fas fa-check-circle"></i> L’excellence académique</li>
+        <li><i class="fas fa-check-circle"></i> L’autonomie</li>
+        <li><i class="fas fa-check-circle"></i> La confiance en soi</li>
+        <li><i class="fas fa-check-circle"></i> La responsabilité</li>
+        <li><i class="fas fa-check-circle"></i> La persévérance</li>
+        <li><i class="fas fa-check-circle"></i> Le goût de l’effort</li>
+    </ul>
+
+    <div class="section-title"><i class="fas fa-layer-group"></i> NOS NIVEAUX <span class="gold">D’ENSEIGNEMENT</span></div>
+    <div class="grid-3">
+        <div class="card"><h3><i class="fas fa-child"></i> MATERNELLE</h3><p>Les premières bases pour bien commencer.</p></div>
+        <div class="card"><h3><i class="fas fa-book-open"></i> PRIMAIRE</h3><p>Apprendre, comprendre et développer ses capacités.</p></div>
+        <div class="card"><h3><i class="fas fa-user-graduate"></i> SECONDAIRE</h3><p>Se préparer aux défis académiques et à l’avenir.</p></div>
+    </div>
+
+    <!-- SECTION SYSTÈME INTELLIGENT INTÉGRÉ -->
+    <div class="section-title"><i class="fas fa-microchip"></i> SYSTÈME DE SUIVI <span class="gold">INTELLIGENT</span></div>
+
+    <div class="smart-card">
+        <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:1.2rem">
+            <i class="fas fa-mobile-alt" style="font-size:2.5rem;color:#b8942b"></i>
+            <div>
+                <h3 style="color:#1e1e1e;font-weight:600;font-size:1.3rem">📱 ESPACE PARENTAL CONNECTÉ</h3>
+                <p style="color:#6b5d48;font-size:0.95rem">Développé par <strong style="color:#b8942b">NeTubeX Sarl</strong></p>
+            </div>
+        </div>
+
+        <p style="color:#2d2822;line-height:1.7;font-size:1rem;margin-bottom:1.2rem">
+            Le Complexe Scolaire Le Tremplin met à disposition des parents un <strong>système de suivi intelligent</strong> développé par <strong>NeTubeX Sarl</strong>, pour accompagner la scolarité de leurs enfants.
+        </p>
+
+        <div style="background:#fff;border-radius:16px;padding:1.5rem;border:1px solid #e9dccd;margin-bottom:1.2rem">
+            <p style="color:#2d2822;font-weight:600;margin-bottom:0.8rem"><i class="fas fa-key" style="color:#b8942b;margin-right:8px"></i> Accès sécurisé par code parent</p>
+            <p style="color:#3f3a32;line-height:1.6;font-size:0.98rem">
+                Chaque parent reçoit un code personnel à 4 ou 6 chiffres lui permettant de consulter en temps réel les informations de son ou ses enfants.
+            </p>
+        </div>
+
+        <div class="smart-grid">
+            <div class="smart-item"><i class="fas fa-coins"></i><h4>Situation financière</h4><p>Minerval, paiements, mois impayés, solde</p></div>
+            <div class="smart-item"><i class="fas fa-graduation-cap"></i><h4>Notes et résultats</h4><p>Notes par matière, épreuves, devoirs</p></div>
+            <div class="smart-item"><i class="fas fa-user-check"></i><h4>Présences</h4><p>Présence quotidienne, retards, absences</p></div>
+            <div class="smart-item"><i class="fas fa-exclamation-triangle"></i><h4>Punitions</h4><p>Motif, date, gravité, justification</p></div>
+            <div class="smart-item"><i class="fas fa-calendar-alt"></i><h4>Emploi du temps</h4><p>Planning des cours par jour</p></div>
+            <div class="smart-item"><i class="fas fa-bullhorn"></i><h4>Communiqués</h4><p>Messages de la direction, actualités</p></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin:1.2rem 0">
+            <div style="background:#fff;border-radius:14px;padding:1.2rem;border:1px solid #e9dccd">
+                <i class="fas fa-globe" style="color:#b8942b;font-size:1.3rem;display:block;margin-bottom:0.4rem"></i>
+                <h4 style="font-size:0.95rem;color:#1e1e1e">Accessible partout, tout le temps</h4>
+                <p style="font-size:0.85rem;color:#6b5d48">Smartphone, tablette ou ordinateur • 24h/24 et 7j/7</p>
+            </div>
+            <div style="background:#fff;border-radius:14px;padding:1.2rem;border:1px solid #e9dccd">
+                <i class="fas fa-volume-up" style="color:#b8942b;font-size:1.3rem;display:block;margin-bottom:0.4rem"></i>
+                <h4 style="font-size:0.95rem;color:#1e1e1e">Assistance vocale intégrée</h4>
+                <p style="font-size:0.85rem;color:#6b5d48">Lecture des informations à voix haute</p>
+            </div>
+            <div style="background:#fff;border-radius:14px;padding:1.2rem;border:1px solid #e9dccd">
+                <i class="fas fa-lock" style="color:#b8942b;font-size:1.3rem;display:block;margin-bottom:0.4rem"></i>
+                <h4 style="font-size:0.95rem;color:#1e1e1e">Sécurité et confidentialité</h4>
+                <p style="font-size:0.85rem;color:#6b5d48">Données chiffrées, accès strictement personnel</p>
+            </div>
+            <div style="background:#fff;border-radius:14px;padding:1.2rem;border:1px solid #e9dccd">
+                <i class="fas fa-code" style="color:#b8942b;font-size:1.3rem;display:block;margin-bottom:0.4rem"></i>
+                <h4 style="font-size:0.95rem;color:#1e1e1e">Développé par NeTubeX Sarl</h4>
+                <p style="font-size:0.85rem;color:#6b5d48">Une solution innovante pour moderniser la gestion scolaire</p>
+            </div>
+        </div>
+
+        <div style="background:#fcf9f3;border-radius:14px;padding:1.2rem 1.8rem;border-left:4px solid #b8942b;margin:1rem 0">
+            <p style="color:#2d2822;font-size:0.98rem;line-height:1.6">
+                <i class="fas fa-phone" style="color:#b8942b;margin-right:8px"></i>
+                <strong>Pour obtenir votre code parent :</strong> Contactez la comptabilité du Complexe Scolaire Le Tremplin
+                — <strong>+243 973 510 555</strong> ou <strong>contact@csletremplin.com</strong>
+            </p>
+        </div>
+
+        <div style="text-align:center;margin-top:1.2rem">
+            <a href="#" class="btn btn-gold"><i class="fas fa-sign-in-alt" style="margin-right:8px"></i> SE CONNECTER À L’ESPACE PARENT</a>
+        </div>
+    </div>
+
+    <div class="section-title"><i class="fas fa-question-circle"></i> POURQUOI <span class="gold">LE TREMPLIN ?</span></div>
+    <div class="grid-2">
+        <div class="card"><h3><i class="fas fa-star"></i> UNE ÉDUCATION DE QUALITÉ</h3><p>Un enseignement structuré pour favoriser la progression et la réussite de chaque élève.</p></div>
+        <div class="card"><h3><i class="fas fa-users"></i> UN ENCADREMENT RIGOUREUX</h3><p>Un suivi attentif permettant d’identifier les besoins de chaque élève et de l’accompagner efficacement.</p></div>
+        <div class="card"><h3><i class="fas fa-gavel"></i> UN CADRE DISCIPLINAIRE</h3><p>Un environnement fondé sur le respect, la responsabilité, la ponctualité et la rigueur.</p></div>
+        <div class="card"><h3><i class="fas fa-cogs"></i> UNE FORMATION COMPLÈTE</h3><p>Au-delà des connaissances scolaires, nous développons le caractère, l’autonomie et les compétences de vie.</p></div>
+        <div class="card" style="grid-column:1/3"><h3><i class="fas fa-rocket"></i> UNE VISION TOURNÉE VERS L’AVENIR</h3><p>Préparer chaque élève à devenir un acteur responsable, compétent et ambitieux de la société.</p></div>
+    </div>
+
+    <div class="section-title"><i class="fas fa-columns"></i> NOS <span class="gold">3 PILIERS</span></div>
+    <div class="grid-3">
+        <div class="pillar-card"><h3><i class="fas fa-hammer"></i> TRAVAIL</h3><p>L’effort qui construit l’excellence.<br><br>Nous cultivons la persévérance, la rigueur et le goût du travail bien fait afin que chaque élève puisse développer pleinement ses capacités.</p></div>
+        <div class="pillar-card"><h3><i class="fas fa-balance-scale"></i> DISCIPLINE</h3><p>Les valeurs qui construisent le caractère.<br><br>Le respect, la responsabilité, la ponctualité et la rigueur constituent les fondements d’un environnement favorable à l’apprentissage.</p></div>
+        <div class="pillar-card"><h3><i class="fas fa-trophy"></i> RÉUSSITE</h3><p>L’ambition de dépasser ses limites.<br><br>La réussite ne se résume pas aux résultats scolaires. Elle se construit à travers les connaissances, les compétences, la confiance en soi et la capacité à relever les défis de demain.</p></div>
+    </div>
+
+    <div class="section-title"><i class="fas fa-handshake"></i> NOTRE <span class="gold">ENGAGEMENT</span></div>
+    <p class="mission-text">
+        Chaque enfant possède un potentiel unique.<br><br>
+        Notre engagement est de créer les conditions nécessaires pour que ce potentiel puisse s’exprimer, progresser et se transformer en réussite.<br><br>
+        <strong style="color:#b8942b">AU CS LE TREMPLIN :</strong><br>
+        Nous enseignons avec exigence.<br>
+        Nous accompagnons avec attention.<br>
+        Nous éduquons avec des valeurs.<br>
+        Nous préparons avec ambition.
+    </p>
+
+    <div class="section-title"><i class="fas fa-images"></i> LA VIE AU <span class="gold">CS LE TREMPLIN</span></div>
+    <p style="text-align:center;color:#3a342a;margin-bottom:0.8rem">Découvrez un environnement où les élèves apprennent, échangent, participent et grandissent ensemble.</p>
+    <div class="gallery">
+        <div class="gallery-item"><i class="fas fa-chalkboard-teacher"></i> Classes</div>
+        <div class="gallery-item"><i class="fas fa-users"></i> Élèves</div>
+        <div class="gallery-item"><i class="fas fa-user-tie"></i> Enseignants</div>
+        <div class="gallery-item"><i class="fas fa-running"></i> Activités</div>
+        <div class="gallery-item"><i class="fas fa-building"></i> Établissement</div>
+    </div>
+
+    <div class="section-title"><i class="fas fa-heart"></i> UN MOT AUX <span class="gold">PARENTS</span></div>
+    <div class="parent-message">
+        <p>Choisir une école, c’est choisir une partie de l’avenir de son enfant.<br><br>Au Complexe Scolaire Le Tremplin, nous travaillons chaque jour pour offrir aux élèves un environnement dans lequel ils peuvent apprendre, progresser et croire en leurs capacités.<br><br>Parce que chaque enfant mérite une éducation qui lui ouvre les portes de l’avenir.</p>
+        <div class="signature"><i class="fas fa-quote-left" style="opacity:0.3;margin-right:6px"></i> L’équipe du CS Le Tremplin</div>
+    </div>
+
+    <div class="section-title"><i class="fas fa-forward"></i> PRÊT POUR <span class="gold">L’AVENIR ?</span></div>
+    <p style="text-align:center;font-size:1.2rem;color:#1e1e1e;font-weight:300;letter-spacing:1px">L’avenir de votre enfant commence aujourd’hui.</p>
+    <p style="text-align:center;color:#3a342a;max-width:600px;margin:0.4rem auto 1.8rem">Donnez-lui un environnement où le travail, la discipline et l’ambition deviennent les fondations de sa réussite.</p>
+    <div class="btn-group" style="margin-top:0">
+        <a href="#" class="btn btn-primary"><i class="fas fa-pen-fancy" style="margin-right:8px"></i> S’INSCRIRE</a>
+        <a href="#" class="btn btn-outline"><i class="fas fa-envelope" style="margin-right:8px"></i> NOUS CONTACTER</a>
+    </div>
+
+    <div class="section-title"><i class="fas fa-address-card"></i> <span class="gold">CONTACT</span></div>
+    <div class="contact-grid">
+        <div>
+            <div style="font-weight:600;font-size:1.2rem;color:#1e1e1e;margin-bottom:0.6rem">COMPLEXE SCOLAIRE LE TREMPLIN</div>
+            <div class="contact-item"><i class="fas fa-phone-alt"></i><span>+243 973 510 555</span></div>
+            <div class="contact-item"><i class="fas fa-envelope"></i><span>contact@csletremplin.com</span></div>
+            <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>Kasumbalesa, Haut-Katanga<br>République Démocratique du Congo</span></div>
+        </div>
+        <div style="display:flex;flex-direction:column;justify-content:center;align-items:center;border-left:1px solid #e9dccd;padding-left:1.5rem">
+            <div style="font-weight:500;color:#b8942b;letter-spacing:2px;font-size:1.1rem">TRAVAIL • DISCIPLINE • RÉUSSITE</div>
+            <div style="margin-top:0.6rem;color:#6b5d48;font-size:0.85rem">© CS LE TREMPLIN</div>
+        </div>
+    </div>
+
+    <div class="footer-gold">
+        <div class="motto-small">CS LE TREMPLIN · L’EXCELLENCE COMMENCE ICI</div>
+        <div class="copy">© 2026 Complexe Scolaire Le Tremplin — Tous droits réservés</div>
+    </div>
 
 </div>
 </body>
