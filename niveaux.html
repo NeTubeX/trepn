@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Niveaux · CS LE TREMPLIN</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+    body{background-color:#f5efe6;display:flex;justify-content:center;padding:2rem 1rem}
+    .page{max-width:1200px;width:100%;background:#fff;box-shadow:0 20px 40px -10px rgba(184,142,47,0.3);border-radius:28px;padding:2.5rem 2.2rem;border:1px solid #e9dccd}
+    .gold-border{border-top:3px solid #c9a84c;border-bottom:3px solid #c9a84c;padding:0.6rem 0;margin-bottom:2rem;text-align:center}
+    .gold-border h1{font-size:2.5rem;font-weight:300;letter-spacing:6px;color:#1e1e1e}
+    .gold-border h1 span{font-weight:700;color:#b8942b}
+    .gold-border .sub{font-size:0.85rem;letter-spacing:8px;color:#6b5d48;margin-top:4px}
+    .nav-links{display:flex;justify-content:center;gap:2rem;margin:1.5rem 0 0.5rem;flex-wrap:wrap}
+    .nav-links a{color:#6b5d48;text-decoration:none;font-weight:500;letter-spacing:1px;font-size:0.95rem;transition:0.2s;border-bottom:2px solid transparent;padding-bottom:4px}
+    .nav-links a:hover{color:#b8942b;border-bottom-color:#b8942b}
+    .nav-links a.active{color:#b8942b;border-bottom-color:#b8942b}
+    .section-title{text-align:center;font-size:1.6rem;font-weight:300;letter-spacing:2px;color:#1e1e1e;margin:2.8rem 0 1.2rem}
+    .section-title i{color:#b8942b;margin-right:10px}
+    .section-title .gold{color:#b8942b;font-weight:500}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin:1.5rem 0}
+    .level-card{background:#fcf9f3;border-radius:20px;padding:2rem;border:1px solid #e9dccd;transition:0.25s;text-align:center}
+    .level-card:hover{transform:translateY(-6px);box-shadow:0 12px 30px -12px rgba(184,142,47,0.25)}
+    .level-card .icon-wrap{font-size:3.2rem;color:#b8942b;margin-bottom:1rem;display:block}
+    .level-card h3{font-size:1.5rem;color:#1e1e1e;font-weight:600;letter-spacing:1px;margin-bottom:0.4rem}
+    .level-card .subtitle{color:#b8942b;font-weight:500;font-size:0.95rem;letter-spacing:2px;margin-bottom:0.8rem;display:block}
+    .level-card p{color:#3f3a32;line-height:1.7;font-size:0.98rem;margin-bottom:1rem}
+    .level-card .age{color:#6b5d48;font-size:0.9rem;background:#ece3d5;padding:0.3rem 1.2rem;border-radius:20px;display:inline-block;margin:0.4rem 0}
+    .level-card .subjects{display:flex;flex-wrap:wrap;gap:0.5rem;justify-content:center;margin:0.8rem 0}
+    .level-card .subjects span{background:#fff;border:1px solid #e9dccd;padding:0.2rem 1rem;border-radius:16px;font-size:0.8rem;color:#6b5d48}
+    .btn{display:inline-block;padding:0.6rem 2rem;border-radius:30px;font-weight:600;font-size:0.9rem;letter-spacing:0.5px;text-decoration:none;transition:0.25s;border:1px solid transparent;margin-top:0.4rem}
+    .btn-primary{background:#b8942b;color:#fff;box-shadow:0 4px 12px rgba(184,148,43,0.2)}
+    .btn-primary:hover{background:#a07d20;box-shadow:0 6px 18px rgba(184,148,43,0.3);transform:translateY(-2px)}
+    .btn-outline{border:1px solid #b8942b;color:#b8942b;background:transparent}
+    .btn-outline:hover{background:#b8942b;color:#fff}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin:1.5rem 0}
+    .feature-card{background:#fcf9f3;border-radius:18px;padding:1.8rem 1.5rem;border-left:4px solid #c9a84c}
+    .feature-card h4{color:#b8942b;font-size:1.1rem;margin-bottom:0.4rem}
+    .feature-card p{color:#3f3a32;line-height:1.6;font-size:0.98rem}
+    .feature-card i{margin-right:8px;color:#b8942b}
+    .comparison-table{width:100%;border-collapse:collapse;margin:1.5rem 0;border-radius:16px;overflow:hidden}
+    .comparison-table th{background:#b8942b;color:#fff;padding:1rem;text-align:left;font-weight:600;letter-spacing:1px}
+    .comparison-table td{padding:1rem;border-bottom:1px solid #e9dccd;color:#2d2822}
+    .comparison-table tr:nth-child(even){background:#fcf9f3}
+    .comparison-table tr:hover{background:#f5efe6}
+    .comparison-table td i{color:#b8942b;margin-right:6px}
+    .footer-gold{text-align:center;border-top:1px solid #e9dccd;padding-top:1.8rem;margin-top:2.5rem;color:#6b5d48;font-size:0.9rem;letter-spacing:1px}
+    .footer-gold .motto-small{color:#b8942b;font-weight:500;letter-spacing:2px;font-size:0.95rem}
+    .footer-gold .copy{margin-top:6px;color:#8f806a;font-size:0.8rem}
+    @media(max-width:768px){.grid-3{grid-template-columns:1fr}.grid-2{grid-template-columns:1fr}.comparison-table{font-size:0.85rem}.comparison-table th,.comparison-table td{padding:0.7rem}.page{padding:1.5rem}.nav-links{gap:1rem}}
+    @media(max-width:480px){.gold-border h1{font-size:1.8rem}}
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <div class="gold-border">
+    <h1>CS <span>LE TREMPLIN</span></h1>
+    <div class="sub">COMPLEXE SCOLAIRE</div>
+  </div>
+
+  <div class="nav-links">
+    <a href="#">Accueil</a>
+    <a href="#">À propos</a>
+    <a href="#" class="active">Niveaux</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <div class="section-title"><i class="fas fa-layer-group"></i> NOS NIVEAUX <span class="gold">D'ENSEIGNEMENT</span></div>
+  <p style="text-align:center;color:#3a342a;max-width:700px;margin:0 auto 1.8rem;line-height:1.6">De la maternelle au secondaire, nous accompagnons chaque élève dans son parcours scolaire avec un enseignement structuré, exigeant et bienveillant.</p>
+
+  <div class="grid-3">
+    <div class="level-card">
+      <span class="icon-wrap"><i class="fas fa-child"></i></span>
+      <h3>MATERNELLE</h3>
+      <span class="subtitle">Les premières bases</span>
+      <span class="age"><i class="fas fa-clock"></i> 3 à 5 ans</span>
+      <p>Développement de la motricité, de la socialisation et des premiers apprentissages dans un cadre ludique et bienveillant.</p>
+      <div class="subjects">
+        <span>Motricité</span>
+        <span>Langage</span>
+        <span>Découverte</span>
+        <span>Socialisation</span>
+      </div>
+      <a href="#" class="btn btn-primary"><i class="fas fa-plus"></i> En savoir plus</a>
+    </div>
+
+    <div class="level-card">
+      <span class="icon-wrap"><i class="fas fa-book-open"></i></span>
+      <h3>PRIMAIRE</h3>
+      <span class="subtitle">Apprendre et comprendre</span>
+      <span class="age"><i class="fas fa-clock"></i> 6 à 11 ans</span>
+      <p>Acquisition des compétences fondamentales : lecture, écriture, calcul, et développement des capacités intellectuelles et sociales.</p>
+      <div class="subjects">
+        <span>Français</span>
+        <span>Mathématiques</span>
+        <span>Sciences</span>
+        <span>Histoire</span>
+        <span>Anglais</span>
+      </div>
+      <a href="#" class="btn btn-primary"><i class="fas fa-plus"></i> En savoir plus</a>
+    </div>
+
+    <div class="level-card">
+      <span class="icon-wrap"><i class="fas fa-user-graduate"></i></span>
+      <h3>SECONDAIRE</h3>
+      <span class="subtitle">Préparer l'avenir</span>
+      <span class="age"><i class="fas fa-clock"></i> 12 à 18 ans</span>
+      <p>Formation académique approfondie, préparation aux examens nationaux et développement des compétences pour les études supérieures.</p>
+      <div class="subjects">
+        <span>Lettres</span>
+        <span>Sciences</span>
+        <span>Maths</span>
+        <span>Anglais</span>
+        <span>Informatique</span>
+      </div>
+      <a href="#" class="btn btn-primary"><i class="fas fa-plus"></i> En savoir plus</a>
+    </div>
+  </div>
+
+  <div class="section-title"><i class="fas fa-graduation-cap"></i> PROGRAMMES <span class="gold">PAR NIVEAU</span></div>
+
+  <div class="grid-2">
+    <div class="feature-card">
+      <h4><i class="fas fa-puzzle-piece"></i> MATERNELLE</h4>
+      <p><strong>Objectifs :</strong> Éveil, socialisation, développement moteur et langagier.</p>
+      <p style="margin-top:0.4rem"><strong>Activités :</strong> Jeux éducatifs, chants, dessin, contes, activités psychomotrices.</p>
+      <p style="margin-top:0.4rem"><strong>Encadrement :</strong> Une équipe spécialisée en petite enfance avec un suivi personnalisé.</p>
+    </div>
+    <div class="feature-card">
+      <h4><i class="fas fa-book"></i> PRIMAIRE</h4>
+      <p><strong>Objectifs :</strong> Acquisition des fondamentaux, développement de l'autonomie et de la confiance.</p>
+      <p style="margin-top:0.4rem"><strong>Matières :</strong> Français, Mathématiques, Sciences, Histoire-Géographie, Anglais, Éducation physique.</p>
+      <p style="margin-top:0.4rem"><strong>Encadrement :</strong> Classes à effectifs réduits pour un suivi personnalisé.</p>
+    </div>
+    <div class="feature-card" style="grid-column:1/3">
+      <h4><i class="fas fa-flask"></i> SECONDAIRE</h4>
+      <p><strong>Objectifs :</strong> Approfondissement des connaissances, préparation aux examens nationaux, développement de l'esprit critique.</p>
+      <p style="margin-top:0.4rem"><strong>Filières :</strong> Section littéraire, section scientifique, section pédagogique.</p>
+      <p style="margin-top:0.4rem"><strong>Activités :</strong> Ateliers, projets, sorties pédagogiques, préparation à l'enseignement supérieur.</p>
+    </div>
+  </div>
+
+  <div class="section-title"><i class="fas fa-table"></i> COMPARAISON <span class="gold">DES NIVEAUX</span></div>
+
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th>Critères</th>
+        <th>Maternelle</th>
+        <th>Primaire</th>
+        <th>Secondaire</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><i class="fas fa-users"></i> Âge</td>
+        <td>3 - 5 ans</td>
+        <td>6 - 11 ans</td>
+        <td>12 - 18 ans</td>
+      </tr>
+      <tr>
+        <td><i class="fas fa-clock"></i> Durée</td>
+        <td>3 ans</td>
+        <td>6 ans</td>
+        <td>6 ans</td>
+      </tr>
+      <tr>
+        <td><i class="fas fa-book"></i> Matières</td>
+        <td>Éveil, langage, motricité</td>
+        <td>Français, Maths, Sciences, Histoire, Anglais</td>
+        <td>Lettres, Sciences, Maths, Anglais, Informatique</td>
+      </tr>
+      <tr>
+        <td><i class="fas fa-certificate"></i> Diplôme</td>
+        <td>—</td>
+        <td>Certificat de fin d'études primaires</td>
+        <td>Diplôme d'État (Examen national)</td>
+      </tr>
+      <tr>
+        <td><i class="fas fa-arrow-right"></i> Débouchés</td>
+        <td>Entrée au primaire</td>
+        <td>Entrée au secondaire</td>
+        <td>Études supérieures / Vie active</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="section-title"><i class="fas fa-check-circle"></i> POURQUOI <span class="gold">NOS NIVEAUX ?</span></div>
+  <div class="grid-3" style="margin-bottom:0.5rem">
+    <div class="feature-card" style="border-left-color:#b8942b;text-align:center;padding:1.5rem">
+      <i class="fas fa-chart-line" style="font-size:2rem;color:#b8942b;display:block;margin-bottom:0.6rem"></i>
+      <h4 style="color:#1e1e1e">Progression continue</h4>
+      <p>Un apprentissage graduel qui respecte le rythme de chaque enfant et assure une progression continue.</p>
+    </div>
+    <div class="feature-card" style="border-left-color:#b8942b;text-align:center;padding:1.5rem">
+      <i class="fas fa-user-check" style="font-size:2rem;color:#b8942b;display:block;margin-bottom:0.6rem"></i>
+      <h4 style="color:#1e1e1e">Suivi personnalisé</h4>
+      <p>Un encadrement attentif qui identifie les besoins de chaque élève et l'accompagne efficacement.</p>
+    </div>
+    <div class="feature-card" style="border-left-color:#b8942b;text-align:center;padding:1.5rem">
+      <i class="fas fa-rocket" style="font-size:2rem;color:#b8942b;display:block;margin-bottom:0.6rem"></i>
+      <h4 style="color:#1e1e1e">Préparation à l'avenir</h4>
+      <p>Des compétences solides pour aborder les études supérieures et la vie professionnelle avec confiance.</p>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin:2.5rem 0 0.5rem;padding:1.8rem;background:#fcf9f3;border-radius:20px;border:1px solid #e9dccd">
+    <p style="font-size:1.1rem;color:#1e1e1e;font-weight:300;letter-spacing:1px">Prêt à inscrire votre enfant ?</p>
+    <p style="color:#6b5d48;margin:0.4rem 0 1rem">Chaque niveau est conçu pour offrir une éducation de qualité et préparer l'avenir.</p>
+    <a href="#" class="btn btn-primary" style="padding:0.8rem 3rem"><i class="fas fa-pen-fancy"></i> S'inscrire maintenant</a>
+  </div>
+
+  <div class="footer-gold">
+    <div class="motto-small">CS LE TREMPLIN · L’EXCELLENCE COMMENCE ICI</div>
+    <div class="copy">© 2026 Complexe Scolaire Le Tremplin — Tous droits réservés</div>
+  </div>
+
+</div>
+</body>
+</html>
