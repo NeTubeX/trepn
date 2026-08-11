@@ -1,147 +1,323 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>À propos · CS LE TREMPLIN</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
-    body{background-color:#f5efe6;display:flex;justify-content:center;padding:2rem 1rem}
-    .page{max-width:1200px;width:100%;background:#fff;box-shadow:0 20px 40px -10px rgba(184,142,47,0.3);border-radius:28px;padding:2.5rem 2.2rem;border:1px solid #e9dccd}
-    .gold-border{border-top:3px solid #c9a84c;border-bottom:3px solid #c9a84c;padding:0.6rem 0;margin-bottom:2rem;text-align:center}
-    .gold-border h1{font-size:2.5rem;font-weight:300;letter-spacing:6px;color:#1e1e1e}
-    .gold-border h1 span{font-weight:700;color:#b8942b}
-    .gold-border .sub{font-size:0.85rem;letter-spacing:8px;color:#6b5d48;margin-top:4px}
-    .section-title{text-align:center;font-size:1.6rem;font-weight:300;letter-spacing:2px;color:#1e1e1e;margin:2.8rem 0 1.2rem}
-    .section-title i{color:#b8942b;margin-right:10px}
-    .section-title .gold{color:#b8942b;font-weight:500}
-    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin:1.5rem 0}
-    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem;margin:1.5rem 0}
-    .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin:1.5rem 0}
-    .card{background:#fcf9f3;border-radius:18px;padding:1.8rem 1.5rem;border-left:4px solid #c9a84c;box-shadow:0 2px 8px rgba(0,0,0,0.02)}
-    .card h3{font-size:1.2rem;color:#b8942b;font-weight:600;margin-bottom:0.4rem;letter-spacing:0.5px}
-    .card p{color:#3f3a32;line-height:1.6;font-size:0.98rem}
-    .card i{color:#b8942b;margin-right:8px;font-size:1.2rem}
-    .mission-text{font-size:1.05rem;line-height:1.7;color:#2d2822;max-width:800px;margin:0 auto;text-align:center}
-    .values-list{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0.8rem 1.5rem;margin:1.2rem 0}
-    .values-list li{color:#2d2822;font-size:1rem;display:flex;align-items:center;gap:12px}
-    .values-list li i{color:#b8942b;font-size:1.1rem;width:22px}
-    .timeline{position:relative;padding:1rem 0}
-    .timeline-item{display:flex;gap:1.5rem;margin-bottom:1.8rem;align-items:flex-start}
-    .timeline-year{min-width:80px;font-weight:700;color:#b8942b;font-size:1.2rem;text-align:right}
-    .timeline-content{background:#fcf9f3;padding:1rem 1.5rem;border-radius:14px;border-left:3px solid #c9a84c;flex:1}
-    .timeline-content h4{color:#1e1e1e;font-size:1.05rem}
-    .timeline-content p{color:#4a443c;font-size:0.95rem;margin-top:4px}
-    .stat{text-align:center;padding:1.2rem}
-    .stat-number{font-size:2.8rem;font-weight:300;color:#b8942b;letter-spacing:1px}
-    .stat-label{color:#6b5d48;font-weight:500;font-size:0.95rem;margin-top:4px}
-    .quote-block{background:#fcf9f3;border-radius:20px;padding:2rem 2.5rem;text-align:center;border:1px solid #e9dccd;margin:1.8rem 0}
-    .quote-block i{color:#b8942b;font-size:1.8rem;opacity:0.3;margin-bottom:0.6rem;display:block}
-    .quote-block p{font-size:1.1rem;line-height:1.7;color:#2d2822;font-style:italic}
-    .quote-block .author{font-weight:600;color:#b8942b;margin-top:0.6rem;font-style:normal}
-    .footer-gold{text-align:center;border-top:1px solid #e9dccd;padding-top:1.8rem;margin-top:2.5rem;color:#6b5d48;font-size:0.9rem;letter-spacing:1px}
-    .footer-gold .motto-small{color:#b8942b;font-weight:500;letter-spacing:2px;font-size:0.95rem}
-    .footer-gold .copy{margin-top:6px;color:#8f806a;font-size:0.8rem}
-    .nav-links{display:flex;justify-content:center;gap:2rem;margin:1.5rem 0 0.5rem;flex-wrap:wrap}
-    .nav-links a{color:#6b5d48;text-decoration:none;font-weight:500;letter-spacing:1px;font-size:0.95rem;transition:0.2s;border-bottom:2px solid transparent;padding-bottom:4px}
-    .nav-links a:hover{color:#b8942b;border-bottom-color:#b8942b}
-    .nav-links a.active{color:#b8942b;border-bottom-color:#b8942b}
-    @media(max-width:768px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}.values-list{grid-template-columns:1fr}.timeline-item{flex-direction:column;gap:0.5rem}.timeline-year{text-align:left;min-width:auto}.page{padding:1.5rem}.nav-links{gap:1rem}}
-    @media(max-width:480px){.gold-border h1{font-size:1.8rem}}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>À propos · COMPLEXE SCOLAIRE LE TREMPLIN</title>
+    <meta name="description" content="Fondé en 2022 à Kasumbalesa, Haut-Katanga, le Complexe Scolaire Le Tremplin offre une éducation d'excellence de la maternelle au secondaire. Découvrez notre histoire, nos valeurs et notre équipe.">
+    <link rel="canonical" href="https://cstremplin.com/about">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+        html,body{overflow-x:hidden;width:100%}
+        body{background:#f4f6f9;display:flex;justify-content:center;padding:0;min-height:100vh}
+        .page{max-width:1200px;width:100%;background:#ffffff;min-height:100vh;overflow-x:hidden}
+        .top-bar{background:#0a1a2a;color:#ffffff;padding:6px 5%;font-size:0.8rem;display:flex;justify-content:flex-end;align-items:center;flex-wrap:wrap}
+        .top-bar a{color:#aac4d4;text-decoration:none;margin:0 8px;transition:0.2s}
+        .top-bar a:hover{color:#ffffff;transform:scale(1.1)}
+        .top-bar .social-icons a{margin:0 6px;font-size:0.9rem}
+        .header-main{background:#ffffff;padding:16px 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;box-shadow:0 2px 12px rgba(0,0,0,0.04);border-bottom:2px solid #eef2f5}
+        .logo{display:flex;align-items:center;gap:16px}
+        .logo img{height:100px;width:auto;border-radius:12px;object-fit:contain;transition:transform 0.4s}
+        .logo img:hover{transform:scale(1.05) rotate(-2deg)}
+        .logo h1{font-size:2.4rem;font-weight:900;color:#0a1a2a;letter-spacing:-0.5px;text-shadow:0 2px 4px rgba(0,0,0,0.04)}
+        .logo h1 span{font-weight:700;color:#1a3a5c}
+        .nav-main{display:flex;gap:2.2rem;align-items:center;flex-wrap:wrap}
+        .nav-main a{color:#1a2b3e;text-decoration:none;font-weight:600;font-size:1rem;padding:6px 0;border-bottom:3px solid transparent;transition:0.3s}
+        .nav-main a:hover,.nav-main a.active{border-bottom-color:#1a3a5c;color:#0a1a2a;transform:translateY(-2px)}
+        .hero-section{background:linear-gradient(135deg,#0a1a2a 0%,#1a3a5c 50%,#2a5f7a 100%);padding:70px 5% 60px;color:#fff;display:grid;grid-template-columns:1.2fr 0.8fr;gap:50px;align-items:center;position:relative;overflow:hidden}
+        .hero-section::before{content:'';position:absolute;top:-50%;right:-20%;width:60%;height:200%;background:radial-gradient(ellipse,rgba(255,255,255,0.04) 0%,transparent 70%);pointer-events:none}
+        .hero-section h2{font-size:3.2rem;font-weight:900;line-height:1.1;letter-spacing:-1px;text-shadow:0 4px 20px rgba(0,0,0,0.15)}
+        .hero-section h2 i{font-weight:300;opacity:0.9}
+        .hero-section p{font-size:1.15rem;line-height:1.8;margin:18px 0 28px;opacity:0.92;max-width:90%}
+        .hero-section .badge-school{display:inline-block;background:rgba(255,255,255,0.12);border-radius:30px;padding:6px 20px;font-size:0.75rem;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;margin-bottom:10px;backdrop-filter:blur(4px)}
+        .hero-buttons{display:flex;flex-wrap:wrap;gap:14px}
+        .btn-primary{background:#ffffff;color:#0a1a2a;padding:14px 36px;border-radius:40px;font-weight:700;font-size:1rem;text-decoration:none;transition:all 0.4s cubic-bezier(0.25,0.46,0.45,0.94);border:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;box-shadow:0 4px 20px rgba(0,0,0,0.08)}
+        .btn-primary:hover{background:#f0f4f8;transform:translateY(-4px) scale(1.03);box-shadow:0 16px 40px rgba(0,0,0,0.18)}
+        .btn-outline{background:transparent;color:#fff;padding:14px 36px;border-radius:40px;font-weight:600;font-size:1rem;text-decoration:none;border:1.5px solid rgba(255,255,255,0.4);transition:all 0.4s cubic-bezier(0.25,0.46,0.45,0.94);cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+        .btn-outline:hover{background:rgba(255,255,255,0.08);border-color:#fff;transform:translateY(-4px) scale(1.03)}
+        .hero-stats{background:rgba(255,255,255,0.08);border-radius:24px;padding:28px;backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.06);transition:transform 0.4s}
+        .hero-stats:hover{transform:perspective(800px) rotateX(2deg) rotateY(2deg)}
+        .hero-stats .stat-row{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.06)}
+        .hero-stats .stat-row:last-child{border-bottom:0}
+        .hero-stats .stat-row .label{font-weight:400;opacity:0.8;font-size:0.95rem}
+        .hero-stats .stat-row .value{font-weight:700;font-size:1.05rem}
+        .section-title{font-size:2rem;font-weight:800;color:#0a1a2a;letter-spacing:-0.5px;padding:48px 5% 16px 5%;display:flex;align-items:center;gap:14px}
+        .section-title i{color:#1a3a5c;font-size:2.2rem}
+        .section-sub{font-size:1.05rem;color:#4a5a6a;padding:0 5% 14px 5%;max-width:800px;line-height:1.7}
+        .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:28px;padding:0 5% 36px 5%}
+        .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;padding:0 5% 36px 5%}
+        .card{background:#f8f9fa;border-radius:24px;padding:28px;border:1px solid #eef2f5;transition:all 0.5s cubic-bezier(0.25,0.46,0.45,0.94);transform:perspective(900px) rotateX(0deg) rotateY(0deg);box-shadow:0 4px 16px rgba(0,0,0,0.02)}
+        .card:hover{transform:perspective(900px) rotateX(3deg) rotateY(3deg) translateY(-8px);box-shadow:0 24px 48px rgba(26,58,92,0.14);border-color:#b8c8d8;background:#ffffff}
+        .card h3{font-size:1.25rem;font-weight:700;color:#0a1a2a;margin-bottom:8px}
+        .card h3 i{color:#1a3a5c;margin-right:10px}
+        .card p{color:#4a5a6a;line-height:1.7;font-size:1rem}
+        .card .tag{display:inline-block;background:#eef2f5;border-radius:20px;padding:4px 14px;font-size:0.75rem;font-weight:600;color:#1a3a5c;margin-top:10px}
+        .fullwidth-images{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:0 5% 36px 5%}
+        .fullwidth-images img{width:100%;height:320px;object-fit:cover;border-radius:20px;box-shadow:0 4px 20px rgba(0,0,0,0.06);transition:all 0.5s cubic-bezier(0.25,0.46,0.45,0.94);transform:perspective(800px) rotateX(0deg)}
+        .fullwidth-images img:hover{transform:perspective(800px) rotateX(2deg) translateY(-6px) scale(1.01);box-shadow:0 16px 40px rgba(26,58,92,0.12)}
+        .footer{background:#0a1a2a;color:#aac4d4;padding:40px 5% 24px;margin-top:16px}
+        .footer .inner{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;max-width:1200px;margin:0 auto}
+        .footer h4{color:#ffffff;font-weight:700;margin-bottom:14px;font-size:1.1rem}
+        .footer a{color:#aac4d4;text-decoration:none;display:block;margin:6px 0;font-size:0.95rem;transition:0.3s}
+        .footer a:hover{color:#ffffff;transform:translateX(4px)}
+        .footer .copy{text-align:center;border-top:1px solid rgba(255,255,255,0.06);padding-top:18px;margin-top:28px;font-size:0.85rem;color:#6a8aa0}
+        .fade-in{opacity:0;transform:translateY(40px);transition:all 0.8s cubic-bezier(0.25,0.46,0.45,0.94)}
+        .fade-in.visible{opacity:1;transform:translateY(0)}
+        .fade-in-left{opacity:0;transform:translateX(-50px);transition:all 0.8s cubic-bezier(0.25,0.46,0.45,0.94)}
+        .fade-in-left.visible{opacity:1;transform:translateX(0)}
+        .fade-in-right{opacity:0;transform:translateX(50px);transition:all 0.8s cubic-bezier(0.25,0.46,0.45,0.94)}
+        .fade-in-right.visible{opacity:1;transform:translateX(0)}
+        .fade-in-scale{opacity:0;transform:scale(0.9);transition:all 0.8s cubic-bezier(0.25,0.46,0.45,0.94)}
+        .fade-in-scale.visible{opacity:1;transform:scale(1)}
+        .fade-in-rotate{opacity:0;transform:rotate(-6deg) scale(0.92);transition:all 0.9s cubic-bezier(0.25,0.46,0.45,0.94)}
+        .fade-in-rotate.visible{opacity:1;transform:rotate(0deg) scale(1)}
+        .btn-retour{display:inline-flex;align-items:center;gap:10px;background:#1a3a5c;color:#fff;padding:14px 32px;border-radius:50px;font-weight:600;font-size:1rem;text-decoration:none;transition:all 0.3s;border:none;cursor:pointer;box-shadow:0 4px 16px rgba(26,58,92,0.15)}
+        .btn-retour:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(26,58,92,0.25);background:#0a1a2a}
+        .btn-retour i{font-size:1.1rem}
+        .retour-wrapper{text-align:center;padding:0 5% 36px 5%}
+        @media(max-width:1024px){.hero-section{grid-template-columns:1fr;padding:48px 5% 40px}.hero-section p{max-width:100%}.grid-3{grid-template-columns:1fr 1fr}}
+        @media(max-width:768px){.header-main{flex-direction:column;gap:14px;align-items:flex-start}.nav-main{gap:1rem;flex-wrap:wrap}.grid-2{grid-template-columns:1fr}.grid-3{grid-template-columns:1fr}.hero-section h2{font-size:2.2rem}.footer .inner{grid-template-columns:1fr;gap:28px}.logo img{height:70px}.logo h1{font-size:1.6rem}.fullwidth-images{grid-template-columns:1fr}.fullwidth-images img{height:200px}}
+        @media(max-width:480px){.hero-section h2{font-size:1.8rem}.logo h1{font-size:1.3rem}.top-bar{flex-direction:column;gap:4px;text-align:center;font-size:0.7rem}.fullwidth-images img{height:160px}}
+    </style>
 </head>
 <body>
 <div class="page">
 
-  <div class="gold-border">
-    <h1>CS <span>LE TREMPLIN</span></h1>
-    <div class="sub">COMPLEXE SCOLAIRE</div>
-  </div>
-
-  <div class="nav-links">
-    <a href="#">Accueil</a>
-    <a href="#" class="active">À propos</a>
-    <a href="#">Niveaux</a>
-    <a href="#">Contact</a>
-  </div>
-
-  <div class="section-title"><i class="fas fa-info-circle"></i> À PROPOS DE <span class="gold">CS LE TREMPLIN</span></div>
-
-  <p class="mission-text" style="max-width:900px;text-align:left;margin:0 auto 1.5rem">
-    <strong style="color:#b8942b">Complexe Scolaire Le Tremplin</strong> est un établissement d’enseignement situé à Kasumbalesa, dans la province du Haut-Katanga en République Démocratique du Congo. Fondé sur des valeurs d’excellence, de discipline et de travail, nous accompagnons les élèves de la maternelle au secondaire dans un environnement exigeant et bienveillant.<br><br>
-    Notre ambition est de former des citoyens compétents, responsables et ambitieux, capables de relever les défis de demain. Au-delà des résultats académiques, nous développons le caractère, l’autonomie et les compétences de vie de chaque élève.
-  </p>
-
-  <div class="grid-4">
-    <div class="stat"><div class="stat-number">15+</div><div class="stat-label">Années d’expérience</div></div>
-    <div class="stat"><div class="stat-number">800+</div><div class="stat-label">Élèves accompagnés</div></div>
-    <div class="stat"><div class="stat-number">40+</div><div class="stat-label">Enseignants qualifiés</div></div>
-    <div class="stat"><div class="stat-number">95%</div><div class="stat-label">Taux de réussite</div></div>
-  </div>
-
-  <div class="section-title"><i class="fas fa-bullseye"></i> NOTRE <span class="gold">VISION</span></div>
-  <div class="grid-2">
-    <div class="card"><h3><i class="fas fa-eye"></i> VISION</h3><p>Devenir un pôle d’excellence éducative reconnu pour la qualité de son enseignement, la rigueur de son encadrement et la réussite de ses élèves, contribuant ainsi au développement de la région et du pays.</p></div>
-    <div class="card"><h3><i class="fas fa-flag"></i> MISSION</h3><p>Offrir une éducation de qualité fondée sur le travail, la discipline et la réussite, en révélant le potentiel de chaque élève et en lui donnant les clés pour construire un avenir solide et prometteur.</p></div>
-  </div>
-
-  <div class="section-title"><i class="fas fa-heart"></i> NOS <span class="gold">VALEURS</span></div>
-  <ul class="values-list">
-    <li><i class="fas fa-check-circle"></i> Excellence académique</li>
-    <li><i class="fas fa-check-circle"></i> Discipline et rigueur</li>
-    <li><i class="fas fa-check-circle"></i> Respect et responsabilité</li>
-    <li><i class="fas fa-check-circle"></i> Persévérance et effort</li>
-    <li><i class="fas fa-check-circle"></i> Autonomie et confiance en soi</li>
-    <li><i class="fas fa-check-circle"></i> Intégrité et honnêteté</li>
-  </ul>
-
-  <div class="section-title"><i class="fas fa-history"></i> NOTRE <span class="gold">HISTOIRE</span></div>
-  <div class="timeline">
-    <div class="timeline-item">
-      <div class="timeline-year">2010</div>
-      <div class="timeline-content"><h4>Fondation du CS Le Tremplin</h4><p>Création de l’établissement avec une classe de maternelle et une classe de primaire, répondant aux besoins éducatifs de la communauté de Kasumbalesa.</p></div>
+    <div class="top-bar">
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
     </div>
-    <div class="timeline-item">
-      <div class="timeline-year">2015</div>
-      <div class="timeline-content"><h4>Ouverture du secondaire</h4><p>Extension de l’offre éducative avec l’ouverture des classes du cycle secondaire, permettant aux élèves de poursuivre leur parcours au sein de l’établissement.</p></div>
+
+    <div class="header-main">
+        <div class="logo">
+            <img src="https://www.netubex.com/tremplin.png" alt="Logo CS Le Tremplin">
+            <h1>CS <span>LE TREMPLIN</span></h1>
+        </div>
+        <div class="nav-main">
+            <a href="index.html">Accueil</a>
+            <a href="https://www.cstremplin.com/about" class="active">À propos</a>
+            <a href="https://www.cstremplin.com/niveaux">Niveaux</a>
+            <a href="#">Contact</a>
+        </div>
     </div>
-    <div class="timeline-item">
-      <div class="timeline-year">2018</div>
-      <div class="timeline-content"><h4>Construction de nouveaux bâtiments</h4><p>Agrandissement du campus avec des salles de classe modernes, un laboratoire informatique et une bibliothèque pour offrir un cadre d’apprentissage optimal.</p></div>
+
+    <div class="hero-section">
+        <div class="fade-in-left">
+            <div class="badge-school"><i class="fas fa-graduation-cap" style="margin-right:6px;"></i> À propos</div>
+            <h2>Notre <i>histoire</i>, notre <i>vision</i></h2>
+            <p>Fondé en 2022, le Complexe Scolaire Le Tremplin est une institution éducative de référence située à Kasumbalesa, dans la province du Haut-Katanga, en République Démocratique du Congo.</p>
+            <p>Notre établissement se distingue par une approche pédagogique innovante et un cadre propice à l'apprentissage, où chaque élève est accompagné dans son développement académique et personnel.</p>
+            <div class="hero-buttons">
+                <a href="#histoire" class="btn-primary"><i class="fas fa-book-open"></i> Notre histoire</a>
+                <a href="#equipe" class="btn-outline"><i class="fas fa-users"></i> Notre équipe</a>
+            </div>
+        </div>
+        <div class="hero-stats fade-in-right">
+            <div class="stat-row"><span class="label">📅 Fondation</span><span class="value">2022</span></div>
+            <div class="stat-row"><span class="label">📍 Localisation</span><span class="value">Kasumbalesa, Haut-Katanga</span></div>
+            <div class="stat-row"><span class="label">🎓 Niveaux</span><span class="value">Maternelle · Primaire · Secondaire</span></div>
+            <div class="stat-row"><span class="label">⭐ Valeurs</span><span class="value">Travail · Discipline · Réussite</span></div>
+            <div class="stat-row"><span class="label">🌍 Pays</span><span class="value">République Démocratique du Congo</span></div>
+        </div>
     </div>
-    <div class="timeline-item">
-      <div class="timeline-year">2023</div>
-      <div class="timeline-content"><h4>Reconnaissance académique</h4><p>L’établissement obtient une reconnaissance pour l’excellence de ses résultats aux examens nationaux et renforce ses partenariats éducatifs.</p></div>
+
+    <div class="section-title fade-in" id="histoire"><i class="fas fa-flag"></i> NOTRE HISTOIRE</div>
+    <div class="grid-2">
+        <div class="card fade-in-scale">
+            <h3><i class="fas fa-graduation-cap"></i> UNE INSTITUTION DE RÉFÉRENCE</h3>
+            <p>Fondé en 2022, le Complexe Scolaire Le Tremplin (CS LE TREMPLIN) est une institution éducative de référence située à Kasumbalesa, dans la province du Haut-Katanga, en République Démocratique du Congo.</p>
+        </div>
+        <div class="card fade-in-scale">
+            <h3><i class="fas fa-rocket"></i> UNE APPROCHE PÉDAGOGIQUE INNOVANTE</h3>
+            <p>Avec une approche pédagogique innovante et un cadre propice à l'apprentissage, notre établissement accompagne les élèves dès la maternelle jusqu'au secondaire, en mettant l'accent sur une formation complète et adaptée aux défis du monde actuel.</p>
+        </div>
     </div>
-  </div>
 
-  <div class="section-title"><i class="fas fa-chalkboard-teacher"></i> NOTRE <span class="gold">ÉQUIPE</span></div>
-  <div class="grid-3">
-    <div class="card" style="text-align:center;border-left-color:#b8942b"><i class="fas fa-user-tie" style="font-size:2.5rem;color:#b8942b;display:block;margin-bottom:0.8rem"></i><h3>Direction</h3><p>Une équipe dirigeante expérimentée, passionnée par l’éducation et engagée pour la réussite de chaque élève.</p></div>
-    <div class="card" style="text-align:center;border-left-color:#b8942b"><i class="fas fa-chalkboard" style="font-size:2.5rem;color:#b8942b;display:block;margin-bottom:0.8rem"></i><h3>Enseignants</h3><p>Des pédagogues qualifiés et dévoués, qui accompagnent les élèves avec exigence et bienveillance dans leur apprentissage.</p></div>
-    <div class="card" style="text-align:center;border-left-color:#b8942b"><i class="fas fa-hands-helping" style="font-size:2.5rem;color:#b8942b;display:block;margin-bottom:0.8rem"></i><h3>Personnel éducatif</h3><p>Une équipe de soutien attentive, qui veille au bien-être et à l’épanouissement des élèves au quotidien.</p></div>
-  </div>
+    <div class="fullwidth-images fade-in-scale">
+        <img src="https://www.cstremplin.com/merite.jpg" alt="Vue de l'établissement">
+        <img src="https://www.cstremplin.com/merite2.jpg" alt="Vie scolaire au CS Le Tremplin">
+    </div>
 
-  <div class="quote-block">
-    <i class="fas fa-quote-right"></i>
-    <p>« Chaque enfant possède un potentiel unique. Notre engagement est de créer les conditions nécessaires pour que ce potentiel puisse s’exprimer, progresser et se transformer en réussite. »</p>
-    <div class="author">— Fondateur du CS Le Tremplin</div>
-  </div>
+    <div class="section-title fade-in"><i class="fas fa-users"></i> NOS VALEURS FONDAMENTALES</div>
+    <div class="grid-3">
+        <div class="card fade-in-rotate">
+            <h3><i class="fas fa-hammer"></i> TRAVAIL</h3>
+            <p>L'effort, la persévérance et la rigueur sont au cœur de notre démarche éducative. Nous encourageons chaque élève à donner le meilleur de lui-même pour construire son avenir.</p>
+        </div>
+        <div class="card fade-in-rotate">
+            <h3><i class="fas fa-balance-scale"></i> DISCIPLINE</h3>
+            <p>Le respect, la responsabilité et la ponctualité sont des valeurs essentielles que nous inculquons à nos élèves pour en faire des citoyens exemplaires et respectueux.</p>
+        </div>
+        <div class="card fade-in-rotate">
+            <h3><i class="fas fa-trophy"></i> RÉUSSITE</h3>
+            <p>La réussite ne se limite pas aux résultats académiques. Elle se construit à travers les compétences, la confiance en soi et la capacité à relever les défis de demain.</p>
+        </div>
+    </div>
 
-  <div class="section-title"><i class="fas fa-handshake"></i> POURQUOI <span class="gold">NOUS CHOISIR ?</span></div>
-  <div class="grid-2">
-    <div class="card"><h3><i class="fas fa-graduation-cap"></i> EXCELLENCE ACADÉMIQUE</h3><p>Un enseignement structuré et exigeant qui prépare les élèves aux examens nationaux et à la poursuite d’études supérieures.</p></div>
-    <div class="card"><h3><i class="fas fa-users"></i> ENCADREMENT PERSONNALISÉ</h3><p>Un suivi attentif de chaque élève avec des classes à effectifs réduits pour un accompagnement de qualité.</p></div>
-    <div class="card"><h3><i class="fas fa-gavel"></i> CADRE DISCIPLINAIRE</h3><p>Un environnement fondé sur le respect, la responsabilité et la rigueur pour favoriser l’apprentissage et l’épanouissement.</p></div>
-    <div class="card"><h3><i class="fas fa-rocket"></i> PRÉPARATION À L’AVENIR</h3><p>Des compétences pratiques, l’autonomie et la confiance en soi pour relever les défis du monde moderne.</p></div>
-  </div>
+    <div class="section-title fade-in" id="equipe"><i class="fas fa-chalkboard-teacher"></i> NOTRE ÉQUIPE ÉDUCATIVE</div>
+    <div class="grid-2">
+        <div class="card fade-in-left">
+            <h3><i class="fas fa-user-tie"></i> DIRECTION</h3>
+            <p>Une équipe dirigeante expérimentée et engagée, animée par une vision claire de l'excellence éducative et du développement de chaque élève. La direction veille à maintenir un environnement scolaire serein et propice à l'apprentissage.</p>
+        </div>
+        <div class="card fade-in-right">
+            <h3><i class="fas fa-users"></i> ENSEIGNANTS</h3>
+            <p>Un corps professoral qualifié, passionné et dévoué, sélectionné pour ses compétences pédagogiques et son engagement à former les leaders de demain. Chaque enseignant contribue à l'épanouissement intellectuel et personnel des élèves.</p>
+        </div>
+    </div>
 
-  <div class="footer-gold">
-    <div class="motto-small">CS LE TREMPLIN · L’EXCELLENCE COMMENCE ICI</div>
-    <div class="copy">© 2026 Complexe Scolaire Le Tremplin — Tous droits réservés</div>
-  </div>
+    <div class="section-title fade-in"><i class="fas fa-calendar-alt"></i> NOS PROGRAMMES PÉDAGOGIQUES</div>
+    <div class="grid-3">
+        <div class="card fade-in-rotate">
+            <h3><i class="fas fa-child"></i> MATERNELLE</h3>
+            <p>Un environnement doux et stimulant pour éveiller la curiosité et développer les premières compétences sociales et cognitives.</p>
+            <span class="tag">3-5 ans</span>
+        </div>
+        <div class="card fade-in-rotate">
+            <h3><i class="fas fa-book-open"></i> PRIMAIRE</h3>
+            <p>Des fondamentaux solides en lecture, écriture, mathématiques et sciences, pour construire une base académique durable.</p>
+            <span class="tag">6-11 ans</span>
+        </div>
+        <div class="card fade-in-rotate">
+            <h3><i class="fas fa-user-graduate"></i> SECONDAIRE</h3>
+            <p>Une formation complète et exigeante pour préparer les élèves aux examens nationaux et à leur future vie professionnelle.</p>
+            <span class="tag">12-18 ans</span>
+        </div>
+    </div>
+
+    <div class="section-title fade-in"><i class="fas fa-heart"></i> NOTRE ENGAGEMENT</div>
+    <div class="grid-2">
+        <div class="card fade-in-left">
+            <h3><i class="fas fa-star"></i> EXCELLENCE ACADÉMIQUE</h3>
+            <p>Un enseignement de qualité, structuré et adapté aux besoins de chaque élève, pour favoriser la progression et la réussite.</p>
+        </div>
+        <div class="card fade-in-right">
+            <h3><i class="fas fa-hand-holding-heart"></i> ACCOMPAGNEMENT PERSONNALISÉ</h3>
+            <p>Un suivi attentif et individualisé pour identifier les besoins de chaque élève et l'accompagner efficacement dans son parcours.</p>
+        </div>
+        <div class="card fade-in-left">
+            <h3><i class="fas fa-gavel"></i> CADRE DISCIPLINAIRE</h3>
+            <p>Un environnement fondé sur le respect, la responsabilité, la ponctualité et la rigueur, favorisant un apprentissage serein.</p>
+        </div>
+        <div class="card fade-in-right">
+            <h3><i class="fas fa-cogs"></i> FORMATION COMPLÈTE</h3>
+            <p>Au-delà des connaissances scolaires, nous développons le caractère, l'autonomie et les compétences de vie essentielles.</p>
+        </div>
+    </div>
+
+    <div class="section-title fade-in"><i class="fas fa-images"></i> GALERIE</div>
+    <div class="fullwidth-images fade-in-scale">
+        <img src="https://www.cstremplin.com/image1.jpg" alt="Bâtiment principal">
+        <img src="https://www.cstremplin.com/image2.jpg" alt="Salle de classe">
+    </div>
+
+    <div class="retour-wrapper fade-in">
+        <a href="index.html" class="btn-retour"><i class="fas fa-arrow-left"></i> Retour à l'accueil</a>
+    </div>
+
+    <div class="footer">
+        <div class="inner">
+            <div>
+                <h4>CS LE TREMPLIN</h4>
+                <p style="font-size:0.95rem;line-height:1.7;max-width:300px;">Une école d'excellence à Kasumbalesa, formant les leaders de demain dans un cadre exigeant et bienveillant.</p>
+            </div>
+            <div>
+                <h4>Liens rapides</h4>
+                <a href="index.html">Accueil</a>
+                <a href="https://www.cstremplin.com/about">À propos</a>
+                <a href="https://www.cstremplin.com/niveaux">Niveaux</a>
+                <a href="#">Contact</a>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <a href="#"><i class="fas fa-envelope" style="margin-right:8px;"></i> contact@cstremplin.com</a>
+                <a href="#"><i class="fas fa-map-marker-alt" style="margin-right:8px;"></i> Kasumbalesa, RDC</a>
+            </div>
+        </div>
+        <div class="copy">© 2026 Complexe Scolaire Le Tremplin — Tous droits réservés</div>
+    </div>
 
 </div>
+
+<script>
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+        window.location.href = 'https://www.cstremplin.com/about';
+        return false;
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'F12' || e.keyCode === 123) {
+            e.preventDefault();
+            window.location.href = 'https://www.cstremplin.com/about';
+            return false;
+        }
+        if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j')) {
+            e.preventDefault();
+            window.location.href = 'https://www.cstremplin.com/about';
+            return false;
+        }
+        if (e.ctrlKey && (e.key === 'U' || e.key === 'u')) {
+            e.preventDefault();
+            window.location.href = 'https://www.cstremplin.com/about';
+            return false;
+        }
+        if (e.ctrlKey && (e.key === 'S' || e.key === 's')) {
+            e.preventDefault();
+            window.location.href = 'https://www.cstremplin.com/about';
+            return false;
+        }
+        if (e.ctrlKey && e.shiftKey && (e.key === 'C' || e.key === 'c')) {
+            e.preventDefault();
+            window.location.href = 'https://www.cstremplin.com/about';
+            return false;
+        }
+    });
+
+    document.addEventListener('dragstart', function(e) {
+        e.preventDefault();
+        window.location.href = 'https://www.cstremplin.com/about';
+        return false;
+    });
+
+    document.addEventListener('selectstart', function(e) {
+        e.preventDefault();
+        window.location.href = 'https://www.cstremplin.com/about';
+        return false;
+    });
+
+    document.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            window.location.href = 'https://www.cstremplin.com/about';
+            return false;
+        });
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const fadeElements = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .fade-in-scale, .fade-in-rotate');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        fadeElements.forEach(el => observer.observe(el));
+        setTimeout(() => {
+            fadeElements.forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight) {
+                    el.classList.add('visible');
+                }
+            });
+        }, 150);
+    });
+</script>
 </body>
 </html>
