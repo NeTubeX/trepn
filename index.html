@@ -2,267 +2,96 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>COMPLEXE SCOLAIRE LE TREMPLIN</title>
     <meta name="description" content="Une éducation d'excellence ancrée dans les valeurs du travail, de la discipline et de la réussite. De la maternelle au secondaire à Kasumbalesa, nous formons des leaders responsables et ambitieux.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+        html,body{overflow-x:hidden;width:100%}
         body{background:#f4f6f9;display:flex;justify-content:center;padding:0;min-height:100vh}
-        .page{max-width:1200px;width:100%;background:#ffffff;min-height:100vh;padding:0}
-        .top-bar{background:#1a2b3e;color:#ffffff;padding:6px 0;font-size:0.75rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;padding-left:5%;padding-right:5%}
+        .page{max-width:1200px;width:100%;background:#ffffff;min-height:100vh;overflow-x:hidden}
+        .top-bar{background:#1a2b3e;color:#ffffff;padding:6px 5%;font-size:0.75rem;display:flex;justify-content:flex-end;align-items:center;flex-wrap:wrap}
         .top-bar a{color:#aac4d4;text-decoration:none;margin:0 8px;transition:0.2s}
         .top-bar a:hover{color:#ffffff}
         .top-bar .social-icons a{margin:0 6px;font-size:0.8rem}
         .header-main{background:#ffffff;padding:16px 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;box-shadow:0 2px 12px rgba(0,0,0,0.04);border-bottom:2px solid #eef2f5}
         .logo{display:flex;align-items:center;gap:14px}
-        .logo img{height:60px;width:auto;border-radius:8px}
-        .logo h1{font-size:1.6rem;font-weight:800;color:#1a2b3e;letter-spacing:-0.5px}
-        .logo h1 span{font-weight:300;color:#4a7a9e}
+        .logo img{height:80px;width:auto;border-radius:10px;object-fit:contain}
+        .logo h1{font-size:1.8rem;font-weight:900;color:#0a1a2a;letter-spacing:-0.5px}
+        .logo h1 span{font-weight:300;color:#1a3a5c}
         .nav-main{display:flex;gap:2rem;align-items:center;flex-wrap:wrap}
-        .nav-main a{color:#1a2b3e;text-decoration:none;font-weight:500;font-size:0.95rem;padding:6px 0;border-bottom:3px solid transparent;transition:0.2s}
-        .nav-main a:hover,.nav-main a.active{border-bottom-color:#2a5f7a;color:#0f2a3e}
-        .nav-main .btn-nav{background:#1a3a5c;color:#fff;padding:8px 24px;border-radius:30px;font-weight:600;font-size:0.85rem;border:none;cursor:pointer;transition:0.2s}
-        .nav-main .btn-nav:hover{background:#2a5f7a;transform:translateY(-1px)}
-        .hero-section{background:linear-gradient(135deg,#1a3a5c 0%,#2a5f7a 50%,#3a7a9e 100%);padding:60px 5% 50px;color:#fff;display:grid;grid-template-columns:1.2fr 0.8fr;gap:40px;align-items:center}
-        .hero-section h2{font-size:2.8rem;font-weight:800;line-height:1.1;letter-spacing:-1px}
+        .nav-main a{color:#1a2b3e;text-decoration:none;font-weight:600;font-size:0.95rem;padding:6px 0;border-bottom:3px solid transparent;transition:0.2s}
+        .nav-main a:hover,.nav-main a.active{border-bottom-color:#1a3a5c;color:#0a1a2a}
+        .nav-main .btn-nav{background:#1a3a5c;color:#fff;padding:8px 28px;border-radius:30px;font-weight:700;font-size:0.85rem;border:none;cursor:pointer;transition:0.2s}
+        .nav-main .btn-nav:hover{background:#2a5f7a;transform:translateY(-2px);box-shadow:0 6px 20px rgba(26,58,92,0.25)}
+        .hero-section{background:linear-gradient(135deg,#0a1a2a 0%,#1a3a5c 50%,#2a5f7a 100%);padding:60px 5% 50px;color:#fff;display:grid;grid-template-columns:1.2fr 0.8fr;gap:40px;align-items:center}
+        .hero-section h2{font-size:2.8rem;font-weight:900;line-height:1.1;letter-spacing:-1px}
         .hero-section h2 i{font-weight:300;opacity:0.85}
         .hero-section p{font-size:1.05rem;line-height:1.7;margin:16px 0 24px;opacity:0.92;max-width:90%}
-        .hero-section .badge-school{display:inline-block;background:rgba(255,255,255,0.12);border-radius:30px;padding:4px 18px;font-size:0.7rem;font-weight:600;letter-spacing:0.5px;text-transform:uppercase;margin-bottom:8px}
+        .hero-section .badge-school{display:inline-block;background:rgba(255,255,255,0.12);border-radius:30px;padding:4px 18px;font-size:0.7rem;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;margin-bottom:8px}
         .hero-buttons{display:flex;flex-wrap:wrap;gap:12px}
-        .btn-primary{background:#ffffff;color:#1a3a5c;padding:12px 32px;border-radius:40px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:0.2s;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
-        .btn-primary:hover{background:#f0f4f8;transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.12)}
-        .btn-outline{background:transparent;color:#fff;padding:12px 32px;border-radius:40px;font-weight:600;font-size:0.95rem;text-decoration:none;border:1.5px solid rgba(255,255,255,0.4);transition:0.2s;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
-        .btn-outline:hover{background:rgba(255,255,255,0.08);border-color:#fff}
+        .btn-primary{background:#ffffff;color:#0a1a2a;padding:12px 32px;border-radius:40px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:0.3s;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+        .btn-primary:hover{background:#f0f4f8;transform:translateY(-3px) scale(1.02);box-shadow:0 12px 32px rgba(0,0,0,0.15)}
+        .btn-outline{background:transparent;color:#fff;padding:12px 32px;border-radius:40px;font-weight:600;font-size:0.95rem;text-decoration:none;border:1.5px solid rgba(255,255,255,0.4);transition:0.3s;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+        .btn-outline:hover{background:rgba(255,255,255,0.08);border-color:#fff;transform:translateY(-3px)}
         .hero-stats{background:rgba(255,255,255,0.08);border-radius:20px;padding:24px;backdrop-filter:blur(4px)}
         .hero-stats .stat-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.08)}
         .hero-stats .stat-row:last-child{border-bottom:0}
         .hero-stats .stat-row .label{font-weight:400;opacity:0.8;font-size:0.9rem}
         .hero-stats .stat-row .value{font-weight:700;font-size:1rem}
-        .section-title{font-size:1.6rem;font-weight:800;color:#1a2b3e;letter-spacing:-0.5px;padding:40px 5% 12px 5%;display:flex;align-items:center;gap:12px}
-        .section-title i{color:#2a5f7a;font-size:1.8rem}
+        .section-title{font-size:1.6rem;font-weight:800;color:#0a1a2a;letter-spacing:-0.5px;padding:40px 5% 12px 5%;display:flex;align-items:center;gap:12px}
+        .section-title i{color:#1a3a5c;font-size:1.8rem}
         .section-sub{font-size:0.95rem;color:#4a5a6a;padding:0 5% 12px 5%;max-width:750px;line-height:1.6}
         .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:0 5% 32px 5%}
         .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:0 5% 32px 5%}
-        .card{background:#f8f9fa;border-radius:20px;padding:24px;border:1px solid #eef2f5;transition:0.3s}
-        .card:hover{background:#ffffff;border-color:#d0dce8;box-shadow:0 8px 30px rgba(0,0,0,0.05);transform:translateY(-3px)}
-        .card h3{font-size:1.1rem;font-weight:700;color:#1a2b3e;margin-bottom:6px}
-        .card h3 i{color:#2a5f7a;margin-right:8px}
+        .card{background:#f8f9fa;border-radius:20px;padding:24px;border:1px solid #eef2f5;transition:all 0.4s cubic-bezier(0.25,0.46,0.45,0.94);transform:perspective(800px) rotateX(0deg) rotateY(0deg);box-shadow:0 4px 12px rgba(0,0,0,0.02)}
+        .card:hover{transform:perspective(800px) rotateX(2deg) rotateY(2deg) translateY(-6px);box-shadow:0 20px 40px rgba(26,58,92,0.12);border-color:#b8c8d8;background:#ffffff}
+        .card h3{font-size:1.1rem;font-weight:700;color:#0a1a2a;margin-bottom:6px}
+        .card h3 i{color:#1a3a5c;margin-right:8px}
         .card p{color:#4a5a6a;line-height:1.6;font-size:0.95rem}
-        .card .tag{display:inline-block;background:#eef2f5;border-radius:20px;padding:2px 12px;font-size:0.7rem;font-weight:600;color:#2a5f7a;margin-top:8px}
+        .card .tag{display:inline-block;background:#eef2f5;border-radius:20px;padding:2px 12px;font-size:0.7rem;font-weight:600;color:#1a3a5c;margin-top:8px}
         .check-grid{list-style:none;padding:0 5% 24px 5%;display:grid;grid-template-columns:1fr 1fr;gap:8px 24px}
-        .check-grid li{font-size:1rem;color:#1a2b3e;display:flex;align-items:center;gap:10px}
-        .check-grid li i{color:#2a5f7a;font-size:1.1rem;width:20px}
+        .check-grid li{font-size:1rem;color:#0a1a2a;display:flex;align-items:center;gap:10px}
+        .check-grid li i{color:#1a3a5c;font-size:1.1rem;width:20px}
         .pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:0 5% 32px 5%}
-        .pillar-card{background:linear-gradient(145deg,#f8f9fa,#eef2f5);border-radius:20px;padding:24px 20px;text-align:center;border:1px solid #eef2f5;transition:0.3s}
-        .pillar-card:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,0.06)}
-        .pillar-card i{font-size:2.2rem;color:#2a5f7a;display:block;margin-bottom:10px}
-        .pillar-card h3{font-size:1.1rem;font-weight:700;color:#1a2b3e;margin-bottom:6px}
+        .pillar-card{background:linear-gradient(145deg,#f8f9fa,#eef2f5);border-radius:20px;padding:24px 20px;text-align:center;border:1px solid #eef2f5;transition:all 0.4s cubic-bezier(0.25,0.46,0.45,0.94);transform:perspective(800px) rotateX(0deg) rotateY(0deg)}
+        .pillar-card:hover{transform:perspective(800px) rotateX(2deg) rotateY(2deg) translateY(-8px);box-shadow:0 20px 40px rgba(26,58,92,0.10);background:#ffffff}
+        .pillar-card i{font-size:2.2rem;color:#1a3a5c;display:block;margin-bottom:10px}
+        .pillar-card h3{font-size:1.1rem;font-weight:700;color:#0a1a2a;margin-bottom:6px}
         .pillar-card p{font-size:0.9rem;color:#4a5a6a;line-height:1.6}
         .gallery-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;padding:0 5% 32px 5%}
-        .gallery-item{background:linear-gradient(145deg,#f0f4f8,#e4eaf0);border-radius:16px;height:100px;display:flex;align-items:center;justify-content:center;color:#1a2b3e;font-weight:600;font-size:0.85rem;border:1px solid #eef2f5;transition:0.2s;gap:8px}
-        .gallery-item i{font-size:1.8rem;color:#2a5f7a}
-        .gallery-item:hover{background:linear-gradient(145deg,#e4eaf0,#d4dce8);border-color:#2a5f7a}
-        .parent-message{background:linear-gradient(145deg,#f8f9fa,#eef2f5);border-radius:24px;padding:32px 40px;margin:0 5% 32px 5%;text-align:center;border:1px solid #eef2f5}
-        .parent-message p{font-size:1.05rem;line-height:1.7;color:#1a2b3e;max-width:750px;margin:0 auto}
-        .parent-message .signature{font-weight:700;color:#2a5f7a;margin-top:12px;font-size:1rem}
+        .gallery-item{background:linear-gradient(145deg,#f0f4f8,#e4eaf0);border-radius:16px;height:100px;display:flex;align-items:center;justify-content:center;color:#0a1a2a;font-weight:600;font-size:0.85rem;border:1px solid #eef2f5;transition:all 0.3s}
+        .gallery-item i{font-size:1.8rem;color:#1a3a5c}
+        .gallery-item:hover{background:linear-gradient(145deg,#e4eaf0,#d4dce8);border-color:#1a3a5c;transform:translateY(-4px) scale(1.02);box-shadow:0 8px 24px rgba(26,58,92,0.08)}
+        .parent-message{background:linear-gradient(145deg,#f8f9fa,#eef2f5);border-radius:24px;padding:32px 40px;margin:0 5% 32px 5%;text-align:center;border:1px solid #eef2f5;transition:all 0.4s}
+        .parent-message:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(26,58,92,0.06)}
+        .parent-message p{font-size:1.05rem;line-height:1.7;color:#0a1a2a;max-width:750px;margin:0 auto}
+        .parent-message .signature{font-weight:700;color:#1a3a5c;margin-top:12px;font-size:1rem}
         .contact-section{display:grid;grid-template-columns:2fr 1fr;gap:32px;padding:0 5% 32px 5%;background:#f8f9fa;border-radius:24px;margin:0 5% 32px 5%;padding:32px}
-        .contact-item{display:flex;align-items:center;gap:16px;padding:10px 0;color:#1a2b3e;border-bottom:1px solid #eef2f5}
+        .contact-item{display:flex;align-items:center;gap:16px;padding:10px 0;color:#0a1a2a;border-bottom:1px solid #eef2f5}
         .contact-item:last-child{border-bottom:0}
-        .contact-item i{width:28px;font-size:1.2rem;color:#2a5f7a;text-align:center}
+        .contact-item i{width:28px;font-size:1.2rem;color:#1a3a5c;text-align:center}
         .contact-item span{font-weight:500}
         .contact-side{border-left:2px solid #eef2f5;padding-left:28px;display:flex;flex-direction:column;justify-content:center}
-        .contact-side .motto{font-weight:700;color:#2a5f7a;font-size:1.1rem;letter-spacing:0.5px}
-        .footer{background:#1a2b3e;color:#aac4d4;padding:32px 5% 20px;margin-top:16px}
+        .contact-side .motto{font-weight:700;color:#1a3a5c;font-size:1.1rem;letter-spacing:0.5px}
+        .footer{background:#0a1a2a;color:#aac4d4;padding:32px 5% 20px;margin-top:16px}
         .footer .inner{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;max-width:1200px;margin:0 auto}
         .footer h4{color:#ffffff;font-weight:700;margin-bottom:12px;font-size:1rem}
         .footer a{color:#aac4d4;text-decoration:none;display:block;margin:4px 0;font-size:0.9rem;transition:0.2s}
         .footer a:hover{color:#ffffff}
         .footer .copy{text-align:center;border-top:1px solid rgba(255,255,255,0.06);padding-top:16px;margin-top:24px;font-size:0.8rem;color:#6a8aa0}
+        .btn-espace{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#0a1a2a,#1a3a5c);color:#fff;padding:14px 40px;border-radius:50px;font-weight:700;font-size:1rem;text-decoration:none;transition:all 0.3s;border:none;cursor:pointer;box-shadow:0 8px 24px rgba(26,58,92,0.25)}
+        .btn-espace:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 16px 40px rgba(26,58,92,0.35);background:linear-gradient(135deg,#1a3a5c,#2a5f7a)}
+        .btn-espace i{font-size:1.2rem}
+        .fade-in{opacity:0;transform:translateY(30px);transition:all 0.7s cubic-bezier(0.25,0.46,0.45,0.94)}
+        .fade-in.visible{opacity:1;transform:translateY(0)}
+        .fade-in-left{opacity:0;transform:translateX(-40px);transition:all 0.7s cubic-bezier(0.25,0.46,0.45,0.94)}
+        .fade-in-left.visible{opacity:1;transform:translateX(0)}
+        .fade-in-right{opacity:0;transform:translateX(40px);transition:all 0.7s cubic-bezier(0.25,0.46,0.45,0.94)}
+        .fade-in-right.visible{opacity:1;transform:translateX(0)}
+        .fade-in-scale{opacity:0;transform:scale(0.92);transition:all 0.7s cubic-bezier(0.25,0.46,0.45,0.94)}
+        .fade-in-scale.visible{opacity:1;transform:scale(1)}
         @media(max-width:1024px){.hero-section{grid-template-columns:1fr;padding:40px 5% 36px}.hero-section p{max-width:100%}.grid-3{grid-template-columns:1fr 1fr}.pillar-grid{grid-template-columns:1fr 1fr}}
-        @media(max-width:768px){.header-main{flex-direction:column;gap:12px;align-items:flex-start}.nav-main{gap:1rem;flex-wrap:wrap}.grid-3{grid-template-columns:1fr}.grid-2{grid-template-columns:1fr}.pillar-grid{grid-template-columns:1fr}.gallery-grid{grid-template-columns:repeat(3,1fr)}.contact-section{grid-template-columns:1fr}.contact-side{border-left:0;border-top:2px solid #eef2f5;padding-left:0;padding-top:20px}.hero-section h2{font-size:2rem}.footer .inner{grid-template-columns:1fr;gap:24px}}
-        @media(max-width:480px){.gallery-grid{grid-template-columns:1fr 1fr}.check-grid{grid-template-columns:1fr}.hero-buttons .btn-primary,.hero-buttons .btn-outline{width:100%;justify-content:center}.top-bar{flex-direction:column;gap:4px;text-align:center;font-size:0.7rem}.logo h1{font-size:1.2rem}}
-    </style>
-</head>
-<body>
-<div class="page">
-
-    <div class="top-bar">
-        <div><i class="fas fa-phone" style="margin-right:6px;"></i> +243 973 510 555 &nbsp;|&nbsp; <i class="fas fa-envelope" style="margin-right:6px;"></i> contact@csletremplin.com</div>
-        <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-        </div>
-    </div>
-
-    <div class="header-main">
-        <div class="logo">
-            <img src="https://www.netubex.com/tremplin.png" alt="Logo CS Le Tremplin">
-            <h1>CS <span>LE TREMPLIN</span></h1>
-        </div>
-        <div class="nav-main">
-            <a href="#" class="active">Accueil</a>
-            <a href="#">À propos</a>
-            <a href="#">Niveaux</a>
-            <a href="#">Promoteur</a>
-            <a href="#">Contact</a>
-            <a href="#" class="btn-nav"><i class="fas fa-user-plus" style="margin-right:6px;"></i> Inscription</a>
-        </div>
-    </div>
-
-    <div class="hero-section">
-        <div>
-            <div class="badge-school"><i class="fas fa-graduation-cap" style="margin-right:6px;"></i> École d'excellence</div>
-            <h2>L’excellence <i>commence ici</i></h2>
-            <p>Au Complexe Scolaire Le Tremplin, nous formons des esprits critiques, des citoyens responsables et des leaders de demain. Notre approche allie rigueur académique, éducation aux valeurs et accompagnement personnalisé pour révéler le potentiel unique de chaque élève.</p>
-            <div class="hero-buttons">
-                <a href="#" class="btn-primary"><i class="fas fa-school"></i> Découvrir l'école</a>
-                <a href="#" class="btn-outline"><i class="fas fa-arrow-right"></i> Nous contacter</a>
-            </div>
-        </div>
-        <div class="hero-stats">
-            <div class="stat-row"><span class="label">📚 Maternelle</span><span class="value">3–5 ans</span></div>
-            <div class="stat-row"><span class="label">📖 Primaire</span><span class="value">6–11 ans</span></div>
-            <div class="stat-row"><span class="label">🎓 Secondaire</span><span class="value">12–18 ans</span></div>
-            <div class="stat-row"><span class="label">👨‍🏫 Encadrement</span><span class="value">Suivi personnalisé</span></div>
-            <div class="stat-row"><span class="label">⭐ Valeurs</span><span class="value">Travail · Discipline · Réussite</span></div>
-        </div>
-    </div>
-
-    <div class="section-title"><i class="fas fa-flag"></i> NOTRE MISSION</div>
-    <p class="section-sub">Révéler le potentiel de chaque élève et lui donner les connaissances, les compétences et les valeurs nécessaires pour construire un avenir solide et prometteur. De la maternelle au secondaire, nous accompagnons chaque élève dans son parcours scolaire en favorisant :</p>
-    <ul class="check-grid">
-        <li><i class="fas fa-check-circle"></i> L'excellence académique</li>
-        <li><i class="fas fa-check-circle"></i> L'autonomie</li>
-        <li><i class="fas fa-check-circle"></i> La confiance en soi</li>
-        <li><i class="fas fa-check-circle"></i> La responsabilité</li>
-        <li><i class="fas fa-check-circle"></i> La persévérance</li>
-        <li><i class="fas fa-check-circle"></i> Le goût de l'effort</li>
-    </ul>
-
-    <div class="section-title"><i class="fas fa-layer-group"></i> NOS NIVEAUX D'ENSEIGNEMENT</div>
-    <div class="grid-3">
-        <div class="card"><h3><i class="fas fa-child"></i> MATERNELLE</h3><p>Les premières bases pour bien commencer. Un environnement doux et stimulant pour éveiller la curiosité.</p><span class="tag">3-5 ans</span></div>
-        <div class="card"><h3><i class="fas fa-book-open"></i> PRIMAIRE</h3><p>Apprendre, comprendre et développer ses capacités. Des fondamentaux solides pour construire la réussite.</p><span class="tag">6-11 ans</span></div>
-        <div class="card"><h3><i class="fas fa-user-graduate"></i> SECONDAIRE</h3><p>Se préparer aux défis académiques et à l'avenir. Une formation complète pour devenir un citoyen éclairé.</p><span class="tag">12-18 ans</span></div>
-    </div>
-
-    <div class="section-title"><i class="fas fa-microchip"></i> SYSTÈME DE SUIVI INTELLIGENT</div>
-    <div class="grid-2" style="padding-bottom:8px;">
-        <div class="card" style="grid-column:1/3;background:linear-gradient(145deg,#f0f6fa,#e4edf5);border-color:#d0dce8;">
-            <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:12px;">
-                <i class="fas fa-mobile-alt" style="font-size:2.5rem;color:#1a3a5c;"></i>
-                <div><h3 style="font-size:1.2rem;">📱 ESPACE PARENTAL CONNECTÉ</h3><p style="color:#4a5a6a;font-size:0.9rem;">Développé par <strong style="color:#1a3a5c;">NeTubeX Sarl</strong></p></div>
-            </div>
-            <p style="margin-bottom:14px;">Le Complexe Scolaire Le Tremplin met à disposition des parents un système de suivi intelligent pour accompagner la scolarité de leurs enfants.</p>
-            <div style="background:#ffffff;border-radius:16px;padding:16px;border:1px solid #eef2f5;margin-bottom:14px;">
-                <p style="font-weight:600;margin-bottom:6px;"><i class="fas fa-key" style="color:#1a3a5c;margin-right:8px;"></i> Accès sécurisé par code parent</p>
-                <p style="font-size:0.9rem;color:#4a5a6a;">Chaque parent reçoit un code personnel à 4 ou 6 chiffres lui permettant de consulter en temps réel les informations de son ou ses enfants.</p>
-            </div>
-            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
-                <div style="background:#ffffff;border-radius:14px;padding:14px;text-align:center;border:1px solid #eef2f5;"><i class="fas fa-coins" style="color:#1a3a5c;font-size:1.4rem;display:block;margin-bottom:4px;"></i><h4 style="font-size:0.8rem;font-weight:700;">Situation financière</h4><p style="font-size:0.75rem;color:#4a5a6a;">Minerval, paiements, solde</p></div>
-                <div style="background:#ffffff;border-radius:14px;padding:14px;text-align:center;border:1px solid #eef2f5;"><i class="fas fa-graduation-cap" style="color:#1a3a5c;font-size:1.4rem;display:block;margin-bottom:4px;"></i><h4 style="font-size:0.8rem;font-weight:700;">Notes et résultats</h4><p style="font-size:0.75rem;color:#4a5a6a;">Notes, épreuves, devoirs</p></div>
-                <div style="background:#ffffff;border-radius:14px;padding:14px;text-align:center;border:1px solid #eef2f5;"><i class="fas fa-user-check" style="color:#1a3a5c;font-size:1.4rem;display:block;margin-bottom:4px;"></i><h4 style="font-size:0.8rem;font-weight:700;">Présences</h4><p style="font-size:0.75rem;color:#4a5a6a;">Présence, retards, absences</p></div>
-                <div style="background:#ffffff;border-radius:14px;padding:14px;text-align:center;border:1px solid #eef2f5;"><i class="fas fa-calendar-alt" style="color:#1a3a5c;font-size:1.4rem;display:block;margin-bottom:4px;"></i><h4 style="font-size:0.8rem;font-weight:700;">Emploi du temps</h4><p style="font-size:0.75rem;color:#4a5a6a;">Planning des cours</p></div>
-                <div style="background:#ffffff;border-radius:14px;padding:14px;text-align:center;border:1px solid #eef2f5;"><i class="fas fa-bullhorn" style="color:#1a3a5c;font-size:1.4rem;display:block;margin-bottom:4px;"></i><h4 style="font-size:0.8rem;font-weight:700;">Communiqués</h4><p style="font-size:0.75rem;color:#4a5a6a;">Messages, actualités</p></div>
-                <div style="background:#ffffff;border-radius:14px;padding:14px;text-align:center;border:1px solid #eef2f5;"><i class="fas fa-lock" style="color:#1a3a5c;font-size:1.4rem;display:block;margin-bottom:4px;"></i><h4 style="font-size:0.8rem;font-weight:700;">Sécurité</h4><p style="font-size:0.75rem;color:#4a5a6a;">Données chiffrées</p></div>
-            </div>
-            <div style="margin-top:14px;background:#ffffff;border-radius:14px;padding:14px 18px;border-left:4px solid #1a3a5c;">
-                <p style="font-size:0.9rem;color:#1a2b3e;"><i class="fas fa-phone" style="color:#1a3a5c;margin-right:8px;"></i> <strong>Pour obtenir votre code parent :</strong> Contactez la comptabilité — <strong>+243 973 510 555</strong> ou <strong>contact@csletremplin.com</strong></p>
-            </div>
-            <div style="text-align:center;margin-top:16px;">
-                <a href="#" class="btn-primary" style="background:#1a3a5c;color:#fff;padding:12px 36px;"><i class="fas fa-sign-in-alt" style="margin-right:8px;"></i> Accéder à l'espace parent</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="section-title"><i class="fas fa-question-circle"></i> POURQUOI LE TREMPLIN ?</div>
-    <div class="grid-2">
-        <div class="card"><h3><i class="fas fa-star"></i> UNE ÉDUCATION DE QUALITÉ</h3><p>Un enseignement structuré pour favoriser la progression et la réussite de chaque élève.</p></div>
-        <div class="card"><h3><i class="fas fa-users"></i> UN ENCADREMENT RIGOUREUX</h3><p>Un suivi attentif permettant d'identifier les besoins de chaque élève et de l'accompagner efficacement.</p></div>
-        <div class="card"><h3><i class="fas fa-gavel"></i> UN CADRE DISCIPLINAIRE</h3><p>Un environnement fondé sur le respect, la responsabilité, la ponctualité et la rigueur.</p></div>
-        <div class="card"><h3><i class="fas fa-cogs"></i> UNE FORMATION COMPLÈTE</h3><p>Au-delà des connaissances scolaires, nous développons le caractère, l'autonomie et les compétences de vie.</p></div>
-        <div class="card" style="grid-column:1/3;"><h3><i class="fas fa-rocket"></i> UNE VISION TOURNÉE VERS L'AVENIR</h3><p>Préparer chaque élève à devenir un acteur responsable, compétent et ambitieux de la société.</p></div>
-    </div>
-
-    <div class="section-title"><i class="fas fa-columns"></i> NOS 3 PILIERS</div>
-    <div class="pillar-grid">
-        <div class="pillar-card"><i class="fas fa-hammer"></i><h3>TRAVAIL</h3><p>L'effort qui construit l'excellence. Nous cultivons la persévérance, la rigueur et le goût du travail bien fait.</p></div>
-        <div class="pillar-card"><i class="fas fa-balance-scale"></i><h3>DISCIPLINE</h3><p>Les valeurs qui construisent le caractère. Respect, responsabilité, ponctualité et rigueur.</p></div>
-        <div class="pillar-card"><i class="fas fa-trophy"></i><h3>RÉUSSITE</h3><p>L'ambition de dépasser ses limites. La réussite se construit à travers les connaissances, les compétences et la confiance en soi.</p></div>
-    </div>
-
-    <div class="section-title"><i class="fas fa-handshake"></i> NOTRE ENGAGEMENT</div>
-    <p style="font-size:1.05rem;line-height:1.8;color:#1a2b3e;max-width:850px;padding:0 5% 24px 5%;text-align:center;margin:0 auto;">
-        Chaque enfant possède un potentiel unique. Notre engagement est de créer les conditions nécessaires pour que ce potentiel puisse s'exprimer, progresser et se transformer en réussite.<br><br>
-        <strong style="color:#1a3a5c;">AU CS LE TREMPLIN :</strong><br>
-        Nous enseignons avec exigence. Nous accompagnons avec attention. Nous éduquons avec des valeurs. Nous préparons avec ambition.
-    </p>
-
-    <div class="section-title"><i class="fas fa-images"></i> LA VIE AU CS LE TREMPLIN</div>
-    <p style="font-size:0.95rem;color:#4a5a6a;padding:0 5% 12px 5%;">Découvrez un environnement où les élèves apprennent, échangent, participent et grandissent ensemble.</p>
-    <div class="gallery-grid">
-        <div class="gallery-item"><i class="fas fa-chalkboard-teacher"></i> Classes</div>
-        <div class="gallery-item"><i class="fas fa-users"></i> Élèves</div>
-        <div class="gallery-item"><i class="fas fa-user-tie"></i> Enseignants</div>
-        <div class="gallery-item"><i class="fas fa-running"></i> Activités</div>
-        <div class="gallery-item"><i class="fas fa-building"></i> Établissement</div>
-    </div>
-
-    <div class="section-title"><i class="fas fa-heart"></i> UN MOT AUX PARENTS</div>
-    <div class="parent-message">
-        <p>Choisir une école, c'est choisir une partie de l'avenir de son enfant. Au Complexe Scolaire Le Tremplin, nous travaillons chaque jour pour offrir aux élèves un environnement dans lequel ils peuvent apprendre, progresser et croire en leurs capacités. Parce que chaque enfant mérite une éducation qui lui ouvre les portes de l'avenir.</p>
-        <div class="signature"><i class="fas fa-quote-left" style="opacity:0.3;margin-right:6px;"></i> L'équipe du CS Le Tremplin</div>
-    </div>
-
-    <div class="section-title"><i class="fas fa-forward"></i> PRÊT POUR L'AVENIR ?</div>
-    <p style="text-align:center;font-size:1.1rem;font-weight:600;color:#1a2b3e;padding:0 5% 8px 5%;">L'avenir de votre enfant commence aujourd'hui.</p>
-    <p style="text-align:center;color:#4a5a6a;max-width:600px;margin:0 auto 24px;padding:0 5%;">Donnez-lui un environnement où le travail, la discipline et l'ambition deviennent les fondations de sa réussite.</p>
-    <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;padding:0 5% 32px 5%;">
-        <a href="#" class="btn-primary" style="background:#1a3a5c;color:#fff;"><i class="fas fa-school" style="margin-right:8px;"></i> Visiter l'école</a>
-        <a href="#" class="btn-outline" style="color:#1a3a5c;border-color:#1a3a5c;"><i class="fas fa-envelope" style="margin-right:8px;"></i> Nous écrire</a>
-    </div>
-
-    <div class="section-title"><i class="fas fa-address-card"></i> CONTACT</div>
-    <div class="contact-section">
-        <div>
-            <div style="font-weight:700;font-size:1.2rem;color:#1a2b3e;margin-bottom:8px;">COMPLEXE SCOLAIRE LE TREMPLIN</div>
-            <div class="contact-item"><i class="fas fa-phone-alt"></i><span>+243 973 510 555</span></div>
-            <div class="contact-item"><i class="fas fa-envelope"></i><span>contact@csletremplin.com</span></div>
-            <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>Kasumbalesa, Haut-Katanga<br>République Démocratique du Congo</span></div>
-        </div>
-        <div class="contact-side">
-            <div class="motto">TRAVAIL • DISCIPLINE • RÉUSSITE</div>
-            <div style="margin-top:8px;color:#4a5a6a;font-size:0.85rem;">© CS LE TREMPLIN</div>
-        </div>
-    </div>
-
-    <div class="footer">
-        <div class="inner">
-            <div>
-                <h4>CS LE TREMPLIN</h4>
-                <p style="font-size:0.9rem;line-height:1.6;max-width:300px;">Une école d'excellence à Kasumbalesa, formant les leaders de demain dans un cadre exigeant et bienveillant.</p>
-            </div>
-            <div>
-                <h4>Liens rapides</h4>
-                <a href="#">Accueil</a>
-                <a href="#">À propos</a>
-                <a href="#">Niveaux</a>
-                <a href="#">Contact</a>
-            </div>
-            <div>
-                <h4>Contact</h4>
-                <a href="#"><i class="fas fa-phone" style="margin-right:6px;"></i> +243 973 510 555</a>
-                <a href="#"><i class="fas fa-envelope" style="margin-right:6px;"></i> contact@csletremplin.com</a>
-                <a href="#"><i class="fas fa-map-marker-alt" style="margin-right:6px;"></i> Kasumbalesa, RDC</a>
-            </div>
-        </div>
-        <div class="copy">© 2026 Complexe Scolaire Le Tremplin — Tous droits réservés</div>
-    </div>
-
-</div>
-</body>
-</html>
+        @media(max-width:768px){.header-main{flex-direction:column;gap:12px;align-items:flex-start}.nav-main{gap:1rem;flex-wrap:wrap}.grid-3{grid-template-columns:1fr}.grid-2{grid-template-columns:1fr}.pillar-grid{grid-template-columns:1fr}.gallery-grid{grid-template-columns:repeat(3,1fr)}.contact-section{
