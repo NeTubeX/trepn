@@ -104,6 +104,9 @@
         .btn-espace:active{transform:scale(0.96)}
         .btn-espace i{font-size:1.4rem}
         .btn-espace-wrapper{text-align:center;padding:10px 5% 24px 5%}
+        .btn-niveaux{display:inline-flex;align-items:center;gap:12px;background:#1a3a5c;color:#fff;padding:14px 40px;border-radius:50px;font-weight:700;font-size:1rem;text-decoration:none;transition:all 0.4s cubic-bezier(0.25,0.46,0.45,0.94);border:none;cursor:pointer;box-shadow:0 4px 20px rgba(26,58,92,0.25)}
+        .btn-niveaux:hover{background:#0a1a2a;transform:translateY(-4px) scale(1.03);box-shadow:0 12px 32px rgba(26,58,92,0.35)}
+        .btn-niveaux i{font-size:1.1rem}
         .fade-in{opacity:0;transform:translateY(40px);transition:all 0.9s cubic-bezier(0.25,0.46,0.45,0.94)}
         .fade-in.visible{opacity:1;transform:translateY(0)}
         .fade-in-left{opacity:0;transform:translateX(-50px);transition:all 0.9s cubic-bezier(0.25,0.46,0.45,0.94)}
@@ -199,6 +202,7 @@
         <div class="nav-main">
             <a href="#" class="active">Accueil</a>
             <a href="https://www.cstremplin.com/about">À propos</a>
+            <a href="niveaux.html">Niveaux</a>
         </div>
     </div>
     <div class="hero-section">
@@ -207,7 +211,8 @@
             <h2>L'excellence <i>commence ici</i></h2>
             <p>Au Complexe Scolaire Le Tremplin, nous formons des esprits critiques, des citoyens responsables et des leaders de demain. Notre approche allie rigueur académique, éducation aux valeurs et accompagnement personnalisé pour révéler le potentiel unique de chaque élève.</p>
             <div class="hero-buttons">
-                <a href="#" class="btn-primary" id="btnDecouvrir"><i class="fas fa-school"></i> Découvrir l'école</a>
+                <a href="decouvir.html" class="btn-primary"><i class="fas fa-school"></i> Découvrir l'école</a>
+                <a href="niveaux.html" class="btn-outline" style="color:#fff;border-color:rgba(255,255,255,0.6);"><i class="fas fa-layer-group"></i> Voir les niveaux</a>
             </div>
         </div>
         <div class="hero-stats fade-in-right">
@@ -255,6 +260,9 @@
         <div class="card fade-in-rotate"><h3><i class="fas fa-child"></i> MATERNELLE</h3><p>Les premières bases pour bien commencer. Un environnement doux et stimulant pour éveiller la curiosité.</p><span class="tag">3-5 ans</span></div>
         <div class="card fade-in-rotate"><h3><i class="fas fa-book-open"></i> PRIMAIRE</h3><p>Apprendre, comprendre et développer ses capacités. Des fondamentaux solides pour construire la réussite.</p><span class="tag">6-11 ans</span></div>
         <div class="card fade-in-rotate"><h3><i class="fas fa-user-graduate"></i> SECONDAIRE</h3><p>Se préparer aux défis académiques et à l'avenir. Une formation complète pour devenir un citoyen éclairé.</p><span class="tag">12-18 ans</span></div>
+    </div>
+    <div style="text-align:center;padding:0 5% 36px 5%;">
+        <a href="niveaux.html" class="btn-niveaux"><i class="fas fa-arrow-right"></i> Découvrir tous les niveaux</a>
     </div>
     <div class="section-title fade-in"><i class="fas fa-microchip"></i> SYSTÈME DE SUIVI INTELLIGENT</div>
     <div class="systeme-card fade-in-scale">
@@ -366,6 +374,7 @@
                 <h4>Liens rapides</h4>
                 <a href="#">Accueil</a>
                 <a href="https://www.cstremplin.com/about">À propos</a>
+                <a href="niveaux.html">Niveaux</a>
             </div>
             <div>
                 <h4>Contact</h4>
@@ -374,39 +383,6 @@
             </div>
         </div>
         <div class="copy">© 2026 Complexe Scolaire Le Tremplin — Tous droits réservés</div>
-    </div>
-</div>
-
-<div class="popup-overlay" id="popupEcole">
-    <div class="popup-ecole">
-        <i class="fas fa-school popup-icon"></i>
-        <h2>COMPLEXE SCOLAIRE LE TREMPLIN</h2>
-        <div class="sous-titre-popup">Une éducation d'excellence à Kasumbalesa</div>
-        <div class="info-item">
-            <i class="fas fa-calendar-alt"></i>
-            <div><span class="label">Fondation</span><br><span class="value">Établissement d'enseignement général</span></div>
-        </div>
-        <div class="info-item">
-            <i class="fas fa-map-marker-alt"></i>
-            <div><span class="label">Localisation</span><br><span class="value">Kasumbalesa, Haut-Katanga<br>République Démocratique du Congo</span></div>
-        </div>
-        <div class="info-item">
-            <i class="fas fa-child"></i>
-            <div><span class="label">Niveaux</span><br><span class="value">Maternelle (3-5 ans) · Primaire (6-11 ans) · Secondaire (12-18 ans)</span></div>
-        </div>
-        <div class="info-item">
-            <i class="fas fa-star"></i>
-            <div><span class="label">Valeurs</span><br><span class="value">Travail · Discipline · Réussite</span></div>
-        </div>
-        <div class="info-item">
-            <i class="fas fa-users"></i>
-            <div><span class="label">Encadrement</span><br><span class="value">Suivi personnalisé et accompagnement individualisé</span></div>
-        </div>
-        <div class="info-item">
-            <i class="fas fa-graduation-cap"></i>
-            <div><span class="label">Objectif</span><br><span class="value">Former des leaders responsables et ambitieux</span></div>
-        </div>
-        <button class="btn-close-popup" id="closePopupEcole"><i class="fas fa-check-circle" style="margin-right:10px;"></i> J'ai compris</button>
     </div>
 </div>
 
@@ -427,7 +403,7 @@
 </div>
 <script>
     document.addEventListener('contextmenu', function(e) {
-        if (!e.target.closest('.popup-overlay') && !e.target.closest('.popup-box') && !e.target.closest('.popup-ecole')) {
+        if (!e.target.closest('.popup-overlay') && !e.target.closest('.popup-box')) {
             e.preventDefault();
         }
         return false;
@@ -454,10 +430,6 @@
             return false;
         }
         if (e.key === 'Escape') {
-            if (document.getElementById('popupEcole').classList.contains('active')) {
-                document.getElementById('popupEcole').classList.remove('active');
-                document.body.style.overflow = '';
-            }
             if (document.getElementById('popupOverlay').classList.contains('active')) {
                 document.getElementById('popupOverlay').classList.remove('active');
                 document.body.style.overflow = '';
@@ -495,32 +467,6 @@
                 }
             });
         }, 150);
-    });
-
-    var btnDecouvrir = document.getElementById('btnDecouvrir');
-    var popupEcole = document.getElementById('popupEcole');
-    var closePopupEcole = document.getElementById('closePopupEcole');
-    if (btnDecouvrir) {
-        btnDecouvrir.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            popupEcole.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-    }
-    if (closePopupEcole) {
-        closePopupEcole.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            popupEcole.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-    }
-    popupEcole.addEventListener('click', function(e) {
-        if (e.target === popupEcole) {
-            popupEcole.classList.remove('active');
-            document.body.style.overflow = '';
-        }
     });
 
     var espaceBtn = document.getElementById('espaceParent');
