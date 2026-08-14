@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>KASHIBA ABEDI Oscar — Promoteur du Complexe Scolaire Le Tremplin</title>
-    <meta name="description" content="Découvrez le profil de Monsieur Oscar KASHIBA ABEDI, promoteur et fondateur du Complexe Scolaire Le Tremplin à Kasumbalesa. Un éducateur visionnaire engagé pour l'excellence.">
+    <meta name="description" content="Découvrez le profil de Monsieur Oscar KASHIBA ABEDI, promoteur et fondateur du Complexe Scolaire Le Tremplin à Kasumbalesa. Un éducateur visionnaire engagé pour l'excellence scolaire.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://cstremplin.com/promoteur">
     <link rel="icon" type="image/jpeg" href="https://www.cstremplin.com/favicon.jpg">
@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
-        html,body{overflow-x:hidden;width:100%;background:#f0f2f5}
+        html,body{overflow-x:hidden;width:100%;background:#f0f2f5;user-select:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none}
         .page{max-width:1200px;margin:0 auto;background:#ffffff;min-height:100vh}
         
         .profile-hero{background:linear-gradient(145deg,#8B0000 0%,#cc0000 40%,#0a1a2a 70%,#1a3a5c 100%);padding:70px 5% 60px;color:#fff;text-align:center;position:relative;overflow:hidden}
@@ -47,6 +47,17 @@
         .profile-section .info-grid .info-item .info-content h4{font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;color:#6a8aa0}
         .profile-section .info-grid .info-item .info-content p{font-size:1rem;font-weight:600;color:#0a1a2a;margin:0}
         
+        .profile-section .logo-block{background:linear-gradient(145deg,#ffffff,#f5f7fa);border-radius:24px;padding:28px 36px;border:2px dashed #cc8888;text-align:center;margin:24px 0 18px;transition:all 0.3s}
+        .profile-section .logo-block:hover{border-color:#8B0000;box-shadow:0 8px 30px rgba(139,0,0,0.08)}
+        .profile-section .logo-block .logo-title{font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#6a8aa0;margin-bottom:14px}
+        .profile-section .logo-block .logo-title i{color:#8B0000;margin-right:8px}
+        .profile-section .logo-block .logo-display{display:flex;align-items:center;justify-content:center;gap:30px;flex-wrap:wrap}
+        .profile-section .logo-block .logo-display img{height:80px;width:auto;border-radius:16px;background:rgba(255,255,255,0.9);padding:8px 16px;box-shadow:0 4px 16px rgba(0,0,0,0.06);border:1px solid #eef2f5;transition:transform 0.3s}
+        .profile-section .logo-block .logo-display img:hover{transform:scale(1.05)}
+        .profile-section .logo-block .logo-display .logo-text{font-size:1.1rem;font-weight:700;color:#0a1a2a}
+        .profile-section .logo-block .logo-display .logo-text span{color:#8B0000}
+        .profile-section .logo-block .logo-display .logo-text .sub{display:block;font-weight:400;font-size:0.85rem;color:#4a5a6a;margin-top:4px}
+        
         .profile-section .values-mini{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:30px 0 10px}
         .profile-section .values-mini .v-item{background:#ffffff;border-radius:18px;padding:20px 16px;text-align:center;border:1px solid #eef2f5;transition:all 0.3s}
         .profile-section .values-mini .v-item:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(139,0,0,0.06);border-color:#cc8888}
@@ -75,8 +86,8 @@
         .fade-in{opacity:0;transform:translateY(30px);transition:all 0.9s cubic-bezier(0.25,0.46,0.45,0.94)}
         .fade-in.visible{opacity:1;transform:translateY(0)}
         
-        @media(max-width:768px){.profile-hero{padding:60px 5% 50px}.profile-hero h1{font-size:2.4rem}.profile-hero p{font-size:1rem}.profile-section{padding:30px 5%}.profile-section .bio-block{padding:28px 22px}.profile-section .info-grid{grid-template-columns:1fr}.profile-section .values-mini{grid-template-columns:1fr 1fr}.btn-action{padding:16px 36px;font-size:1rem;width:100%;justify-content:center}}
-        @media(max-width:480px){.profile-hero h1{font-size:1.8rem}.profile-hero .date-creation{font-size:0.75rem;padding:8px 16px}.profile-hero .avatar{width:100px;height:100px}.profile-section .bio-block p{font-size:0.98rem}.profile-section .values-mini{grid-template-columns:1fr}.profile-section .signature-block .name{font-size:1.3rem}.btn-action{padding:14px 28px;font-size:0.95rem}}
+        @media(max-width:768px){.profile-hero{padding:60px 5% 50px}.profile-hero h1{font-size:2.4rem}.profile-hero p{font-size:1rem}.profile-section{padding:30px 5%}.profile-section .bio-block{padding:28px 22px}.profile-section .info-grid{grid-template-columns:1fr}.profile-section .values-mini{grid-template-columns:1fr 1fr}.profile-section .logo-block .logo-display{flex-direction:column;gap:12px}.profile-section .logo-block .logo-display img{height:60px}.btn-action{padding:16px 36px;font-size:1rem;width:100%;justify-content:center}}
+        @media(max-width:480px){.profile-hero h1{font-size:1.8rem}.profile-hero .date-creation{font-size:0.75rem;padding:8px 16px}.profile-hero .avatar{width:100px;height:100px}.profile-section .bio-block p{font-size:0.98rem}.profile-section .values-mini{grid-template-columns:1fr}.profile-section .signature-block .name{font-size:1.3rem}.profile-section .logo-block{padding:20px 16px}.btn-action{padding:14px 28px;font-size:0.95rem}}
     </style>
 </head>
 <body>
@@ -93,15 +104,26 @@
     <div class="profile-section">
         <div class="fade-in bio-block">
             <div class="section-title"><i class="fas fa-user-circle"></i> Biographie</div>
-            <p><strong>KASHIBA ABEDI Oscar</strong> est un éducateur passionné et un visionnaire engagé pour l'excellence éducative. Fort d'une conviction profonde que l'éducation est le socle de tout développement durable, il a fondé en <strong>2022</strong> le <strong>Complexe Scolaire Le Tremplin</strong> à Kasumbalesa.</p>
+            <p><strong>KASHIBA ABEDI Oscar</strong> est un éducateur passionné et un visionnaire engagé pour l'excellence scolaire. Fort d'une conviction profonde que l'éducation est le socle de tout développement durable, il a fondé en <strong>2022</strong> le <strong>Complexe Scolaire Le Tremplin</strong> à Kasumbalesa.</p>
             
             <div class="highlight-quote">
                 <i class="fas fa-quote-left"></i> Chaque enfant porte en lui un potentiel immense. Notre mission est de créer les conditions pour qu'il puisse s'épanouir, apprendre et devenir un acteur responsable de la société.
             </div>
             
-            <p>À travers cette institution, <strong>Monsieur Oscar</strong> incarne une vision éducative qui allie rigueur académique, éducation aux valeurs et accompagnement personnalisé. Son engagement repose sur trois piliers fondamentaux : le <strong>travail</strong>, la <strong>discipline</strong> et la <strong>réussite</strong>.</p>
+            <p>À travers cette institution, <strong>Monsieur Oscar</strong> incarne une vision éducative qui allie rigueur scolaire, éducation aux valeurs et accompagnement personnalisé. Son engagement repose sur trois piliers fondamentaux : le <strong>travail</strong>, la <strong>discipline</strong> et la <strong>réussite</strong>.</p>
             
             <p>Reconnu pour son dévouement et sa bienveillance, il suit de près le parcours de chaque élève, veillant à ce que chacun puisse développer ses talents et construire un avenir prometteur. Son leadership a fait du CS Le Tremplin une référence en matière d'éducation à Kasumbalesa.</p>
+            
+            <div class="logo-block fade-in">
+                <div class="logo-title"><i class="fas fa-school"></i> L'emblème du Complexe Scolaire Le Tremplin</div>
+                <div class="logo-display">
+                    <img src="tremplin.png" alt="Logo du Complexe Scolaire Le Tremplin" loading="lazy">
+                    <div class="logo-text">
+                        Complexe Scolaire <span>Le Tremplin</span>
+                        <span class="sub"><i class="fas fa-map-marker-alt" style="color:#8B0000;margin-right:4px;"></i> Kasumbalesa — Éducation d'excellence</span>
+                    </div>
+                </div>
+            </div>
             
             <div class="info-grid">
                 <div class="info-item">
@@ -159,6 +181,9 @@
 
 <script>
     document.addEventListener('DOMContentLoaded',function(){var e=document.querySelectorAll('.fade-in');var t=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible')}})},{threshold:0.15,rootMargin:'0px 0px -30px 0px'});e.forEach(function(e){t.observe(e)});setTimeout(function(){e.forEach(function(e){if(e.getBoundingClientRect().top<window.innerHeight){e.classList.add('visible')}})},150)});
+    
+    document.addEventListener('contextmenu', function(e){e.preventDefault();return false});
+    document.addEventListener('keydown', function(e){if(e.keyCode==123||(e.ctrlKey&&e.shiftKey&&(e.keyCode==73||e.keyCode==74||e.keyCode==67))||(e.ctrlKey&&e.keyCode==85)){e.preventDefault();return false}});
 </script>
 </body>
 </html>
