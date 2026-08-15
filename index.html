@@ -24,9 +24,11 @@
         .logo img:hover{transform:scale(1.05) rotate(-2deg)}
         .logo h1{font-size:2.4rem;font-weight:900;color:#0a1a2a;letter-spacing:-0.5px;text-shadow:0 2px 4px rgba(0,0,0,0.04)}
         .logo h1 span{font-weight:700;color:#cc3333}
-        .nav-main{display:flex;gap:2.2rem;align-items:center;flex-wrap:wrap}
+        .nav-main{display:flex;gap:1.8rem;align-items:center;flex-wrap:wrap}
         .nav-main a{color:#1a2b3e;text-decoration:none;font-weight:600;font-size:1rem;padding:6px 0;border-bottom:3px solid transparent;transition:0.3s}
         .nav-main a:hover,.nav-main a.active{border-bottom-color:#cc3333;color:#cc3333;transform:translateY(-2px)}
+        .nav-main .btn-fondateur{background:#cc3333;color:#fff;padding:8px 22px;border-radius:30px;border-bottom:none;font-weight:600;font-size:0.9rem;transition:all 0.3s}
+        .nav-main .btn-fondateur:hover{background:#aa2222;transform:translateY(-2px);color:#fff;border-bottom:none}
         .hero-section{background:linear-gradient(135deg,#0a1a2a 0%,#1a3a5c 50%,#2a5f7a 100%);padding:70px 5% 60px;color:#fff;display:grid;grid-template-columns:1.2fr 0.8fr;gap:50px;align-items:center;position:relative;overflow:hidden}
         .hero-section::before{content:'';position:absolute;top:-50%;right:-20%;width:60%;height:200%;background:radial-gradient(ellipse,rgba(255,255,255,0.04) 0%,transparent 70%);pointer-events:none}
         .hero-section h2{font-size:3.2rem;font-weight:900;line-height:1.1;letter-spacing:-1px;text-shadow:0 4px 20px rgba(0,0,0,0.15)}
@@ -77,6 +79,16 @@
         .vehicle-section{padding:0 5% 36px 5%}
         .vehicle-section img{width:100%;height:auto;max-height:400px;object-fit:cover;border-radius:20px;box-shadow:0 4px 20px rgba(0,0,0,0.06);transition:all 0.5s cubic-bezier(0.25,0.46,0.45,0.94);border:2px solid #cc3333}
         .vehicle-section img:hover{transform:perspective(800px) rotateX(2deg) translateY(-6px) scale(1.01);box-shadow:0 16px 40px rgba(204,51,51,0.10)}
+        .eleves-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:0 5% 36px 5%}
+        .eleves-grid .eleve-item{position:relative;overflow:hidden;border-radius:16px;box-shadow:0 4px 16px rgba(0,0,0,0.06);transition:all 0.5s cubic-bezier(0.25,0.46,0.45,0.94);background:#f8f9fa;aspect-ratio:1/1}
+        .eleves-grid .eleve-item:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 20px 48px rgba(204,51,51,0.12)}
+        .eleves-grid .eleve-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94)}
+        .eleves-grid .eleve-item:hover img{transform:scale(1.05)}
+        .eleves-grid .eleve-item .eleve-overlay{position:absolute;bottom:0;left:0;right:0;padding:20px 16px 16px;background:linear-gradient(transparent,rgba(10,26,42,0.85));color:#fff;opacity:0;transform:translateY(20px);transition:all 0.5s cubic-bezier(0.25,0.46,0.45,0.94)}
+        .eleves-grid .eleve-item:hover .eleve-overlay{opacity:1;transform:translateY(0)}
+        .eleves-grid .eleve-item .eleve-overlay .eleve-nom{font-size:0.9rem;font-weight:700}
+        .eleves-grid .eleve-item .eleve-overlay .eleve-classe{font-size:0.75rem;opacity:0.8}
+        .eleves-grid .img-wide{grid-column:span 2;aspect-ratio:2/1}
         .gallery-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;padding:0 5% 36px 5%}
         .gallery-item{background:linear-gradient(145deg,#f0f4f8,#e4eaf0);border-radius:18px;height:110px;display:flex;align-items:center;justify-content:center;color:#0a1a2a;font-weight:600;font-size:0.9rem;border:1px solid #eef2f5;transition:all 0.4s cubic-bezier(0.25,0.46,0.45,0.94);transform:perspective(600px) rotateX(0deg)}
         .gallery-item i{font-size:2rem;color:#cc3333;margin-right:8px;transition:transform 0.4s}
@@ -146,12 +158,12 @@
         .systeme-box .box-title{font-weight:700;font-size:1.05rem;color:#0a1a2a;margin-bottom:6px;display:flex;align-items:center;gap:10px}
         .systeme-box .box-title i{color:#cc3333;font-size:1.1rem}
         .systeme-box .box-text{font-size:0.95rem;color:#4a5a6a;line-height:1.6}
-        .systeme-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:18px}
+        .systeme-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:18px}
         .systeme-grid-item{background:#ffffff;border-radius:16px;padding:18px 16px;text-align:center;border:1px solid #eef2f5;transition:all 0.4s;transform:perspective(600px) rotateX(0deg)}
         .systeme-grid-item:hover{transform:perspective(600px) rotateX(2deg) translateY(-4px);box-shadow:0 8px 24px rgba(204,51,51,0.05);border-color:#cc8888}
         .systeme-grid-item i{font-size:2rem;color:#cc3333;display:block;margin-bottom:6px}
-        .systeme-grid-item h4{font-size:0.9rem;font-weight:700;color:#0a1a2a}
-        .systeme-grid-item p{font-size:0.8rem;color:#4a5a6a;margin-top:3px}
+        .systeme-grid-item h4{font-size:0.85rem;font-weight:700;color:#0a1a2a}
+        .systeme-grid-item p{font-size:0.75rem;color:#4a5a6a;margin-top:3px}
         .systeme-contact{background:#ffffff;border-radius:16px;padding:16px 20px;border-left:4px solid #cc3333;margin-bottom:18px;display:flex;flex-wrap:wrap;align-items:center;gap:12px}
         .systeme-contact i{color:#cc3333;font-size:1.1rem}
         .systeme-contact strong{color:#0a1a2a}
@@ -159,21 +171,24 @@
         .systeme-btn-wrapper{text-align:center;padding-top:6px}
         .popup-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);backdrop-filter:blur(8px);z-index:9999;justify-content:center;align-items:center}
         .popup-overlay.active{display:flex}
-        .popup-box{background:linear-gradient(145deg,#ffffff,#f5f7fa);border-radius:28px;padding:40px 48px;max-width:500px;width:92%;text-align:center;box-shadow:0 40px 80px rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.15);position:relative;transform:scale(0.95) translateY(20px);transition:all 0.7s cubic-bezier(0.34,1.56,0.64,1)}
+        .popup-box{background:linear-gradient(145deg,#ffffff,#f5f7fa);border-radius:28px;padding:40px 48px;max-width:520px;width:92%;text-align:center;box-shadow:0 40px 80px rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.15);position:relative;transform:scale(0.95) translateY(20px);transition:all 0.7s cubic-bezier(0.34,1.56,0.64,1)}
         .popup-overlay.active .popup-box{transform:scale(1) translateY(0)}
-        .popup-box .popup-icon{font-size:4rem;color:#cc3333;margin-bottom:12px;display:block}
-        .popup-box .badge-coming{display:inline-block;background:linear-gradient(135deg,#1a3a5c,#2a5f7a);color:#fff;padding:4px 20px;border-radius:30px;font-size:0.7rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px}
-        .popup-box h2{font-size:1.5rem;font-weight:800;color:#0a1a2a;margin-bottom:8px}
-        .popup-box .sub-text{font-size:0.95rem;color:#4a5a6a;margin-bottom:20px;line-height:1.5}
-        .popup-box .countdown{display:flex;justify-content:center;gap:12px;margin-bottom:24px}
+        .popup-box .popup-icon{font-size:3.5rem;color:#cc3333;margin-bottom:8px;display:block}
+        .popup-box .badge-coming{display:inline-block;background:linear-gradient(135deg,#1a3a5c,#2a5f7a);color:#fff;padding:4px 20px;border-radius:30px;font-size:0.7rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px}
+        .popup-box h2{font-size:1.5rem;font-weight:800;color:#0a1a2a;margin-bottom:6px}
+        .popup-box .sub-text{font-size:1rem;color:#0a1a2a;margin-bottom:4px;line-height:1.5;font-weight:500}
+        .popup-box .sub-text strong{color:#cc3333}
+        .popup-box .sub-text-2{font-size:1.1rem;color:#cc3333;font-weight:700;margin-bottom:16px}
+        .popup-box .countdown{display:flex;justify-content:center;gap:12px;margin-bottom:20px}
         .popup-box .countdown-item{background:#f0f4f8;border-radius:14px;padding:12px 8px;min-width:70px;border:1px solid #e8edf2}
         .popup-box .countdown-item .number{font-size:2.2rem;font-weight:800;color:#0a1a2a;display:block;line-height:1}
         .popup-box .countdown-item .label{font-size:0.65rem;color:#6a8aa0;text-transform:uppercase;font-weight:600;letter-spacing:0.5px;margin-top:4px;display:block}
         .popup-box .btn-close-popup{background:linear-gradient(135deg,#1a3a5c,#2a5f7a);color:#fff;border:none;padding:12px 40px;border-radius:50px;font-weight:700;font-size:0.95rem;cursor:pointer;transition:all 0.3s;box-shadow:0 6px 24px rgba(26,58,92,0.3)}
         .popup-box .btn-close-popup:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 10px 36px rgba(26,58,92,0.4)}
-        @media(max-width:1024px){.hero-section{grid-template-columns:1fr;padding:48px 5% 40px}.hero-section p{max-width:100%}.grid-3{grid-template-columns:1fr 1fr}.pillar-grid{grid-template-columns:1fr 1fr}.pourquoi-grid{grid-template-columns:1fr 1fr}.systeme-grid{grid-template-columns:1fr 1fr}.fullwidth-images{grid-template-columns:1fr 1fr}}
-        @media(max-width:768px){.header-main{flex-direction:column;gap:14px;align-items:flex-start}.nav-main{gap:1rem;flex-wrap:wrap}.grid-3{grid-template-columns:1fr}.grid-2{grid-template-columns:1fr}.pillar-grid{grid-template-columns:1fr}.gallery-grid{grid-template-columns:repeat(3,1fr)}.contact-section{grid-template-columns:1fr}.contact-side{border-left:0;border-top:2px solid #eef2f5;padding-left:0;padding-top:20px}.hero-section h2{font-size:2.2rem}.footer .inner{grid-template-columns:1fr;gap:28px}.logo img{height:70px}.logo h1{font-size:1.6rem}.pourquoi-grid{grid-template-columns:1fr}.pourquoi-card-full{grid-column:1/2}.systeme-card{padding:20px}.systeme-grid{grid-template-columns:1fr 1fr}.systeme-header h3{font-size:1.2rem}.carousel-banner .track img{height:160px}.fullwidth-images{grid-template-columns:1fr}.fullwidth-images img{height:200px}.popup-box{padding:28px 20px}.popup-box h2{font-size:1.2rem}.popup-box .countdown-item{min-width:55px;padding:8px 4px}.popup-box .countdown-item .number{font-size:1.5rem}.btn-espace{padding:14px 32px;font-size:1rem}.vehicle-section img{max-height:250px}}
-        @media(max-width:480px){.gallery-grid{grid-template-columns:1fr 1fr}.check-grid{grid-template-columns:1fr}.hero-buttons .btn-primary,.hero-buttons .btn-outline{width:100%;justify-content:center}.top-bar{flex-direction:column;gap:4px;text-align:center;font-size:0.7rem}.logo h1{font-size:1.3rem}.hero-section h2{font-size:1.8rem}.btn-espace{width:100%;justify-content:center;padding:14px 24px}.systeme-grid{grid-template-columns:1fr}.systeme-card{padding:16px}.carousel-banner .track img{height:120px}.fullwidth-images img{height:160px}.vehicle-section img{max-height:180px}}
+        @media(max-width:768px){.popup-box{padding:28px 20px}.popup-box .countdown-item{min-width:55px;padding:8px 4px}.popup-box .countdown-item .number{font-size:1.5rem}}
+        @media(max-width:1024px){.hero-section{grid-template-columns:1fr;padding:48px 5% 40px}.hero-section p{max-width:100%}.grid-3{grid-template-columns:1fr 1fr}.pillar-grid{grid-template-columns:1fr 1fr}.pourquoi-grid{grid-template-columns:1fr 1fr}.systeme-grid{grid-template-columns:1fr 1fr}.fullwidth-images{grid-template-columns:1fr 1fr}.eleves-grid{grid-template-columns:repeat(2,1fr)}.eleves-grid .img-wide{grid-column:span 1;aspect-ratio:1/1}}
+        @media(max-width:768px){.header-main{flex-direction:column;gap:14px;align-items:flex-start}.nav-main{gap:1rem;flex-wrap:wrap}.grid-3{grid-template-columns:1fr}.grid-2{grid-template-columns:1fr}.pillar-grid{grid-template-columns:1fr}.gallery-grid{grid-template-columns:repeat(3,1fr)}.contact-section{grid-template-columns:1fr}.contact-side{border-left:0;border-top:2px solid #eef2f5;padding-left:0;padding-top:20px}.hero-section h2{font-size:2.2rem}.footer .inner{grid-template-columns:1fr;gap:28px}.logo img{height:70px}.logo h1{font-size:1.6rem}.pourquoi-grid{grid-template-columns:1fr}.pourquoi-card-full{grid-column:1/2}.systeme-card{padding:20px}.systeme-grid{grid-template-columns:1fr 1fr}.systeme-header h3{font-size:1.2rem}.carousel-banner .track img{height:160px}.fullwidth-images{grid-template-columns:1fr}.fullwidth-images img{height:200px}.btn-espace{padding:14px 32px;font-size:1rem}.vehicle-section img{max-height:250px}.eleves-grid{grid-template-columns:1fr 1fr}}
+        @media(max-width:480px){.gallery-grid{grid-template-columns:1fr 1fr}.check-grid{grid-template-columns:1fr}.hero-buttons .btn-primary,.hero-buttons .btn-outline{width:100%;justify-content:center}.top-bar{flex-direction:column;gap:4px;text-align:center;font-size:0.7rem}.logo h1{font-size:1.3rem}.hero-section h2{font-size:1.8rem}.btn-espace{width:100%;justify-content:center;padding:14px 24px}.systeme-grid{grid-template-columns:1fr}.systeme-card{padding:16px}.carousel-banner .track img{height:120px}.fullwidth-images img{height:160px}.vehicle-section img{max-height:180px}.eleves-grid{grid-template-columns:1fr 1fr;gap:10px}}
     </style>
 </head>
 <body>
@@ -195,7 +210,8 @@
             <a href="#" class="active">Accueil</a>
             <a href="https://www.cstremplin.com/about">À propos</a>
             <a href="niveaux.html">Niveaux</a>
-            <a href="fondateur.html">Fondateur</a>
+            <a href="enseignants.html">Enseignants</a>
+            <a href="fondateur.html" class="btn-fondateur"><i class="fas fa-user-tie"></i> Fondateur</a>
         </div>
     </div>
     <div class="hero-section">
@@ -241,6 +257,17 @@
     <div class="vehicle-section fade-in-scale">
         <img src="https://www.cstremplin.com/vehicule.jpg" alt="Véhicule de l'école Le Tremplin">
     </div>
+    <div class="section-title fade-in"><i class="fas fa-users"></i> NOS ÉLÈVES EN ACTION</div>
+    <p class="section-sub fade-in">Découvrez nos élèves, acteurs de leur réussite, dans leur quotidien au sein du Complexe Scolaire Le Tremplin.</p>
+    <div class="eleves-grid fade-in-scale">
+        <div class="eleve-item"><img src="https://www.cstremplin.com/eleve1.jpg" alt="Élève 1"><div class="eleve-overlay"><div class="eleve-nom">Élève</div><div class="eleve-classe">Classe d'excellence</div></div></div>
+        <div class="eleve-item"><img src="https://www.cstremplin.com/eleve2.jpg" alt="Élève 2"><div class="eleve-overlay"><div class="eleve-nom">Élève</div><div class="eleve-classe">Classe d'excellence</div></div></div>
+        <div class="eleve-item"><img src="https://www.cstremplin.com/eleve3.jpg" alt="Élève 3"><div class="eleve-overlay"><div class="eleve-nom">Élève</div><div class="eleve-classe">Classe d'excellence</div></div></div>
+        <div class="eleve-item"><img src="https://www.cstremplin.com/eleve4.jpg" alt="Élève 4"><div class="eleve-overlay"><div class="eleve-nom">Élève</div><div class="eleve-classe">Classe d'excellence</div></div></div>
+        <div class="eleve-item img-wide"><img src="https://www.cstremplin.com/eleve5.jpg" alt="Élève 5"><div class="eleve-overlay"><div class="eleve-nom">Élève</div><div class="eleve-classe">Classe d'excellence</div></div></div>
+        <div class="eleve-item"><img src="https://www.cstremplin.com/eleve6.jpg" alt="Élève 6"><div class="eleve-overlay"><div class="eleve-nom">Élève</div><div class="eleve-classe">Classe d'excellence</div></div></div>
+        <div class="eleve-item"><img src="https://www.cstremplin.com/eleve7.jpg" alt="Élève 7"><div class="eleve-overlay"><div class="eleve-nom">Élève</div><div class="eleve-classe">Classe d'excellence</div></div></div>
+    </div>
     <div class="section-title fade-in"><i class="fas fa-flag"></i> NOTRE MISSION</div>
     <p class="section-sub fade-in">Révéler le potentiel de chaque élève et lui donner les connaissances, les compétences et les valeurs nécessaires pour construire un avenir solide et prometteur. De la maternelle au secondaire, nous accompagnons chaque élève dans son parcours scolaire en favorisant :</p>
     <ul class="check-grid fade-in">
@@ -260,27 +287,25 @@
     <div style="text-align:center;padding:0 5% 36px 5%;">
         <a href="niveaux.html" class="btn-niveaux"><i class="fas fa-arrow-right"></i> Découvrir tous les niveaux</a>
     </div>
-    <div class="section-title fade-in"><i class="fas fa-microchip"></i> SYSTÈME DE SUIVI INTELLIGENT</div>
+    <div class="section-title fade-in"><i class="fas fa-microchip"></i> ESPACE PARENTAL CONNECTÉ</div>
     <div class="systeme-card fade-in-scale">
         <div class="systeme-header">
             <i class="fas fa-mobile-alt icon-big"></i>
             <div>
-                <h3>📱 ESPACE PARENTAL CONNECTÉ</h3>
+                <h3>📱 SUIVI SCOLAIRE EN TEMPS RÉEL</h3>
                 <p class="sous-titre">Développé par <strong>NeTubeX Sarl</strong></p>
             </div>
         </div>
-        <p class="systeme-desc">Le Complexe Scolaire Le Tremplin met à disposition des parents un système de suivi intelligent pour accompagner la scolarité de leurs enfants.</p>
+        <p class="systeme-desc">Le Complexe Scolaire Le Tremplin révolutionne le suivi scolaire en offrant aux parents un système intelligent de supervision en temps réel. Plus besoin d'attendre le bulletin, tout est accessible instantanément.</p>
+        <div class="systeme-grid">
+            <div class="systeme-grid-item"><i class="fas fa-graduation-cap"></i><h4>Notes et résultats</h4><p>Devoirs · Examens · Interrogations · Travaux · Exercices</p></div>
+            <div class="systeme-grid-item"><i class="fas fa-coins"></i><h4>Situation financière</h4><p>Paiements · Dates · Solde restant</p></div>
+            <div class="systeme-grid-item"><i class="fas fa-exclamation-triangle"></i><h4>Punitions</h4><p>Sanctions · Motifs · Dates</p></div>
+            <div class="systeme-grid-item"><i class="fas fa-bullhorn"></i><h4>Communiqués</h4><p>Actualités · Annonces · Informations</p></div>
+        </div>
         <div class="systeme-box">
             <div class="box-title"><i class="fas fa-key"></i> Accès sécurisé par code parent</div>
-            <p class="box-text">Chaque parent reçoit un code personnel à 4 ou 6 chiffres lui permettant de consulter en temps réel les informations de son ou ses enfants.</p>
-        </div>
-        <div class="systeme-grid">
-            <div class="systeme-grid-item"><i class="fas fa-coins"></i><h4>Situation financière</h4><p>Minerval, paiements, solde</p></div>
-            <div class="systeme-grid-item"><i class="fas fa-graduation-cap"></i><h4>Notes et résultats</h4><p>Notes, épreuves, devoirs</p></div>
-            <div class="systeme-grid-item"><i class="fas fa-user-check"></i><h4>Présences</h4><p>Présence, retards, absences</p></div>
-            <div class="systeme-grid-item"><i class="fas fa-calendar-alt"></i><h4>Emploi du temps</h4><p>Planning des cours</p></div>
-            <div class="systeme-grid-item"><i class="fas fa-bullhorn"></i><h4>Communiqués</h4><p>Messages, actualités</p></div>
-            <div class="systeme-grid-item"><i class="fas fa-lock"></i><h4>Sécurité</h4><p>Données chiffrées</p></div>
+            <p class="box-text">Chaque parent reçoit un code personnel confidentiel à 4 ou 6 chiffres lui permettant de consulter en temps réel les informations de son ou ses enfants.</p>
         </div>
         <div class="systeme-contact">
             <i class="fas fa-phone"></i>
@@ -371,6 +396,7 @@
                 <a href="#">Accueil</a>
                 <a href="https://www.cstremplin.com/about">À propos</a>
                 <a href="niveaux.html">Niveaux</a>
+                <a href="enseignants.html">Enseignants</a>
                 <a href="fondateur.html">Fondateur</a>
             </div>
             <div>
@@ -389,6 +415,7 @@
         <span class="badge-coming"><i class="fas fa-clock" style="margin-right:6px;"></i>Bientôt disponible</span>
         <h2>Espace Parental</h2>
         <p class="sub-text">L'espace parental de l'école Tremplin sera disponible le <strong>31 Août 2026</strong></p>
+        <p class="sub-text-2">Hâtez-vous pour inscrire votre enfant.</p>
         <div class="countdown">
             <div class="countdown-item"><span class="number" id="days">00</span><span class="label">Jours</span></div>
             <div class="countdown-item"><span class="number" id="hours">00</span><span class="label">Heures</span></div>
