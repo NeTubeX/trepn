@@ -110,12 +110,16 @@
         .contact-item span{font-weight:500;font-size:1rem}
         .contact-side{border-left:2px solid #eef2f5;padding-left:32px;display:flex;flex-direction:column;justify-content:center}
         .contact-side .motto{font-weight:700;color:#cc3333;font-size:1.2rem;letter-spacing:0.5px}
-        .footer{background:#0a1a2a;color:#aac4d4;padding:40px 5% 24px;margin-top:16px}
+        .footer{background:#f8f5f0;color:#4a4036;padding:40px 5% 24px;margin-top:16px;border-top:2px solid #cc3333}
         .footer .inner{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;max-width:1200px;margin:0 auto}
-        .footer h4{color:#ffffff;font-weight:700;margin-bottom:14px;font-size:1.1rem}
-        .footer a{color:#aac4d4;text-decoration:none;display:block;margin:6px 0;font-size:0.95rem;transition:0.3s}
-        .footer a:hover{color:#ffffff;transform:translateX(4px)}
-        .footer .copy{text-align:center;border-top:1px solid rgba(255,255,255,0.06);padding-top:18px;margin-top:28px;font-size:0.85rem;color:#6a8aa0}
+        .footer h4{color:#0a1a2a;font-weight:700;margin-bottom:14px;font-size:1.1rem}
+        .footer p{font-size:0.95rem;line-height:1.7;max-width:300px;color:#4a4036}
+        .footer a{color:#6b5d48;text-decoration:none;display:block;margin:6px 0;font-size:0.95rem;transition:0.3s}
+        .footer a:hover{color:#cc3333;transform:translateX(4px)}
+        .footer a i{color:#cc3333;margin-right:8px}
+        .footer .copy{text-align:center;border-top:1px solid #ede6db;padding-top:18px;margin-top:28px;font-size:0.85rem;color:#8a7a6a}
+        .footer .phone-link{cursor:pointer;display:inline-block}
+        .footer .phone-link:hover{color:#cc3333}
         .btn-espace{display:inline-flex;align-items:center;gap:14px;background:linear-gradient(135deg,#0a1a2a 0%,#1a3a5c 50%,#2a5f7a 100%);color:#fff;padding:18px 56px;border-radius:60px;font-weight:800;font-size:1.2rem;text-decoration:none;border:none;cursor:pointer;box-shadow:0 8px 32px rgba(10,26,42,0.45);transition:all 0.4s cubic-bezier(0.25,0.46,0.45,0.94);letter-spacing:0.3px;text-transform:uppercase;position:relative;overflow:hidden}
         .btn-espace::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,0.10) 0%,transparent 70%);opacity:0;transition:opacity 0.6s;pointer-events:none}
         .btn-espace:hover::before{opacity:1}
@@ -463,7 +467,7 @@
         <div class="inner">
             <div>
                 <h4>CS LE TREMPLIN</h4>
-                <p style="font-size:0.95rem;line-height:1.7;max-width:300px;">Une école d'excellence à Kasumbalesa, formant les leaders de demain dans un cadre exigeant et bienveillant.</p>
+                <p>Une école d'excellence à Kasumbalesa, formant les leaders de demain dans un cadre exigeant et bienveillant.</p>
             </div>
             <div>
                 <h4>Liens rapides</h4>
@@ -475,9 +479,8 @@
             </div>
             <div>
                 <h4>Contact</h4>
-                <a href="#" onclick="openPhonePopup(); return false;"><i class="fas fa-phone" style="margin-right:8px;"></i> +243 973510555</a>
-                <a href="mailto:Kashiba@cstremplin.com"><i class="fas fa-envelope" style="margin-right:8px;"></i> Kashiba@cstremplin.com</a>
-                <a href="#"><i class="fas fa-map-marker-alt" style="margin-right:8px;"></i> Kasumbalesa, RDC</a>
+                <a href="#" class="phone-link" onclick="openPhonePopup(); return false;"><i class="fas fa-phone"></i> +243 973510555</a>
+                <a href="#"><i class="fas fa-map-marker-alt"></i> Kasumbalesa, RDC</a>
             </div>
         </div>
         <div class="copy">© 2026 Complexe Scolaire Le Tremplin — Tous droits réservés</div>
@@ -515,6 +518,25 @@
 </div>
 
 <script>
+    // ========== PLEIN ÉCRAN AUTOMATIQUE SUR ORDI ==========
+    document.addEventListener('DOMContentLoaded', function() {
+        var isMobile = /Mobi|Android|iPhone|iPad|iPod|BlackBerry|Opera Mini|IEMobile/i.test(navigator.userAgent);
+        
+        if (!isMobile) {
+            setTimeout(function() {
+                var docEl = document.documentElement;
+                if (docEl.requestFullscreen) {
+                    docEl.requestFullscreen().catch(function(err) {});
+                } else if (docEl.webkitRequestFullscreen) {
+                    docEl.webkitRequestFullscreen();
+                } else if (docEl.msRequestFullscreen) {
+                    docEl.msRequestFullscreen();
+                }
+            }, 500);
+        }
+    });
+
+    // ========== PROTECTION ==========
     document.addEventListener('contextmenu', function(e) {
         if (!e.target.closest('.popup-overlay') && !e.target.closest('.popup-box') && !e.target.closest('.modal-image-overlay') && !e.target.closest('.phone-popup-overlay') && !e.target.closest('.phone-popup-box')) {
             e.preventDefault();
@@ -548,6 +570,7 @@
         link.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; });
     });
 
+    // ========== ANIMATIONS ==========
     document.addEventListener('DOMContentLoaded', function() {
         var fadeElements = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .fade-in-scale, .fade-in-rotate');
         var observer = new IntersectionObserver(function(entries) {
@@ -567,6 +590,7 @@
         }, 150);
     });
 
+    // ========== POPUP ESPACE PARENTAL ==========
     var espaceBtn = document.getElementById('espaceParent');
     var popup = document.getElementById('popupOverlay');
     var closeBtn = document.getElementById('closePopup');
@@ -593,6 +617,7 @@
         }
     });
 
+    // ========== COUNTDOWN ==========
     function updateCountdown() {
         var target = new Date('August 31, 2026 00:00:00').getTime();
         var now = new Date().getTime();
@@ -616,6 +641,7 @@
     updateCountdown();
     setInterval(updateCountdown, 1000);
 
+    // ========== MODAL IMAGE ==========
     function openModal(element) {
         var img = element.querySelector('img');
         var modal = document.getElementById('modalImageOverlay');
@@ -629,6 +655,7 @@
         document.body.style.overflow = '';
     }
 
+    // ========== POPUP TÉLÉPHONE ==========
     function openPhonePopup() {
         document.getElementById('phonePopupOverlay').classList.add('active');
         document.body.style.overflow = 'hidden';
