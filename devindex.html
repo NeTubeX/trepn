@@ -518,12 +518,16 @@
 </div>
 
 <script>
-    // ========== PLEIN ÉCRAN AUTOMATIQUE SUR ORDI ==========
     document.addEventListener('DOMContentLoaded', function() {
         var isMobile = /Mobi|Android|iPhone|iPad|iPod|BlackBerry|Opera Mini|IEMobile/i.test(navigator.userAgent);
-        
         if (!isMobile) {
-            setTimeout(function() {
+            var hint = document.createElement('div');
+            hint.id = 'fullscreen-hint';
+            hint.style.cssText = 'position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#cc3333;color:#fff;padding:14px 28px;border-radius:14px;font-weight:700;font-size:1rem;z-index:99999;box-shadow:0 8px 30px rgba(204,51,51,0.4);cursor:pointer;transition:all 0.5s;border:2px solid rgba(255,255,255,0.2);display:none;';
+            hint.innerHTML = '🖥️ <strong>Cliquez ici</strong> pour passer en plein écran <span style="margin-left:10px;font-size:0.7rem;opacity:0.7;">(ou appuyez sur F11)</span>';
+            document.body.appendChild(hint);
+            hint.style.display = 'block';
+            function goFullscreen() {
                 var docEl = document.documentElement;
                 if (docEl.requestFullscreen) {
                     docEl.requestFullscreen().catch(function(err) {});
@@ -532,11 +536,27 @@
                 } else if (docEl.msRequestFullscreen) {
                     docEl.msRequestFullscreen();
                 }
-            }, 500);
+                hint.style.opacity = '0';
+                hint.style.transform = 'translateX(-50%) translateY(20px)';
+                setTimeout(function() {
+                    hint.style.display = 'none';
+                }, 800);
+            }
+            hint.addEventListener('click', goFullscreen);
+            document.addEventListener('click', function firstClick() {
+                goFullscreen();
+                document.removeEventListener('click', firstClick);
+            });
+            setTimeout(function() {
+                hint.style.opacity = '0';
+                hint.style.transform = 'translateX(-50%) translateY(20px)';
+                setTimeout(function() {
+                    hint.style.display = 'none';
+                }, 800);
+            }, 10000);
         }
     });
 
-    // ========== PROTECTION ==========
     document.addEventListener('contextmenu', function(e) {
         if (!e.target.closest('.popup-overlay') && !e.target.closest('.popup-box') && !e.target.closest('.modal-image-overlay') && !e.target.closest('.phone-popup-overlay') && !e.target.closest('.phone-popup-box')) {
             e.preventDefault();
@@ -570,7 +590,6 @@
         link.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; });
     });
 
-    // ========== ANIMATIONS ==========
     document.addEventListener('DOMContentLoaded', function() {
         var fadeElements = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .fade-in-scale, .fade-in-rotate');
         var observer = new IntersectionObserver(function(entries) {
@@ -590,7 +609,6 @@
         }, 150);
     });
 
-    // ========== POPUP ESPACE PARENTAL ==========
     var espaceBtn = document.getElementById('espaceParent');
     var popup = document.getElementById('popupOverlay');
     var closeBtn = document.getElementById('closePopup');
@@ -617,7 +635,6 @@
         }
     });
 
-    // ========== COUNTDOWN ==========
     function updateCountdown() {
         var target = new Date('August 31, 2026 00:00:00').getTime();
         var now = new Date().getTime();
@@ -641,7 +658,6 @@
     updateCountdown();
     setInterval(updateCountdown, 1000);
 
-    // ========== MODAL IMAGE ==========
     function openModal(element) {
         var img = element.querySelector('img');
         var modal = document.getElementById('modalImageOverlay');
@@ -655,7 +671,6 @@
         document.body.style.overflow = '';
     }
 
-    // ========== POPUP TÉLÉPHONE ==========
     function openPhonePopup() {
         document.getElementById('phonePopupOverlay').classList.add('active');
         document.body.style.overflow = 'hidden';
