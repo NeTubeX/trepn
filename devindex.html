@@ -198,21 +198,21 @@
         .modal-image-overlay .modal-image-box .modal-title{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);background:linear-gradient(transparent,rgba(10,26,42,0.85));padding:18px 32px 22px;border-radius:12px;color:#fff;font-weight:700;font-size:1.2rem;letter-spacing:0.5px;text-align:center;width:100%;white-space:nowrap}
         .modal-image-overlay .modal-image-box .modal-title i{margin-right:10px;color:#cc3333}
         .itineraire-section{padding:20px 5% 40px 5%}
-        .itineraire-container{background:linear-gradient(145deg,#f8f9fa,#eef2f5);border-radius:28px;padding:35px 30px 30px 30px;text-align:center;border:2px solid #cc3333;box-shadow:0 8px 30px rgba(204,51,51,0.08);transition:all 0.4s;max-width:700px;margin:0 auto}
-        .itineraire-container:hover{box-shadow:0 12px 40px rgba(204,51,51,0.15)}
-        .itineraire-badge{display:inline-block;background:#cc3333;color:#fff;padding:4px 20px;border-radius:30px;font-size:0.7rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
+        .itineraire-container{background:linear-gradient(145deg,#f8f9fa,#eef2f5);border-radius:28px;padding:35px 30px 30px 30px;text-align:center;border:3px solid #cc3333;box-shadow:0 8px 30px rgba(204,51,51,0.15);transition:all 0.4s;max-width:700px;margin:0 auto}
+        .itineraire-container:hover{box-shadow:0 12px 50px rgba(204,51,51,0.25);transform:translateY(-2px)}
+        .itineraire-badge{display:inline-block;background:#cc3333;color:#fff;padding:6px 24px;border-radius:30px;font-size:0.75rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px}
         .itineraire-title{font-size:1.8rem;font-weight:800;color:#0a1a2a;margin-bottom:6px}
         .itineraire-desc{font-size:1rem;color:#4a5a6a;margin-bottom:4px;font-weight:500}
         .itineraire-cta{font-size:0.95rem;color:#0a1a2a;line-height:1.6;max-width:500px;margin:8px auto 14px auto}
-        .itineraire-link{display:block;border-radius:20px;overflow:hidden;cursor:pointer;text-decoration:none;box-shadow:0 4px 20px rgba(0,0,0,0.06);transition:all 0.4s;position:relative}
-        .itineraire-link:hover{box-shadow:0 12px 40px rgba(204,51,51,0.25)}
-        .itineraire-link .respire-image{width:100%;height:auto;max-height:280px;object-fit:cover;display:block;border-radius:20px;animation:respirer 2.8s ease-in-out infinite;transition:transform 0.3s}
+        .itineraire-link{display:block;border-radius:20px;overflow:hidden;cursor:pointer;text-decoration:none;box-shadow:0 6px 30px rgba(0,0,0,0.10);transition:all 0.4s;position:relative;border:2px solid #cc3333}
+        .itineraire-link:hover{box-shadow:0 12px 50px rgba(204,51,51,0.35);transform:scale(1.01)}
+        .itineraire-link .respire-image{width:100%;height:auto;max-height:280px;object-fit:cover;display:block;border-radius:18px;animation:respirer 2.8s ease-in-out infinite;transition:transform 0.3s;user-select:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;pointer-events:none}
         .itineraire-link:hover .respire-image{animation-play-state:paused;transform:scale(1.02)}
         .itineraire-link::after{content:"🏫 CS LE TREMPLIN";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(0.8);background:rgba(10,26,42,0.85);color:#fff;padding:12px 24px;border-radius:12px;font-weight:700;font-size:1.2rem;letter-spacing:1px;opacity:0;transition:all 0.4s cubic-bezier(0.25,0.46,0.45,0.94);backdrop-filter:blur(4px);border:2px solid rgba(255,255,255,0.15);pointer-events:none;white-space:nowrap}
         .itineraire-link:hover::after{opacity:1;transform:translate(-50%,-50%) scale(1)}
         .itineraire-action{margin-top:14px;display:flex;align-items:center;justify-content:center;gap:8px;font-size:0.9rem;font-weight:600;color:#cc3333}
         .itineraire-info{margin-top:10px;font-size:0.75rem;color:#6a8aa0}
-        @keyframes respirer{0%{transform:scale(1)}50%{transform:scale(1.035)}100%{transform:scale(1)}}
+        @keyframes respirer{0%{transform:scale(1)}50%{transform:scale(1.04)}100%{transform:scale(1)}}
         .phone-popup-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);backdrop-filter:blur(8px);z-index:99999;justify-content:center;align-items:center}
         .phone-popup-overlay.active{display:flex}
         .phone-popup-box{background:linear-gradient(145deg,#ffffff,#f5f7fa);border-radius:28px;padding:40px 36px;max-width:420px;width:92%;text-align:center;box-shadow:0 40px 80px rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.15);transform:scale(0.95) translateY(20px);transition:all 0.7s cubic-bezier(0.34,1.56,0.64,1)}
@@ -308,7 +308,7 @@
             <p class="itineraire-desc"><i class="fas fa-map-pin" style="color:#cc3333;"></i> <strong>Complexe Scolaire Le Tremplin</strong> – Kasumbalesa</p>
             <p class="itineraire-cta">👆 <strong>Cliquez sur l'image ci-dessous</strong> pour être guidé directement jusqu'à notre établissement.</p>
             <a href="https://www.google.com/maps/dir/?api=1&destination=-12.260982%2C27.737325" target="_blank" rel="noopener noreferrer" class="itineraire-link" title="CS LE TREMPLIN">
-                <img src="https://www.cstremplin.com/image2.jpg" alt="Complexe Scolaire Le Tremplin - Itinéraire" class="respire-image">
+                <img src="https://www.cstremplin.com/image2.jpg" alt="Complexe Scolaire Le Tremplin - Itinéraire" class="respire-image" draggable="false">
             </a>
             <div class="itineraire-action"><i class="fas fa-hand-pointer"></i> CLIQUEZ SUR L'IMAGE POUR L'ITINÉRAIRE <i class="fas fa-arrow-right"></i></div>
             <div class="itineraire-info"><i class="fas fa-map-marker-alt"></i> Votre position actuelle sera utilisée comme point de départ.</div>
